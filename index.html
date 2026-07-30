@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  SEO META - edit YOURDOMAIN.com below once you buy a domain,
+  then it will be correct everywhere it appears (canonical, OG, JSON-LD)
+============================================================= -->
+<title>Shakir Hussain | Full-Stack Web Developer in Islamabad, Pakistan - React, Node.js, PHP, WordPress</title>
+<meta name="description" content="Shakir Hussain is a full-stack web developer in Islamabad, Pakistan, building fast, SEO-ready websites and web apps with React, Node.js, PHP, MySQL, MongoDB and WordPress for clients in the US, UK, EU and Australia. Available for remote and international freelance projects.">
+<meta name="keywords" content="full stack developer, hire web developer, React developer, Node.js developer, PHP developer, WordPress developer, WooCommerce developer, freelance web developer Pakistan, full stack developer Islamabad, remote web developer for hire, MERN stack developer">
+<meta name="author" content="Shakir Hussain">
+<link rel="canonical" href="https://YOURDOMAIN.com/">
+<meta name="robots" content="index, follow">
+
+<!-- Favicons / logo -->
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shakir Hussain | Full-Stack Web Developer for Hire">
+<meta property="og:description" content="Full-stack web development in React, Node.js, PHP, MySQL, MongoDB and WordPress. Available for remote and international clients.">
+<meta property="og:url" content="https://YOURDOMAIN.com/">
+<meta property="og:site_name" content="Shakir Hussain - Full-Stack Developer">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://YOURDOMAIN.com/images/shakir-profile.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shakir Hussain | Full-Stack Web Developer for Hire">
+<meta name="twitter:description" content="Full-stack web development in React, Node.js, PHP, MySQL, MongoDB and WordPress. Available for remote and international clients.">
+<meta name="twitter:image" content="https://YOURDOMAIN.com/images/shakir-profile.jpg">
+
+<!-- JSON-LD structured data: helps Google understand who you are and show rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shakir Hussain",
+  "url": "https://YOURDOMAIN.com/",
+  "image": "https://YOURDOMAIN.com/images/shakir-profile.jpg",
+  "email": "mailto:mr.shakir77@gmail.com",
+  "telephone": "+92-305-9494585",
+  "jobTitle": "Full-Stack Web Developer",
+  "description": "Full-stack web developer specializing in React, Node.js, PHP, MySQL, MongoDB and WordPress for international clients.",
+  "knowsAbout": ["React.js", "Node.js", "Express.js", "PHP", "MySQL", "MongoDB", "WordPress", "WooCommerce", "Tailwind CSS", "Bootstrap", "Docker", "Git"],
+  "sameAs": [
+    "https://www.linkedin.com/in/shakir-hussain-7991221a1/",
+    "https://github.com/profshakir77"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Skyittec Software House"
+  },
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "University of Sargodha"},
+    {"@type": "CollegeOrUniversity", "name": "Air University"}
+  ]
+}
+</script>
+
+<!-- FAQ schema - helps you show up for question-style searches ("who can build a WordPress store", etc.) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What kind of web development projects do you take on?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Full-stack websites and web apps, e-commerce stores built on WordPress/WooCommerce, custom React and Node.js applications, and ongoing maintenance or feature work on existing sites."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with international clients?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. I work remotely with clients across the US, UK, EU, Australia and elsewhere, and I'm comfortable coordinating across time zones in English."}
+    },
+    {
+      "@type": "Question",
+      "name": "What technologies do you specialize in?",
+      "acceptedAnswer": {"@type": "Answer", "text": "React, Node.js and Express on the JavaScript side; PHP and WordPress/WooCommerce for CMS and e-commerce builds; MySQL and MongoDB for data; Tailwind CSS and Bootstrap for front-end styling."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0E1512;
+    --ink-2:#141C18;
+    --paper:#F0ECE1;
+    --paper-dim:#B9C2BA;
+    --brass:#C79A44;
+    --brass-dim:#8A6C31;
+    --teal:#4C7A6D;
+    --line:#28322C;
+    --radius:2px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Bricolage Grotesque', sans-serif; font-weight:600; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  /* ---------- Skip link for keyboard/screen-reader users ---------- */
+  .skip-link{
+    position:absolute; left:-999px; top:auto;
+    background:var(--brass); color:var(--ink); padding:10px 16px; z-index:100;
+  }
+  .skip-link:focus{left:16px; top:16px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--brass); outline-offset:3px;
+  }
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(14,21,18,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:68px;
+  }
+  .logo{font-family:'JetBrains Mono', monospace; font-weight:600; font-size:15px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .logo img{display:block; border-radius:6px;}
+  .logo span{color:var(--brass);}
+  .navlinks{display:flex; gap:28px; list-style:none; font-size:14px;}
+  .navlinks a{text-decoration:none; color:var(--paper-dim); transition:color 0.2s;}
+  .navlinks a:hover{color:var(--paper);}
+  .nav-cta{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    border:1px solid var(--brass-dim); color:var(--brass);
+    padding:8px 16px; text-decoration:none; border-radius:var(--radius);
+    transition:background 0.2s, color 0.2s;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--brass); color:var(--ink);}
+  .navtoggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 84px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass);
+    letter-spacing:0.04em; margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:8px; height:8px; background:var(--brass); border-radius:50%; display:inline-block;}
+  .hero h1{font-size:clamp(2.4rem, 5vw, 3.6rem); line-height:1.08; margin-bottom:22px; font-weight:700;}
+  .hero h1 em{color:var(--brass); font-style:normal;}
+  .hero p.lede{
+    font-size:1.15rem; color:var(--paper-dim); max-width:520px; margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:14px;
+    padding:14px 24px; text-decoration:none; border-radius:var(--radius);
+    display:inline-block; transition:transform 0.15s, background 0.2s, color 0.2s;
+  }
+  .btn-primary{background:var(--brass); color:var(--ink); font-weight:600;}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line); color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--brass); color:var(--brass);}
+
+  /* Terminal card */
+  .terminal{
+    background:var(--ink-2); border:1px solid var(--line); border-radius:6px;
+    overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .terminal-bar{
+    display:flex; align-items:center; gap:8px; padding:12px 16px;
+    border-bottom:1px solid var(--line); background:rgba(255,255,255,0.02);
+  }
+  .terminal-bar span{width:10px; height:10px; border-radius:50%; background:var(--line);}
+  .terminal-bar .t1{background:#4C4438;} .terminal-bar .t2{background:#4C4438;} .terminal-bar .t3{background:#4C4438;}
+  .terminal-title{margin-left:8px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--paper-dim);}
+  .terminal-body{padding:22px; font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--paper-dim); line-height:1.9;}
+  .terminal-body .prompt{color:var(--teal);}
+  .terminal-body .out{color:var(--paper);}
+  .terminal-body .comment{color:#5B6660;}
+  .cursor{display:inline-block; width:7px; height:14px; background:var(--brass); vertical-align:middle; animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* ---------- Section shared ---------- */
+  section{padding:84px 0; border-bottom:1px solid var(--line);}
+  .section-head{margin-bottom:44px; max-width:640px;}
+  .section-eyebrow{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:10px; display:block;}
+  .section-head h2{font-size:clamp(1.7rem, 3vw, 2.3rem);}
+  .section-head p{color:var(--paper-dim); margin-top:14px; font-size:1.02rem;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:start;}
+  .portrait-frame{
+    border:1px solid var(--line); padding:10px; background:var(--ink-2); border-radius:4px;
+  }
+  .portrait-frame img{
+    display:block; width:100%; height:auto; border-radius:2px;
+    filter:grayscale(0.25) contrast(1.04);
+  }
+  .portrait-caption{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--brass);
+    margin-top:12px; padding-top:12px; border-top:1px dashed var(--line);
+    display:flex; justify-content:space-between;
+  }
+  .about-grid p{color:var(--paper-dim); margin-bottom:16px;}
+  .stat-row{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:12px;}
+  .stat{border:1px solid var(--line); padding:20px; border-radius:var(--radius);}
+  .stat .num{font-family:'Bricolage Grotesque', sans-serif; font-size:2rem; color:var(--brass);}
+  .stat .label{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--paper-dim); margin-top:4px;}
+
+  /* ---------- Skills ---------- */
+  .skills-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .skill-card{background:var(--ink); padding:26px 22px;}
+  .skill-card h3{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:14px; font-weight:600;}
+  .skill-card ul{list-style:none; font-size:14.5px; color:var(--paper-dim);}
+  .skill-card li{padding:5px 0; border-bottom:1px dashed var(--line);}
+  .skill-card li:last-child{border-bottom:none;}
+
+  /* ---------- Commit log (experience) ---------- */
+  .log{border-left:1px solid var(--line); margin-left:8px;}
+  .log-entry{position:relative; padding:0 0 40px 34px;}
+  .log-entry:last-child{padding-bottom:0;}
+  .log-entry::before{
+    content:""; position:absolute; left:-5px; top:4px; width:9px; height:9px;
+    background:var(--ink); border:2px solid var(--brass); border-radius:50%;
+  }
+  .log-meta{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--teal); margin-bottom:6px; display:flex; gap:12px; flex-wrap:wrap;}
+  .log-meta .hash{color:var(--brass-dim);}
+  .log-entry h3{font-size:1.15rem; margin-bottom:6px;}
+  .log-entry p{color:var(--paper-dim); font-size:14.5px; max-width:560px;}
+
+  /* ---------- Projects ---------- */
+  .projects-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;}
+  .proj-card{
+    border:1px solid var(--line); border-radius:var(--radius); padding:26px;
+    text-decoration:none; color:var(--paper); display:block;
+    transition:border-color 0.2s, transform 0.2s;
+    background:var(--ink-2);
+  }
+  .proj-card:hover{border-color:var(--brass); transform:translateY(-3px);}
+  .proj-index{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--brass-dim); margin-bottom:14px;}
+  .proj-card h3{font-size:1.1rem; margin-bottom:8px;}
+  .proj-card p{color:var(--paper-dim); font-size:13.8px; margin-bottom:16px;}
+  .proj-tags{display:flex; gap:8px; flex-wrap:wrap;}
+  .proj-tags span{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--teal); border:1px solid var(--line); padding:3px 8px; border-radius:20px;}
+  .proj-link{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass); margin-top:16px; display:block;}
+
+  /* ---------- Availability strip ---------- */
+  .avail{
+    background:var(--ink-2); text-align:center; border-bottom:1px solid var(--line);
+  }
+  .avail h2{font-size:clamp(1.5rem,3vw,2rem); margin-bottom:14px;}
+  .avail p{color:var(--paper-dim); max-width:560px; margin:0 auto 28px;}
+  .avail-tags{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:32px;}
+  .avail-tags span{font-family:'JetBrains Mono', monospace; font-size:12.5px; border:1px solid var(--brass-dim); color:var(--brass); padding:6px 14px; border-radius:20px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .contact-list{list-style:none;}
+  .contact-list li{border-bottom:1px solid var(--line); padding:18px 0; display:flex; justify-content:space-between; align-items:center;}
+  .contact-list li:first-child{padding-top:0;}
+  .contact-list .k{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim); text-transform:uppercase;}
+  .contact-list .v a{text-decoration:none; color:var(--brass); font-size:15px;}
+  .contact-list .v a:hover{text-decoration:underline;}
+  .note{
+    font-size:13px; color:var(--paper-dim); border-left:2px solid var(--brass-dim); padding-left:14px; margin-top:22px;
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .svc-card{border:1px solid var(--line); padding:26px 22px; border-radius:var(--radius);}
+  .svc-card h3{font-size:1rem; margin-bottom:10px;}
+  .svc-card p{color:var(--paper-dim); font-size:13.8px;}
+  .why-block{
+    margin-top:40px; padding-top:36px; border-top:1px solid var(--line);
+    max-width:720px;
+  }
+  .why-block h3{font-size:1.2rem; margin-bottom:14px;}
+  .why-block p{color:var(--paper-dim); font-size:15px; line-height:1.75;}
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .testi-card{border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:var(--ink-2);}
+  .testi-card p.quote{font-family:'Bricolage Grotesque', sans-serif; font-size:1.05rem; font-style:italic; color:var(--paper); margin-bottom:16px;}
+  .testi-card .who{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass);}
+
+  /* ---------- Contact form ---------- */
+  .form-group{margin-bottom:18px;}
+  .form-group label{display:block; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--paper-dim); text-transform:uppercase; margin-bottom:8px;}
+  .form-group input, .form-group textarea{
+    width:100%; background:var(--ink-2); border:1px solid var(--line); color:var(--paper);
+    padding:12px 14px; font-family:'Plus Jakarta Sans', sans-serif; font-size:14.5px; border-radius:var(--radius);
+  }
+  .form-group input:focus, .form-group textarea:focus{outline:2px solid var(--brass); outline-offset:1px; border-color:var(--brass);}
+  .form-group textarea{resize:vertical; min-height:110px;}
+  .form-submit{
+    font-family:'JetBrains Mono', monospace; font-size:14px; background:var(--brass); color:var(--ink);
+    font-weight:600; border:none; padding:14px 26px; border-radius:var(--radius); cursor:pointer;
+  }
+  .form-submit:hover{transform:translateY(-2px);}
+
+  footer{padding:36px 0; text-align:center;}
+  footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:repeat(2,1fr);}
+    .projects-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:480px){
+    .skills-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .hero{padding:64px 0 56px;}
+    section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="wrap" aria-label="Primary">
+    <a href="#main" class="logo"><img src="images/logo.svg" alt="Shakir Hussain logo" width="30" height="30">shakir<span>.</span>dev</a>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Start a project →</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Available for remote &amp; international projects</p>
+        <h1>Full-stack development, <em>built to launch and built to last.</em></h1>
+        <p class="lede">I'm Shakir Hussain - a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan. I design, build and ship websites and web apps for clients worldwide, from first commit to production.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Hire me for your project</a>
+          <a href="#work" class="btn btn-ghost">See my work</a>
+        </div>
+      </div>
+      <div class="terminal" role="img" aria-label="Terminal window showing a summary of Shakir Hussain's developer profile">
+        <div class="terminal-bar">
+          <span class="t1"></span><span class="t2"></span><span class="t3"></span>
+          <span class="terminal-title">shakir@dev - zsh</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="prompt">$</span> whoami</div>
+          <div class="out">shakir-hussain - full-stack developer</div>
+          <div><span class="prompt">$</span> cat stack.txt</div>
+          <div class="out">React · Node.js · PHP · MySQL · MongoDB · WordPress</div>
+          <div><span class="prompt">$</span> git log --oneline -3</div>
+          <div class="comment">a91f3e feat: ship client project on schedule</div>
+          <div class="comment">7c02b1 fix: optimize for Core Web Vitals</div>
+          <div class="comment">1e88aa feat: SEO pass - meta, schema, sitemap</div>
+          <div><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="portrait-frame">
+          <img src="images/shakir-profile.jpg" alt="Shakir Hussain, full-stack web developer and Computer Science lecturer" width="700" height="935" loading="lazy">
+          <div class="portrait-caption">
+            <span>Shakir Hussain</span>
+            <span>Islamabad, PK</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="section-eyebrow">About</span>
+        <h2>Two disciplines, one standard: work that holds up.</h2>
+        <p>I split my time between building production web applications and teaching Computer Science - a combination that keeps my fundamentals sharp and my delivery practical. Clients get code that's built the way it's taught to be built: readable, tested against real use, and documented well enough that someone else could pick it up.</p>
+        <p>I work across the full stack - from responsive front ends to APIs, databases and deployment - and I'm comfortable owning a project end to end or slotting into an existing team and codebase.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="num">2020</div><div class="label">Building production web apps since</div></div>
+          <div class="stat"><div class="num">Full</div><div class="label">Stack - front end to database</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Services</span>
+        <h2>Full-stack web development services</h2>
+        <p>Hire me for one piece of the stack or the whole build, start to finish.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card">
+          <h3>Custom Web Apps</h3>
+          <p>React front ends backed by Node.js/Express APIs - built for speed and built to scale as your product grows.</p>
+        </div>
+        <div class="svc-card">
+          <h3>WordPress &amp; WooCommerce</h3>
+          <p>E-commerce stores and business sites on WordPress, customized beyond the default theme so the site looks and works like your brand, not a template.</p>
+        </div>
+        <div class="svc-card">
+          <h3>API &amp; Database Design</h3>
+          <p>RESTful APIs, MySQL/MongoDB schema design, and integrations with third-party services and payment gateways.</p>
+        </div>
+        <div class="svc-card">
+          <h3>SEO &amp; Performance</h3>
+          <p>On-page SEO, structured data, and Core Web Vitals tuning so the site you get is built to be found, not just built to look good.</p>
+        </div>
+      </div>
+      <div class="why-block">
+        <h3>Why clients work with a full-stack freelance developer instead of an agency</h3>
+        <p>You talk directly to the person writing the code - no account manager relaying messages, no hand-off between a design team and a dev team. I scope the project, build it, and stay on for fixes and updates after launch, so there's one person accountable for the whole thing. Because I also teach Computer Science, I write code and documentation with the assumption that someone else may need to read it later - which matters if you ever bring in another developer down the line.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Skills</span>
+        <h2>What I build with</h2>
+        <p>A stack chosen for speed of delivery without cutting corners on performance, security or SEO.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Front End</h3>
+          <ul>
+            <li>HTML5 &amp; CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Tailwind CSS</li>
+            <li>Bootstrap</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Back End</h3>
+          <ul>
+            <li>Node.js &amp; Express</li>
+            <li>PHP</li>
+            <li>RESTful API design</li>
+            <li>Authentication &amp; sessions</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Data &amp; CMS</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>WordPress</li>
+            <li>WooCommerce</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Workflow &amp; Delivery</h3>
+          <ul>
+            <li>Git &amp; GitHub</li>
+            <li>Docker</li>
+            <li>Cloud-based dev &amp; instant deployment</li>
+            <li>On-page SEO &amp; performance tuning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE - "commit log" ============ -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Experience</span>
+        <h2>My career, as a commit log</h2>
+        <p>Every developer's history is a sequence of commits. Here's mine.</p>
+      </div>
+      <div class="log">
+        <div class="log-entry">
+          <div class="log-meta"><span class="hash">#2025</span><span>current</span></div>
+          <h3>feat: Junior Lecturer, Air University</h3>
+          <p>Delivering Computer Science lectures at Air University, Islamabad, using modern tools and teaching methods - while continuing to build client projects in parallel.</p>
+        </div>
+        <div class="log-entry">
+          <div class="log-meta"><span class="hash">#2018–2025</span></div>
+          <h3>feat: Lecturer - Computer Science, Punjab College, Kharian</h3>
+          <p>Taught core CS and web development courses for seven years, translating theory into practical, buildable skills for students.</p>
+        </div>
+        <div class="log-entry">
+          <div class="log-meta"><span class="hash">#2020</span><span>ongoing</span></div>
+          <h3>feat: Full-Stack Website Developer, Skyittec Software House - Multan (Remote)</h3>
+          <p>Building and shipping full-stack, WordPress-based web applications for clients, from front-end interfaces to back-end APIs and databases.</p>
+        </div>
+        <div class="log-entry">
+          <div class="log-meta"><span class="hash">#2017</span></div>
+          <h3>init: BS Computer Science - University of Sargodha</h3>
+          <p>Graduated with a foundation in software engineering, data structures and web technologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK / PROJECTS ============ -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Selected Work</span>
+        <h2>Recent projects</h2>
+        <p>A mix of client sites, e-commerce builds and AI-assisted tools. Source available on GitHub.</p>
+      </div>
+      <div class="projects-grid">
+        <a class="proj-card" href="https://github.com/profshakir77/jabeenjewels" target="_blank" rel="noopener">
+          <div class="proj-index">01</div>
+          <h3>Jabeen Jewels</h3>
+          <p>E-commerce storefront for a jewelry brand - product catalog, cart and checkout flow.</p>
+          <div class="proj-tags"><span>WordPress</span><span>WooCommerce</span></div>
+          <span class="proj-link">View on GitHub →</span>
+        </a>
+        <a class="proj-card" href="https://github.com/profshakir77/goudagiggle" target="_blank" rel="noopener">
+          <div class="proj-index">02</div>
+          <h3>Gouda Giggle</h3>
+          <p>Custom storefront built for a food &amp; retail brand, focused on a fast, mobile-first shopping experience.</p>
+          <div class="proj-tags"><span>PHP</span><span>MySQL</span></div>
+          <span class="proj-link">View on GitHub →</span>
+        </a>
+        <a class="proj-card" href="https://github.com/profshakir77/ai-resume-tool" target="_blank" rel="noopener">
+          <div class="proj-index">03</div>
+          <h3>AI Resume Tool</h3>
+          <p>Web app that helps users generate and refine resumes with AI-assisted suggestions.</p>
+          <div class="proj-tags"><span>React</span><span>Node.js</span></div>
+          <span class="proj-link">View on GitHub →</span>
+        </a>
+        <a class="proj-card" href="https://github.com/profshakir77/ai-website-auditor" target="_blank" rel="noopener">
+          <div class="proj-index">04</div>
+          <h3>AI Website Auditor</h3>
+          <p>Tool that scans a website and reports back on SEO, performance and accessibility issues.</p>
+          <div class="proj-tags"><span>JavaScript</span><span>Node.js</span></div>
+          <span class="proj-link">View on GitHub →</span>
+        </a>
+        <a class="proj-card" href="https://github.com/profshakir77/shakir-digital-hub" target="_blank" rel="noopener">
+          <div class="proj-index">05</div>
+          <h3>Digital Hub</h3>
+          <p>A central hub site tying together services, projects and client-facing resources.</p>
+          <div class="proj-tags"><span>HTML/CSS</span><span>JavaScript</span></div>
+          <span class="proj-link">View on GitHub →</span>
+        </a>
+        <a class="proj-card" href="https://github.com/profshakir77" target="_blank" rel="noopener">
+          <div class="proj-index">06</div>
+          <h3>More on GitHub</h3>
+          <p>Browse the full list of repositories, including in-progress and open-source work.</p>
+          <div class="proj-tags"><span>github.com/profshakir77</span></div>
+          <span class="proj-link">View profile →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVAILABILITY ============ -->
+  <section class="avail">
+    <div class="wrap">
+      <h2>Open to remote &amp; international client work</h2>
+      <p>Comfortable working across time zones, in English, with clients in the US, UK, EU, Australia and beyond.</p>
+      <div class="avail-tags">
+        <span>Full-Stack Builds</span>
+        <span>E-Commerce (WooCommerce)</span>
+        <span>API Development</span>
+        <span>Website SEO &amp; Speed</span>
+        <span>Ongoing Maintenance</span>
+      </div>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Client Feedback</span>
+        <h2>What clients say</h2>
+        <p>Swap these placeholders for real quotes - ask your last two or three clients for a couple of lines, or pull one from a LinkedIn recommendation.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p class="quote">"[Add a short client quote here - what you built and how it went.]"</p>
+          <p class="who">- Client name, project</p>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"[Add a second client quote here.]"</p>
+          <p class="who">- Client name, project</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">FAQ</span>
+        <h2>Common questions</h2>
+      </div>
+      <div class="log">
+        <div class="log-entry">
+          <h3>What kind of projects do you take on?</h3>
+          <p>Full-stack websites and web apps, WordPress/WooCommerce stores, custom React and Node.js applications, and ongoing maintenance on existing sites.</p>
+        </div>
+        <div class="log-entry">
+          <h3>Do you work with international clients?</h3>
+          <p>Yes - remotely, across time zones, in English, with clients in the US, UK, EU, Australia and beyond.</p>
+        </div>
+        <div class="log-entry">
+          <h3>What technologies do you specialize in?</h3>
+          <p>React, Node.js, Express, PHP, WordPress/WooCommerce, MySQL, MongoDB, Tailwind CSS and Bootstrap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="section-eyebrow">Contact</span>
+        <h2>Let's build something.</h2>
+        <p style="color:var(--paper-dim); margin-top:14px; max-width:440px;">Send a short brief - what you're building, your timeline and your budget range - and I'll reply with next steps.</p>
+      </div>
+      <div>
+        <!-- FORM SETUP: sign up free at formspree.io, create a form, and replace
+             YOUR_FORM_ID below with the ID they give you. Until then this form
+             won't actually send anywhere. -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget range</label>
+            <input type="text" id="budget" name="budget" placeholder="e.g. $500–$1500">
+          </div>
+          <div class="form-group">
+            <label for="message">Project brief</label>
+            <textarea id="message" name="message" required placeholder="What are you building, and what's your timeline?"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send message</button>
+        </form>
+        <p class="note">Prefer email or WhatsApp? Use the details below instead.</p>
+        <ul class="contact-list" style="margin-top:14px;">
+          <li><span class="k">Email</span><span class="v"><a href="mailto:mr.shakir77@gmail.com">mr.shakir77@gmail.com</a></span></li>
+          <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/shakir-hussain-7991221a1/" target="_blank" rel="noopener">/in/shakir-hussain</a></span></li>
+          <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/profshakir77" target="_blank" rel="noopener">/profshakir77</a></span></li>
+          <li><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/923059494585" target="_blank" rel="noopener">+92 305 9494585</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Shakir Hussain. Built and maintained by hand.</p>
+</footer>
+
+</body>
+</html>
