@@ -239,6 +239,11 @@
   /* ---------- Skills ---------- */
   .skills-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
   .skill-card{background:var(--ink); padding:26px 22px;}
+  .skill-icon{
+    width:36px; height:36px; border-radius:7px; background:rgba(76,122,109,0.12);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; color:var(--teal);
+  }
+  .skill-icon svg{width:19px; height:19px;}
   .skill-card h3{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:14px; font-weight:600;}
   .skill-card ul{list-style:none; font-size:14.5px; color:var(--paper-dim);}
   .skill-card li{padding:5px 0; border-bottom:1px dashed var(--line);}
@@ -266,7 +271,20 @@
     background:var(--ink-2);
   }
   .proj-card:hover{border-color:var(--brass); transform:translateY(-3px);}
-  .proj-index{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--brass-dim); margin-bottom:14px;}
+  .proj-cover{
+    margin:-26px -26px 20px -26px; border-radius:var(--radius) var(--radius) 0 0; overflow:hidden;
+    background:var(--ink); border-bottom:1px solid var(--line);
+  }
+  .proj-cover-bar{display:flex; gap:6px; padding:12px 16px; background:rgba(255,255,255,0.02);}
+  .proj-cover-bar span{width:8px; height:8px; border-radius:50%; background:var(--line);}
+  .proj-monogram{
+    height:110px; display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em;
+    color:var(--brass); background:linear-gradient(135deg, rgba(199,154,68,0.10), rgba(76,122,109,0.06));
+  }
+  .proj-card:nth-child(2) .proj-monogram{color:var(--teal); background:linear-gradient(135deg, rgba(76,122,109,0.14), rgba(199,154,68,0.05));}
+  .proj-card:nth-child(4) .proj-monogram{color:var(--teal); background:linear-gradient(135deg, rgba(76,122,109,0.14), rgba(199,154,68,0.05));}
+  .proj-card:nth-child(6) .proj-monogram{color:var(--paper-dim); background:linear-gradient(135deg, rgba(185,194,186,0.08), rgba(199,154,68,0.05));}
   .proj-card h3{font-size:1.1rem; margin-bottom:8px;}
   .proj-card p{color:var(--paper-dim); font-size:13.8px; margin-bottom:16px;}
   .proj-tags{display:flex; gap:8px; flex-wrap:wrap;}
@@ -274,6 +292,14 @@
   .proj-link{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass); margin-top:16px; display:block;}
 
   /* ---------- Availability strip ---------- */
+  /* ---------- Video ---------- */
+  .video-frame{
+    max-width:360px; margin:0 auto; aspect-ratio:9/16;
+    border:1.5px solid var(--line); border-radius:8px; overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .video-frame iframe{width:100%; height:100%; display:block;}
+
   .avail{
     background:var(--ink-2); text-align:center; border-bottom:1px solid var(--line);
   }
@@ -297,6 +323,11 @@
   /* ---------- Services ---------- */
   .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
   .svc-card{border:1px solid var(--line); padding:26px 22px; border-radius:var(--radius);}
+  .svc-icon{
+    width:44px; height:44px; border-radius:8px; background:rgba(199,154,68,0.1);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px; color:var(--brass);
+  }
+  .svc-icon svg{width:22px; height:22px;}
   .svc-card h3{font-size:1rem; margin-bottom:10px;}
   .svc-card p{color:var(--paper-dim); font-size:13.8px;}
   .why-block{
@@ -402,6 +433,28 @@
     </div>
   </section>
 
+  <!-- ============ VIDEO ============ -->
+  <!-- Replace YOUTUBE_VIDEO_ID below with your actual YouTube video ID once uploaded
+       (the part after "watch?v=" in the URL, or after "youtu.be/" in a share link). -->
+  <section id="video-intro">
+    <div class="wrap">
+      <div class="section-head" style="text-align:center; max-width:100%;">
+        <span class="section-eyebrow">Watch</span>
+        <h2>The 30-second version</h2>
+      </div>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
+          title="Shakir Hussain - Full-Stack Web Developer Portfolio"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ ABOUT ============ -->
   <section id="about">
     <div class="wrap about-grid">
@@ -437,18 +490,22 @@
       </div>
       <div class="services-grid">
         <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg></div>
           <h3>Custom Web Apps</h3>
           <p>React front ends backed by Node.js/Express APIs - built for speed and built to scale as your product grows.</p>
         </div>
         <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg></div>
           <h3>WordPress &amp; WooCommerce</h3>
           <p>E-commerce stores and business sites on WordPress, customized beyond the default theme so the site looks and works like your brand, not a template.</p>
         </div>
         <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
           <h3>API &amp; Database Design</h3>
           <p>RESTful APIs, MySQL/MongoDB schema design, and integrations with third-party services and payment gateways.</p>
         </div>
         <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="15 6 21 6 21 12"/></svg></div>
           <h3>SEO &amp; Performance</h3>
           <p>On-page SEO, structured data, and Core Web Vitals tuning so the site you get is built to be found, not just built to look good.</p>
         </div>
@@ -470,6 +527,7 @@
       </div>
       <div class="skills-grid">
         <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg></div>
           <h3>Front End</h3>
           <ul>
             <li>HTML5 &amp; CSS3</li>
@@ -480,6 +538,7 @@
           </ul>
         </div>
         <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="7" rx="1.5"/><line x1="7" y1="6.5" x2="7.01" y2="6.5"/><line x1="7" y1="17.5" x2="7.01" y2="17.5"/></svg></div>
           <h3>Back End</h3>
           <ul>
             <li>Node.js &amp; Express</li>
@@ -489,6 +548,7 @@
           </ul>
         </div>
         <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
           <h3>Data &amp; CMS</h3>
           <ul>
             <li>MySQL</li>
@@ -498,6 +558,7 @@
           </ul>
         </div>
         <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="M6 8.4V15.6"/><path d="M8.4 6H12a4 4 0 0 1 4 4v0"/></svg></div>
           <h3>Workflow &amp; Delivery</h3>
           <ul>
             <li>Git &amp; GitHub</li>
@@ -553,42 +614,42 @@
       </div>
       <div class="projects-grid">
         <a class="proj-card" href="https://github.com/profshakir77/jabeenjewels" target="_blank" rel="noopener">
-          <div class="proj-index">01</div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">JJ</div></div>
           <h3>Jabeen Jewels</h3>
           <p>E-commerce storefront for a jewelry brand - product catalog, cart and checkout flow.</p>
           <div class="proj-tags"><span>WordPress</span><span>WooCommerce</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
         <a class="proj-card" href="https://github.com/profshakir77/goudagiggle" target="_blank" rel="noopener">
-          <div class="proj-index">02</div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">GG</div></div>
           <h3>Gouda Giggle</h3>
           <p>Custom storefront built for a food &amp; retail brand, focused on a fast, mobile-first shopping experience.</p>
           <div class="proj-tags"><span>PHP</span><span>MySQL</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
         <a class="proj-card" href="https://github.com/profshakir77/ai-resume-tool" target="_blank" rel="noopener">
-          <div class="proj-index">03</div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">AR</div></div>
           <h3>AI Resume Tool</h3>
           <p>Web app that helps users generate and refine resumes with AI-assisted suggestions.</p>
           <div class="proj-tags"><span>React</span><span>Node.js</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
         <a class="proj-card" href="https://github.com/profshakir77/ai-website-auditor" target="_blank" rel="noopener">
-          <div class="proj-index">04</div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">AW</div></div>
           <h3>AI Website Auditor</h3>
           <p>Tool that scans a website and reports back on SEO, performance and accessibility issues.</p>
           <div class="proj-tags"><span>JavaScript</span><span>Node.js</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
         <a class="proj-card" href="https://github.com/profshakir77/shakir-digital-hub" target="_blank" rel="noopener">
-          <div class="proj-index">05</div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">DH</div></div>
           <h3>Digital Hub</h3>
           <p>A central hub site tying together services, projects and client-facing resources.</p>
           <div class="proj-tags"><span>HTML/CSS</span><span>JavaScript</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
         <a class="proj-card" href="https://github.com/profshakir77" target="_blank" rel="noopener">
-          <div class="proj-index">06</div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">+</div></div>
           <h3>More on GitHub</h3>
           <p>Browse the full list of repositories, including in-progress and open-source work.</p>
           <div class="proj-tags"><span>github.com/profshakir77</span></div>
