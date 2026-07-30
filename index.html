@@ -166,7 +166,15 @@
   .logo img{display:block; border-radius:6px;}
   .logo span{color:var(--brass);}
   .navlinks{display:flex; gap:22px; list-style:none; font-size:13.5px;}
-  .navlinks a{text-decoration:none; color:var(--paper-dim); transition:color 0.2s;}
+  .navlinks a{
+    text-decoration:none; color:var(--paper-dim); transition:color 0.2s;
+    position:relative; padding-bottom:2px;
+  }
+  .navlinks a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1.5px;
+    background:var(--brass); transition:width 0.25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
   .navlinks a:hover{color:var(--paper);}
   .nav-cta{
     font-family:'JetBrains Mono', monospace; font-size:13px;
@@ -313,7 +321,9 @@
     height:110px; display:flex; align-items:center; justify-content:center;
     font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em;
     color:var(--brass); background:linear-gradient(135deg, rgba(199,154,68,0.10), rgba(76,122,109,0.06));
+    transition:transform 0.3s ease;
   }
+  .proj-card:hover .proj-monogram{transform:scale(1.06);}
   .proj-card:nth-child(2) .proj-monogram{color:var(--teal); background:linear-gradient(135deg, rgba(76,122,109,0.14), rgba(199,154,68,0.05));}
   .proj-card:nth-child(4) .proj-monogram{color:var(--teal); background:linear-gradient(135deg, rgba(76,122,109,0.14), rgba(199,154,68,0.05));}
   .proj-card:nth-child(6) .proj-monogram{color:var(--paper-dim); background:linear-gradient(135deg, rgba(185,194,186,0.08), rgba(199,154,68,0.05));}
@@ -430,7 +440,34 @@
   }
   .form-submit:hover{transform:translateY(-2px);}
 
-  footer{padding:36px 0; text-align:center;}
+  footer{
+    background:var(--ink-2); border-top:1px solid var(--line); padding-top:56px;
+  }
+  .footer-grid{
+    display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:44px;
+  }
+  .footer-logo{margin-bottom:16px;}
+  .footer-brand p{color:var(--paper-dim); font-size:14px; line-height:1.7; max-width:340px; margin-bottom:22px;}
+  .footer-social{display:flex; gap:12px;}
+  .footer-social a{
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--line); color:var(--paper-dim);
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    transition:border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .footer-social a:hover{border-color:var(--brass); color:var(--brass); transform:translateY(-2px);}
+  .footer-social svg{width:16px; height:16px;}
+  .footer-col h4{
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass);
+    text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;
+  }
+  .footer-col{display:flex; flex-direction:column; gap:11px;}
+  .footer-col a{color:var(--paper-dim); text-decoration:none; font-size:14.5px; transition:color 0.2s;}
+  .footer-col a:hover{color:var(--brass);}
+  .footer-bottom{border-top:1px solid var(--line);}
+  .footer-bottom-inner{
+    padding:22px 28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+  .footer-bottom-inner p{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--paper-dim);}
 
   /* ---------- Scroll reveal ---------- */
   .reveal{opacity:0; transform:translateY(22px); transition:opacity 0.6s ease, transform 0.6s ease;}
@@ -479,12 +516,14 @@
     .services-grid{grid-template-columns:repeat(2,1fr);}
     .testi-grid{grid-template-columns:1fr;}
     .packages-grid{grid-template-columns:1fr; max-width:440px; margin:0 auto;}
+    .footer-grid{grid-template-columns:1fr; gap:32px;}
   }
   @media (max-width:480px){
     .skills-grid{grid-template-columns:1fr;}
     .services-grid{grid-template-columns:1fr;}
     .hero{padding:64px 0 56px;}
     section{padding:56px 0;}
+    .footer-bottom-inner{flex-direction:column; gap:6px;}
   }
 </style>
 <script>
@@ -951,7 +990,37 @@
 </main>
 
 <footer>
-  <p>© 2026 Shakir Hussain. Built and maintained by hand.</p>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#main" class="logo footer-logo"><img src="logo.svg" alt="Shakir Hussain logo" width="30" height="30">shakir<span>.</span>dev</a>
+      <p>Full-stack web developer &amp; Computer Science lecturer, based in Islamabad, Pakistan. Available for remote and international projects.</p>
+      <div class="footer-social">
+        <a href="https://github.com/profshakir77" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.66.35-1.1.63-1.36-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49C19.14 20.61 22 16.77 22 12.25 22 6.58 17.52 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/shakir-hussain-7991221a1/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg></a>
+        <a href="mailto:mr.shakir77@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></a>
+        <a href="https://wa.me/923059494585" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#work">Work</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:mr.shakir77@gmail.com">mr.shakir77@gmail.com</a>
+      <a href="https://wa.me/923059494585" target="_blank" rel="noopener">+92 305 9494585</a>
+      <a href="#contact">Send a message →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap footer-bottom-inner">
+      <p>© 2026 Shakir Hussain. Built and maintained by hand.</p>
+      <p>Islamabad, Pakistan · Available worldwide</p>
+    </div>
+  </div>
 </footer>
 
 <a href="https://wa.me/923059494585" target="_blank" rel="noopener" class="float-btn whatsapp-btn" aria-label="Message Shakir on WhatsApp">
