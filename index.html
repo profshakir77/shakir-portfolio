@@ -318,7 +318,11 @@
   .proj-card:nth-child(4) .proj-monogram{color:var(--teal); background:linear-gradient(135deg, rgba(76,122,109,0.14), rgba(199,154,68,0.05));}
   .proj-card:nth-child(6) .proj-monogram{color:var(--paper-dim); background:linear-gradient(135deg, rgba(185,194,186,0.08), rgba(199,154,68,0.05));}
   .proj-card h3{font-size:1.1rem; margin-bottom:8px;}
-  .proj-card p{color:var(--paper-dim); font-size:13.8px; margin-bottom:16px;}
+  .proj-card p{color:var(--paper-dim); font-size:13.8px; margin-bottom:12px;}
+  .proj-scope{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--brass-dim);
+    margin-bottom:16px;
+  }
   .proj-tags{display:flex; gap:8px; flex-wrap:wrap;}
   .proj-tags span{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--teal); border:1px solid var(--line); padding:3px 8px; border-radius:20px;}
   .proj-link{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass); margin-top:16px; display:block;}
@@ -427,6 +431,13 @@
   .form-submit:hover{transform:translateY(-2px);}
 
   footer{padding:36px 0; text-align:center;}
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.in-view{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
 
   /* ---------- Floating buttons ---------- */
   .float-btn{
@@ -760,6 +771,7 @@
           <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">JJ</div></div>
           <h3>Jabeen Jewels</h3>
           <p>E-commerce storefront for a jewelry brand - product catalog, cart and checkout flow.</p>
+          <div class="proj-scope">Product catalog · Cart &amp; checkout · Responsive design</div>
           <div class="proj-tags"><span>WordPress</span><span>WooCommerce</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
@@ -767,6 +779,7 @@
           <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">GG</div></div>
           <h3>Gouda Giggle</h3>
           <p>Custom storefront built for a food &amp; retail brand, focused on a fast, mobile-first shopping experience.</p>
+          <div class="proj-scope">Custom PHP build · Mobile-first · Fast page loads</div>
           <div class="proj-tags"><span>PHP</span><span>MySQL</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
@@ -774,6 +787,7 @@
           <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">AR</div></div>
           <h3>AI Resume Tool</h3>
           <p>Web app that helps users generate and refine resumes with AI-assisted suggestions.</p>
+          <div class="proj-scope">React front end · Node.js API · AI-assisted output</div>
           <div class="proj-tags"><span>React</span><span>Node.js</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
@@ -781,6 +795,7 @@
           <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">AW</div></div>
           <h3>AI Website Auditor</h3>
           <p>Tool that scans a website and reports back on SEO, performance and accessibility issues.</p>
+          <div class="proj-scope">Automated scanning · SEO &amp; performance reporting</div>
           <div class="proj-tags"><span>JavaScript</span><span>Node.js</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
@@ -788,6 +803,7 @@
           <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">DH</div></div>
           <h3>Digital Hub</h3>
           <p>A central hub site tying together services, projects and client-facing resources.</p>
+          <div class="proj-scope">Multi-section layout · Client-facing resources</div>
           <div class="proj-tags"><span>HTML/CSS</span><span>JavaScript</span></div>
           <span class="proj-link">View on GitHub →</span>
         </a>
@@ -965,6 +981,27 @@
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
+
+  // Scroll-reveal: fade+rise cards and section headers into view as the visitor scrolls
+  var revealSelectors = '.section-head, .svc-card, .skill-card, .pkg-card, .proj-card, .testi-card, .faq-entry, .stat';
+  var revealEls = document.querySelectorAll(revealSelectors);
+  revealEls.forEach(function(el, i){
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i % 4) * 70 + 'ms';
+  });
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
 </script>
 
 </body>
