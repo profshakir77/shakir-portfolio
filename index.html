@@ -292,14 +292,6 @@
   .proj-link{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass); margin-top:16px; display:block;}
 
   /* ---------- Availability strip ---------- */
-  /* ---------- Video ---------- */
-  .video-frame{
-    max-width:360px; margin:0 auto; aspect-ratio:9/16;
-    border:1.5px solid var(--line); border-radius:8px; overflow:hidden;
-    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
-  }
-  .video-frame iframe{width:100%; height:100%; display:block;}
-
   .avail{
     background:var(--ink-2); text-align:center; border-bottom:1px solid var(--line);
   }
@@ -340,6 +332,22 @@
   /* ---------- Testimonials ---------- */
   .testi-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
   .testi-card{border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:var(--ink-2);}
+  .testi-icon{
+    width:38px; height:38px; border-radius:8px; background:rgba(199,154,68,0.1);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px; color:var(--brass);
+  }
+  .testi-icon svg{width:19px; height:19px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{display:flex; flex-direction:column; gap:28px;}
+  .faq-entry{display:flex; gap:20px; align-items:flex-start;}
+  .faq-icon{
+    flex:none; width:34px; height:34px; border-radius:50%; border:1.5px solid var(--brass-dim);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:15px; color:var(--brass);
+  }
+  .faq-entry h3{font-size:1.15rem; margin-bottom:6px;}
+  .faq-entry p{color:var(--paper-dim); font-size:14.5px; max-width:560px;}
   .testi-card p.quote{font-family:'Bricolage Grotesque', sans-serif; font-size:1.05rem; font-style:italic; color:var(--paper); margin-bottom:16px;}
   .testi-card .who{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brass);}
 
@@ -359,6 +367,34 @@
   .form-submit:hover{transform:translateY(-2px);}
 
   footer{padding:36px 0; text-align:center;}
+
+  /* ---------- Floating buttons ---------- */
+  .float-btn{
+    position:fixed; right:24px; width:52px; height:52px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 28px rgba(0,0,0,0.45);
+    z-index:60; border:none; cursor:pointer;
+    transition:transform 0.2s, opacity 0.2s;
+  }
+  .float-btn:hover{transform:translateY(-3px);}
+
+  .whatsapp-btn{
+    bottom:24px; background:#25D366; color:#0E1512;
+  }
+  .whatsapp-btn svg{width:27px; height:27px;}
+
+  .top-btn{
+    bottom:88px; background:var(--brass); color:var(--ink);
+    opacity:0; pointer-events:none;
+  }
+  .top-btn.visible{opacity:1; pointer-events:auto;}
+  .top-btn svg{width:22px; height:22px;}
+
+  @media (max-width:480px){
+    .float-btn{width:46px; height:46px; right:16px;}
+    .whatsapp-btn{bottom:16px;}
+    .top-btn{bottom:72px;}
+  }
   footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
 
   /* ---------- Responsive ---------- */
@@ -429,27 +465,6 @@
           <div class="comment">1e88aa feat: SEO pass - meta, schema, sitemap</div>
           <div><span class="prompt">$</span> <span class="cursor"></span></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ VIDEO ============ -->
-  <!-- Video: Full-Stack Web Developer Portfolio intro -->
-  <section id="video-intro">
-    <div class="wrap">
-      <div class="section-head" style="text-align:center; max-width:100%;">
-        <span class="section-eyebrow">Watch</span>
-        <h2>The 30-second version</h2>
-      </div>
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/FDwKSCTT0SE"
-          title="Shakir Hussain - Full-Stack Web Developer Portfolio"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
       </div>
     </div>
   </section>
@@ -688,10 +703,12 @@
       </div>
       <div class="testi-grid">
         <div class="testi-card">
+          <div class="testi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
           <p class="quote">5 live projects shipped, from e-commerce stores to AI-assisted tools - browse them in the Selected Work section above, or check the source directly on GitHub.</p>
           <p class="who">- github.com/profshakir77</p>
         </div>
         <div class="testi-card">
+          <div class="testi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6.5v5c0 5 3.8 9 9 10.5 5.2-1.5 9-5.5 9-10.5v-5L12 2z"/><polyline points="9 12 11.5 14.5 16 9.5"/></svg></div>
           <p class="quote">Building production web applications since 2020, alongside seven years teaching Computer Science - work that has to hold up in front of both clients and students.</p>
           <p class="who">- Skyittec Software House &amp; Air University</p>
         </div>
@@ -706,18 +723,27 @@
         <span class="section-eyebrow">FAQ</span>
         <h2>Common questions</h2>
       </div>
-      <div class="log">
-        <div class="log-entry">
-          <h3>What kind of projects do you take on?</h3>
-          <p>Full-stack websites and web apps, WordPress/WooCommerce stores, custom React and Node.js applications, and ongoing maintenance on existing sites.</p>
+      <div class="faq-list">
+        <div class="faq-entry">
+          <div class="faq-icon">?</div>
+          <div>
+            <h3>What kind of projects do you take on?</h3>
+            <p>Full-stack websites and web apps, WordPress/WooCommerce stores, custom React and Node.js applications, and ongoing maintenance on existing sites.</p>
+          </div>
         </div>
-        <div class="log-entry">
-          <h3>Do you work with international clients?</h3>
-          <p>Yes - remotely, across time zones, in English, with clients in the US, UK, EU, Australia and beyond.</p>
+        <div class="faq-entry">
+          <div class="faq-icon">?</div>
+          <div>
+            <h3>Do you work with international clients?</h3>
+            <p>Yes - remotely, across time zones, in English, with clients in the US, UK, EU, Australia and beyond.</p>
+          </div>
         </div>
-        <div class="log-entry">
-          <h3>What technologies do you specialize in?</h3>
-          <p>React, Node.js, Express, PHP, WordPress/WooCommerce, MySQL, MongoDB, Tailwind CSS and Bootstrap.</p>
+        <div class="faq-entry">
+          <div class="faq-icon">?</div>
+          <div>
+            <h3>What technologies do you specialize in?</h3>
+            <p>React, Node.js, Express, PHP, WordPress/WooCommerce, MySQL, MongoDB, Tailwind CSS and Bootstrap.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -768,6 +794,27 @@
 <footer>
   <p>© 2026 Shakir Hussain. Built and maintained by hand.</p>
 </footer>
+
+<a href="https://wa.me/923059494585" target="_blank" rel="noopener" class="float-btn whatsapp-btn" aria-label="Message Shakir on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg>
+</a>
+
+<button type="button" class="float-btn top-btn" id="topBtn" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script>
+  var topBtn = document.getElementById('topBtn');
+  function toggleTopBtn(){
+    if (window.scrollY > 600) { topBtn.classList.add('visible'); }
+    else { topBtn.classList.remove('visible'); }
+  }
+  window.addEventListener('scroll', toggleTopBtn);
+  toggleTopBtn();
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+</script>
 
 </body>
 </html>
