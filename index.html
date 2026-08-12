@@ -36,7 +36,7 @@
   "jobTitle": "Full-Stack Web Developer",
   "description": "Full-stack web developer who has delivered 213+ websites for clients worldwide, specializing in React, Node.js, PHP, MySQL, MongoDB and WordPress.",
   "knowsAbout": ["React.js", "Node.js", "Express.js", "PHP", "MySQL", "MongoDB", "WordPress", "WooCommerce", "Tailwind CSS", "Bootstrap", "Docker", "Git"],
-  "sameAs": ["https://www.linkedin.com/in/shakir-hussain-7991221a1/", "https://github.com/profshakir77"],
+  "sameAs": ["https://www.linkedin.com/in/shakir-hussain77/", "https://github.com/profshakir77"],
   "worksFor": {"@type": "Organization", "name": "Skyittec Software House"},
   "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of Sargodha"}, {"@type": "CollegeOrUniversity", "name": "Air University"}]
 }
@@ -122,8 +122,8 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none;}
 html[data-theme="light"] .theme-toggle .icon-sun{display:block;}
 
 .hero{ padding:96px 0 0; border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
-.hero::before{ content:""; position:absolute; top:-180px; right:-160px; width:620px; height:620px; background:radial-gradient(circle, rgba(201,162,39,0.16) 0%, rgba(201,162,39,0) 68%); pointer-events:none; }
-.hero::after{ content:""; position:absolute; bottom:-220px; left:-180px; width:520px; height:520px; background:radial-gradient(circle, rgba(62,92,134,0.20) 0%, rgba(62,92,134,0) 68%); pointer-events:none; }
+.hero::before{ content:""; position:absolute; top:-180px; right:-160px; width:680px; height:680px; background:radial-gradient(circle, rgba(201,162,39,0.24) 0%, rgba(201,162,39,0) 68%); pointer-events:none; }
+.hero::after{ content:""; position:absolute; bottom:-220px; left:-180px; width:580px; height:580px; background:radial-gradient(circle, rgba(62,92,134,0.30) 0%, rgba(62,92,134,0) 68%); pointer-events:none; }
 .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center; position:relative; z-index:1; padding-bottom:84px; }
 .eyebrow{ font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass); letter-spacing:0.04em; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
 .eyebrow::before{content:""; width:8px; height:8px; background:var(--brass); border-radius:50%; display:inline-block;}
@@ -153,6 +153,8 @@ html[data-theme="light"] .theme-toggle .icon-sun{display:block;}
 .terminal-body .comment{color:#6B7690;}
 .cursor{display:inline-block; width:7px; height:14px; background:var(--brass); vertical-align:middle; animation:blink 1s steps(1) infinite;}
 @keyframes blink{50%{opacity:0;}}
+.terminal-body.type-reveal > div{opacity:0; transform:translateY(4px); transition:opacity 0.3s ease, transform 0.3s ease;}
+.terminal-body.type-reveal > div.show{opacity:1; transform:none;}
 
 .stack-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--ink-2); overflow:hidden; position:relative; }
 .stack-strip::before, .stack-strip::after{ content:""; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
@@ -221,6 +223,9 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .proj-cover-bar{display:flex; gap:6px; padding:12px 16px; background:var(--surface-tint);}
 .proj-cover-bar span{width:8px; height:8px; border-radius:50%; background:var(--line);}
 .proj-monogram{ height:110px; display:flex; align-items:center; justify-content:center; gap:10px; font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em; color:var(--brass); background:linear-gradient(135deg, rgba(201,162,39,0.12), rgba(62,92,134,0.10)); transition:transform 0.3s ease; }
+.proj-photo{ height:150px; overflow:hidden; transition:transform 0.3s ease; }
+.proj-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.proj-card:hover .proj-photo img{transform:scale(1.06);}
 .proj-monogram i{font-size:30px;}
 .proj-card:hover .proj-monogram{transform:scale(1.06);}
 .proj-card h3{font-size:1.1rem; margin-bottom:8px;}
@@ -303,7 +308,8 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .calc-disclaimer{ font-size:12.5px; color:var(--paper-dim); margin-top:24px; line-height:1.6; border-left:2px solid var(--brass-dim); padding-left:14px; position:relative; z-index:1; }
 
 .testi-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
-.testi-card{border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:var(--ink-2);}
+.testi-card{border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:var(--ink-2); transition:border-color 0.5s ease, box-shadow 0.5s ease;}
+.testi-card.glow{border-color:var(--brass); box-shadow:0 16px 40px -20px rgba(201,162,39,0.5);}
 .testi-icon{ width:38px; height:38px; border-radius:8px; background:rgba(201,162,39,0.12); display:flex; align-items:center; justify-content:center; margin-bottom:16px; color:var(--brass); }
 .testi-icon svg{width:19px; height:19px;}
 .testi-card p.quote{font-family:'Bricolage Grotesque', sans-serif; font-size:1.05rem; font-style:italic; color:var(--paper); margin-bottom:16px;}
@@ -338,12 +344,28 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .blog-soon{ border:1.5px dashed var(--line); border-radius:8px; padding:50px 30px; text-align:center; color:var(--paper-dim); margin-top:12px; }
 .blog-soon svg{width:34px; height:34px; color:var(--brass); margin:0 auto 16px;}
 .blog-soon h3{color:var(--paper); margin-bottom:8px;}
+.skeleton-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:36px;}
+.skeleton-card{border:1px solid var(--line); border-radius:var(--radius); padding:26px; background:var(--ink-2); overflow:hidden;}
+.skeleton-bar{height:12px; border-radius:4px; margin-bottom:12px; background:linear-gradient(90deg, var(--line) 25%, rgba(201,162,39,0.18) 50%, var(--line) 75%); background-size:200% 100%; animation:shimmer 1.8s ease-in-out infinite;}
+.skeleton-bar.tag{width:40%; height:10px;}
+.skeleton-bar.title{width:85%; height:16px; margin-top:14px;}
+.skeleton-bar.title2{width:60%;}
+.skeleton-bar.line{width:100%;}
+.skeleton-bar.line2{width:75%; margin-bottom:0;}
+@keyframes shimmer{ 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
+.blog-status{ display:flex; align-items:center; gap:10px; justify-content:center; margin-bottom:36px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass); }
+.pulse-dot{width:8px; height:8px; border-radius:50%; background:var(--brass); animation:pulseDot 1.6s ease-in-out infinite;}
+@keyframes pulseDot{ 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.4; transform:scale(1.4);} }
 
 footer{background:var(--ink-2); border-top:1px solid var(--line); padding-top:56px;}
 .footer-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:44px;}
 .footer-logo{margin-bottom:16px;}
+.footer-avatar{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
+.footer-avatar img{width:52px; height:52px; border-radius:50%; flex:none;}
+.footer-avatar div strong{display:block; color:var(--paper); font-size:15px;}
+.footer-avatar div span{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--brass);}
 .footer-brand p{color:var(--paper-dim); font-size:14px; line-height:1.7; max-width:340px; margin-bottom:22px;}
-.footer-social{display:flex; gap:12px;}
+.footer-social{display:flex; gap:12px; flex-wrap:wrap;}
 .footer-social a{ width:36px; height:36px; border-radius:50%; border:1px solid var(--line); color:var(--paper-dim); display:flex; align-items:center; justify-content:center; text-decoration:none; transition:border-color 0.2s, color 0.2s, transform 0.2s; }
 .footer-social a:hover{border-color:var(--brass); color:var(--brass); transform:translateY(-2px);}
 .footer-social svg{width:16px; height:16px;}
@@ -373,7 +395,7 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   .navlinks{display:none;}
   .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
   .skills-grid{grid-template-columns:repeat(2,1fr);}
-  .projects-grid, .blog-grid{grid-template-columns:1fr;}
+  .projects-grid, .blog-grid, .skeleton-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:repeat(2,1fr);}
   .testi-grid{grid-template-columns:1fr;}
   .packages-grid{grid-template-columns:1fr; max-width:440px; margin:0 auto;}
@@ -393,7 +415,7 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
 <script>
   (function(){
     var saved = localStorage.getItem('theme');
-    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var theme = saved || 'light';
     document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
@@ -435,14 +457,14 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
           <a href="work.html" class="btn btn-ghost">See my work</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><span class="num">213+</span><span class="label">Websites delivered</span></div>
-          <div class="hero-stat"><span class="num">6 Years</span><span class="label">Building production apps</span></div>
+          <div class="hero-stat"><span class="num" data-count="213" data-suffix="+">0+</span><span class="label">Websites delivered</span></div>
+          <div class="hero-stat"><span class="num" data-count="6" data-suffix=" Years">0 Years</span><span class="label">Building production apps</span></div>
           <div class="hero-stat"><span class="num">Remote</span><span class="label">Across time zones</span></div>
         </div>
       </div>
       <div class="terminal" role="img" aria-label="Terminal window showing a summary of Shakir Hussain's developer profile">
         <div class="terminal-bar"><span class="t1"></span><span class="t2"></span><span class="t3"></span><span class="terminal-title">shakir@dev - zsh</span></div>
-        <div class="terminal-body">
+        <div class="terminal-body" id="termBody">
           <div><span class="prompt">$</span> whoami</div>
           <div class="out">shakir-hussain - full-stack developer</div>
           <div><span class="prompt">$</span> cat stack.txt</div>
@@ -500,7 +522,7 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
         <p>I split my time between building production web applications and teaching Computer Science - a combination that keeps my fundamentals sharp and my delivery practical. Over the years that's added up to 213+ delivered websites, from single-page sites to full e-commerce stores and custom apps.</p>
         <p><a href="about.html" style="color:var(--brass); text-decoration:none;">Read the full story &rarr;</a></p>
         <div class="stat-row">
-          <div class="stat"><div class="num">213+</div><div class="label">Websites delivered</div></div>
+          <div class="stat"><div class="num" data-count="213" data-suffix="+">0+</div><div class="label">Websites delivered</div></div>
           <div class="stat"><div class="num">2020</div><div class="label">Building production apps since</div></div>
         </div>
       </div>
@@ -532,12 +554,12 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
       </div>
       <div class="projects-grid">
         <a class="proj-card" href="https://github.com/profshakir77/jabeenjewels" target="_blank" rel="noopener">
-          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">JJ</div></div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-photo"><img src="https://jabeenjewels.pk/og-image.jpg" alt="Jabeen Jewels storefront screenshot" loading="lazy"></div></div>
           <h3>Jabeen Jewels</h3><p>E-commerce storefront for a jewelry brand.</p>
           <div class="proj-tags"><span><i class="devicon-wordpress-plain colored"></i>WordPress</span><span><i class="devicon-woocommerce-plain colored"></i>WooCommerce</span></div>
         </a>
         <a class="proj-card" href="https://github.com/profshakir77/goudagiggle" target="_blank" rel="noopener">
-          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-monogram">GG</div></div>
+          <div class="proj-cover"><div class="proj-cover-bar"><span></span><span></span><span></span></div><div class="proj-photo"><img src="https://www.goudagiggles.com/images/product-1.png" alt="Gouda Giggles storefront screenshot" loading="lazy"></div></div>
           <h3>Gouda Giggle</h3><p>Custom storefront for a food &amp; retail brand.</p>
           <div class="proj-tags"><span><i class="devicon-php-plain colored"></i>PHP</span><span><i class="devicon-mysql-plain colored"></i>MySQL</span></div>
         </a>
@@ -575,11 +597,17 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
 <footer>
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="logo footer-logo"><img src="logo.svg" alt="Shakir Hussain logo" width="30" height="30">shakir<span>.</span>dev</a>
+      <div class="footer-avatar">
+        <img src="shakir-circle-128.png" alt="Shakir Hussain">
+        <div><strong>Shakir Hussain</strong><span>213+ websites delivered</span></div>
+      </div>
       <p>Full-stack web developer &amp; Computer Science lecturer, based in Islamabad, Pakistan. 213+ websites delivered for clients worldwide.</p>
       <div class="footer-social">
+        <a href="https://www.facebook.com/shakir.hussain.3114935/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
+        <a href="https://www.instagram.com/shakir.hussain77/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@prof.shakir?lang=en" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.7-.77-1.09-1.77-1.09-2.82h-3.02v13.44c0 1.48-1.2 2.68-2.68 2.68a2.68 2.68 0 0 1-2.68-2.68 2.68 2.68 0 0 1 2.68-2.68c.28 0 .54.04.79.12v-3.07a5.7 5.7 0 0 0-.79-.06 5.7 5.7 0 0 0-5.7 5.7 5.7 5.7 0 0 0 5.7 5.7 5.7 5.7 0 0 0 5.7-5.7V9.4a8.24 8.24 0 0 0 4.8 1.54V7.92a4.85 4.85 0 0 1-3.71-2.1z"/></svg></a>
         <a href="https://github.com/profshakir77" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.66.35-1.1.63-1.36-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49C19.14 20.61 22 16.77 22 12.25 22 6.58 17.52 2 12 2z"/></svg></a>
-        <a href="https://www.linkedin.com/in/shakir-hussain-7991221a1/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg></a>
+        <a href="https://www.linkedin.com/in/shakir-hussain77/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg></a>
         <a href="mailto:mr.shakir77@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></a>
         <a href="https://wa.me/923059494585" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg></a>
       </div>
@@ -636,6 +664,69 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
     }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
     revealEls.forEach(function(el){ revealObserver.observe(el); });
   } else { revealEls.forEach(function(el){ el.classList.add('in-view'); }); }
+
+  // Count-up animation for stat numbers (213+, 6 Years, etc.)
+  var countEls = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1200;
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  if (countEls.length && 'IntersectionObserver' in window) {
+    var countObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { animateCount(entry.target); countObserver.unobserve(entry.target); }
+      });
+    }, {threshold:0.4});
+    countEls.forEach(function(el){ countObserver.observe(el); });
+  } else {
+    countEls.forEach(function(el){ el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix')||''); });
+  }
+
+  // Staggered line-by-line reveal for the hero terminal
+  var termBody = document.getElementById('termBody');
+  if (termBody) {
+    var lines = Array.prototype.slice.call(termBody.children);
+    termBody.classList.add('type-reveal');
+    function playTerminal(){
+      lines.forEach(function(line, i){
+        setTimeout(function(){ line.classList.add('show'); }, i * 260);
+      });
+    }
+    if ('IntersectionObserver' in window) {
+      var termObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){ if (entry.isIntersecting) { playTerminal(); termObserver.unobserve(entry.target); } });
+      }, {threshold:0.3});
+      termObserver.observe(termBody);
+    } else { lines.forEach(function(line){ line.classList.add('show'); }); }
+  }
+
+  // Slowly rotate a highlight glow between track-record cards on the Testimonials page
+  var trackGrid = document.getElementById('trackRecordGrid');
+  if (trackGrid) {
+    var trackCards = Array.prototype.slice.call(trackGrid.querySelectorAll('.testi-card'));
+    var glowIndex = 0;
+    function pulseGlow(){
+      trackCards.forEach(function(c){ c.classList.remove('glow'); });
+      trackCards[glowIndex].classList.add('glow');
+      glowIndex = (glowIndex + 1) % trackCards.length;
+    }
+    if (trackCards.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      pulseGlow();
+      setInterval(pulseGlow, 3200);
+    }
+  }
 </script>
 
 </body>
