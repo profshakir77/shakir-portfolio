@@ -299,8 +299,30 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .review-placeholder h3{color:var(--paper); margin-bottom:8px; font-size:1.1rem;}
 .review-placeholder p{font-size:14px; max-width:420px; margin:0 auto;}
 .rating-badge{ display:inline-flex; align-items:center; gap:10px; background:var(--ink-2); border:1px solid var(--line); border-radius:30px; padding:10px 20px; margin-bottom:32px; }
-.rating-badge .stars{color:var(--brass); font-size:15px; letter-spacing:2px;}
+.rating-badge .stars{color:var(--teal); font-size:15px; letter-spacing:2px;}
 .rating-badge .count{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
+.review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:36px;}
+.review-card{
+  position:relative; border:1px solid var(--line); border-radius:8px; padding:32px 28px 26px; background:var(--ink-2);
+  overflow:hidden; transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.review-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--brass), var(--teal)); }
+.review-card:hover{ transform:translateY(-4px); box-shadow:0 20px 40px -24px var(--shadow); border-color:var(--brass); }
+.review-quote-mark{
+  font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:52px; line-height:1; color:var(--brass);
+  opacity:0.18; position:absolute; top:14px; right:20px; pointer-events:none; user-select:none;
+}
+.review-card .stars{color:var(--teal); font-size:16px; letter-spacing:2px; margin-bottom:14px; display:block; position:relative; z-index:1;}
+.review-card p.quote{font-family:'Bricolage Grotesque', sans-serif; color:var(--paper); font-size:16px; line-height:1.6; margin-bottom:22px; position:relative; z-index:1;}
+.review-card .who{display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px dashed var(--line);}
+.review-who-avatar{
+  width:38px; height:38px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg, var(--brass), var(--teal)); color:#FFFFFF; font-family:'JetBrains Mono', monospace;
+  font-weight:700; font-size:13px;
+}
+.review-card .who-text{display:flex; flex-direction:column; gap:2px;}
+.review-card .who strong{font-size:14.5px; color:var(--paper);}
+.review-card .who span{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--brass);}
 
 .faq-list{display:flex; flex-direction:column; gap:28px;}
 .faq-entry{display:flex; gap:20px; align-items:flex-start;}
@@ -383,7 +405,7 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   .skills-grid{grid-template-columns:repeat(2,1fr);}
   .projects-grid, .blog-grid, .skeleton-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:repeat(2,1fr);}
-  .testi-grid{grid-template-columns:1fr;}
+  .testi-grid, .review-grid{grid-template-columns:1fr;}
   .packages-grid{grid-template-columns:1fr; max-width:440px; margin:0 auto;}
   .footer-grid{grid-template-columns:1fr; gap:32px;}
   .portrait-badge{right:8px;}
@@ -452,17 +474,36 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
       <div class="rating-badge">
         <span class="pulse-dot"></span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="count">Client reviews - being added</span>
+        <span class="count">Real client reviews</span>
       </div>
     </div>
   </div>
 
   <section id="reviews">
     <div class="wrap">
+      <div class="review-grid">
+        <div class="review-card">
+          <span class="review-quote-mark">&#8221;</span>
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">Shakir did an excellent job with the Jabeen Jewels website. Communication was clear and professional throughout the project, and the work was completed efficiently with great attention to detail. The speed optimization made a noticeable difference, and the overall result exceeded our expectations. Very satisfied with the quality of work and service. Highly recommended!</p>
+          <div class="who"><div class="review-who-avatar">SF</div><div class="who-text"><strong>Syeda Fatima Jabeen</strong><span>Jabeenjewels.pk</span></div></div>
+        </div>
+        <div class="review-card">
+          <span class="review-quote-mark">&#8221;</span>
+          <p class="quote">I had a great experience with Gouda Giggles! The service was professional, responsive, and delivered exactly as expected. Communication was smooth, the work was handled efficiently, and the overall quality was excellent. I'm very satisfied with the results and would definitely recommend Gouda Giggles to others.</p>
+          <div class="who"><div class="review-who-avatar">MA</div><div class="who-text"><strong>Muhammad Asjid</strong><span>Gouda Giggles &middot; USA</span></div></div>
+        </div>
+        <div class="review-card">
+          <span class="review-quote-mark">&#8221;</span>
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">I'm very satisfied with the customized software developed for Tech Tutor Institute. The solution was tailored to our specific requirements, user-friendly, and delivered with excellent attention to detail. Communication was professional, and the overall development process was smooth and efficient. Highly recommended for anyone looking for reliable customized software solutions!</p>
+          <div class="who"><div class="review-who-avatar">AS</div><div class="who-text"><strong>Altaf Hussain Shah</strong><span>Tech Tutor Institute &middot; Italy</span></div></div>
+        </div>
+      </div>
       <div class="review-placeholder">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-1.1 4.2 8.5 8.5 0 0 1-7.6 4.3 8.4 8.4 0 0 1-4.2-1.1L3 21l2.1-5.1a8.4 8.4 0 0 1-1.1-4.2 8.5 8.5 0 0 1 4.3-7.6A8.4 8.4 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg>
-        <h3>Real client reviews landing here soon</h3>
-        <p>This page is set up to display your actual client testimonials as soon as you send them over - each will show as its own card with the client's name, project and quote, matching the rest of the site's design.</p>
+        <h3>More reviews being added</h3>
+        <p>More client testimonials will land here as they come in - each will show as its own card with the client's name, project and quote, matching the style above.</p>
       </div>
     </div>
   </section>
@@ -568,7 +609,7 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
     });
   }
 
-  var revealSelectors = '.section-head, .svc-card, .skill-card, .pkg-card, .proj-card, .testi-card, .faq-entry, .stat, .calc-card, .blog-card, .review-placeholder';
+  var revealSelectors = '.section-head, .svc-card, .skill-card, .pkg-card, .proj-card, .testi-card, .faq-entry, .stat, .calc-card, .blog-card, .review-placeholder, .review-card';
   var revealEls = document.querySelectorAll(revealSelectors);
   revealEls.forEach(function(el, i){ el.classList.add('reveal'); el.style.transitionDelay = (i % 4) * 70 + 'ms'; });
   if ('IntersectionObserver' in window) {
