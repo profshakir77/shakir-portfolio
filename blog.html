@@ -356,15 +356,9 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
   overflow:hidden; transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .blog-card:hover{transform:translateY(-4px); border-color:var(--brass); box-shadow:0 20px 40px -24px var(--shadow);}
-.blog-card-cover{
-  height:120px; display:flex; align-items:center; justify-content:center; gap:12px; position:relative; overflow:hidden;
-  background-image:linear-gradient(135deg, rgba(37,99,235,0.14), rgba(249,115,22,0.12)), radial-gradient(circle, rgba(37,99,235,0.16) 1.5px, transparent 1.5px);
-  background-size:100% 100%, 16px 16px;
-}
-.blog-card-cover .icon-lg{font-size:38px; color:var(--brass); position:relative; z-index:1;}
-.blog-card-cover .icon-sm{font-size:20px; opacity:0.5; position:relative; z-index:1;}
-.blog-card-cover .icon-sm.up{transform:translateY(-8px);}
-.blog-card-cover .icon-sm.down{transform:translateY(8px);}
+.blog-card-photo{ height:150px; overflow:hidden; transition:transform 0.3s ease; }
+.blog-card-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.blog-card:hover .blog-card-photo img{transform:scale(1.06);}
 .blog-card .b-tag{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--brass); text-transform:uppercase; letter-spacing:0.05em; margin:20px 24px 10px; display:block;}
 .blog-card h3{font-size:1.05rem; margin:0 24px 10px; line-height:1.35;}
 .blog-card p{color:var(--paper-dim); font-size:13.8px; margin:0 24px 16px; line-height:1.6;}
@@ -506,140 +500,140 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
     <div class="wrap">
       <div class="blog-grid">
         <a class="blog-card" href="website-cost-pakistan-2026.html">
-          <div class="blog-card-cover"><i class="devicon-html5-plain colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M15 9.5c0-1.5-1.5-2.5-3-2.5s-3 1-3 2.5c0 3 6 1.5 6 4.5 0 1.5-1.5 2.5-3 2.5s-3-1-3-2.5"/></svg><i class="devicon-wordpress-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1772588627527-db42040f3a8b?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="How Much Does a Website Cost in Pakistan? A 2026 Pricing Guide" loading="lazy"></div>
           <span class="b-tag">Pricing & Business</span>
           <h3>How Much Does a Website Cost in Pakistan? A 2026 Pricing Guide</h3>
           <p>A realistic breakdown of website costs in Pakistan for 2026 - landing pages, business sites, e-commerce stores and custom web apps, plus what actually drives the price up or down.</p>
           <span class="blog-readtime">7 min read</span>
         </a>
         <a class="blog-card" href="wordpress-vs-custom-development.html">
-          <div class="blog-card-cover"><i class="devicon-wordpress-plain colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-react-original colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="WordPress vs Custom Development: Which Is Right for Your Business?" loading="lazy"></div>
           <span class="b-tag">Web Development</span>
           <h3>WordPress vs Custom Development: Which Is Right for Your Business?</h3>
           <p>A practical comparison of WordPress and custom-coded websites - cost, flexibility, maintenance and performance - to help you choose the right approach for your business.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="woocommerce-vs-shopify-2026.html">
-          <div class="blog-card-cover"><i class="devicon-woocommerce-plain colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-wordpress-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="WooCommerce vs Shopify: Choosing the Right E-Commerce Platform in 2026" loading="lazy"></div>
           <span class="b-tag">E-Commerce</span>
           <h3>WooCommerce vs Shopify: Choosing the Right E-Commerce Platform in 2026</h3>
           <p>WooCommerce and Shopify compared on cost, control, ease of use and scalability, to help you pick the right e-commerce platform for your store in 2026.</p>
           <span class="blog-readtime">7 min read</span>
         </a>
         <a class="blog-card" href="how-to-hire-a-full-stack-developer.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><circle cx="18" cy="8" r="2.5"/><path d="M15 20c.3-2 1.5-4 3-4s2.7 2 3 4"/></svg><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 2 2 4-4"/><line x1="7" y1="15" x2="17" y2="15"/></svg><i class="devicon-react-original colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="How to Hire a Full-Stack Web Developer (Without Getting Burned)" loading="lazy"></div>
           <span class="b-tag">Hiring & Freelancing</span>
           <h3>How to Hire a Full-Stack Web Developer (Without Getting Burned)</h3>
           <p>A practical guide to hiring a full-stack web developer - what to ask, red flags to avoid, and how to structure a project so it actually gets delivered on time.</p>
           <span class="blog-readtime">8 min read</span>
         </a>
         <a class="blog-card" href="signs-your-website-needs-redesign.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M12 15 16 9"/><circle cx="12" cy="15" r="1"/></svg><i class="devicon-html5-plain colored icon-lg"></i><i class="devicon-css3-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="10 Signs Your Website Needs a Redesign" loading="lazy"></div>
           <span class="b-tag">Web Design</span>
           <h3>10 Signs Your Website Needs a Redesign</h3>
           <p>Ten clear signs it's time to redesign your website - from slow load times and poor mobile experience to outdated design and falling search rankings.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="core-web-vitals-beginners-guide.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><i class="devicon-google-plain colored icon-lg"></i><svg class="icon-sm down" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="A Beginner's Guide to Core Web Vitals and Why They Matter for SEO" loading="lazy"></div>
           <span class="b-tag">SEO & Performance</span>
           <h3>A Beginner's Guide to Core Web Vitals and Why They Matter for SEO</h3>
           <p>What Core Web Vitals actually measure, why Google cares, and practical steps to improve your scores without needing to be a performance engineer.</p>
           <span class="blog-readtime">7 min read</span>
         </a>
         <a class="blog-card" href="postex-courier-woocommerce-integration.html">
-          <div class="blog-card-cover"><i class="devicon-woocommerce-plain colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="18" height="12" rx="1"/><path d="M14 8V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><circle cx="7" cy="20" r="1.5"/><circle cx="16" cy="20" r="1.5"/></svg><i class="devicon-php-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="How to Integrate a Local Courier Service (PostEx) Into Your WooCommerce Store" loading="lazy"></div>
           <span class="b-tag">E-Commerce</span>
           <h3>How to Integrate a Local Courier Service (PostEx) Into Your WooCommerce Store</h3>
           <p>A real-world walkthrough of integrating PostEx courier services into a WooCommerce store - order creation, tracking, and cancellation - based on an actual client project.</p>
           <span class="blog-readtime">8 min read</span>
         </a>
         <a class="blog-card" href="react-vs-plain-javascript.html">
-          <div class="blog-card-cover"><i class="devicon-react-original colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-javascript-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="React vs Plain JavaScript: When to Use Which for Your Project" loading="lazy"></div>
           <span class="b-tag">Web Development</span>
           <h3>React vs Plain JavaScript: When to Use Which for Your Project</h3>
           <p>When a React frontend is worth the added complexity, and when plain JavaScript (or a lighter framework) is the better, faster choice for your project.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="page-speed-losing-customers.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M12 15 16 9"/><circle cx="12" cy="15" r="1"/></svg><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg><i class="devicon-vercel-original icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Why Page Speed Is Costing You Customers (And How to Fix It)" loading="lazy"></div>
           <span class="b-tag">SEO & Performance</span>
           <h3>Why Page Speed Is Costing You Customers (And How to Fix It)</h3>
           <p>The real business impact of slow page load times, with practical, prioritized steps to speed up your website without a full rebuild.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="on-page-seo-checklist-small-business.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 2 2 4-4"/><line x1="7" y1="15" x2="17" y2="15"/></svg><i class="devicon-google-plain colored icon-lg"></i><i class="devicon-html5-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="On-Page SEO Checklist for Small Business Websites" loading="lazy"></div>
           <span class="b-tag">SEO & Performance</span>
           <h3>On-Page SEO Checklist for Small Business Websites</h3>
           <p>A practical, no-fluff on-page SEO checklist small business owners can actually use - title tags, meta descriptions, headings, images, and internal linking done right.</p>
           <span class="blog-readtime">7 min read</span>
         </a>
         <a class="blog-card" href="why-your-site-needs-a-cost-calculator.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M15 9.5c0-1.5-1.5-2.5-3-2.5s-3 1-3 2.5c0 3 6 1.5 6 4.5 0 1.5-1.5 2.5-3 2.5s-3-1-3-2.5"/></svg><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg><i class="devicon-react-original colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="What Is a Cost Calculator and Why Your Service Website Needs One" loading="lazy"></div>
           <span class="b-tag">Web Design</span>
           <h3>What Is a Cost Calculator and Why Your Service Website Needs One</h3>
           <p>Why an interactive cost calculator on your service business website reduces friction, pre-qualifies leads, and converts better than a plain contact form.</p>
           <span class="blog-readtime">5 min read</span>
         </a>
         <a class="blog-card" href="nodejs-vs-php-backend.html">
-          <div class="blog-card-cover"><i class="devicon-nodejs-plain colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-php-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Node.js vs PHP: Choosing a Backend for Your Next Web App" loading="lazy"></div>
           <span class="b-tag">Web Development</span>
           <h3>Node.js vs PHP: Choosing a Backend for Your Next Web App</h3>
           <p>A practical comparison of Node.js and PHP for backend development - performance, ecosystem, hosting cost and hiring pool - to help you pick the right one.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="migrate-off-replit-to-production.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="6" height="8" rx="1"/><rect x="16" y="8" width="6" height="8" rx="1"/><path d="M9 12h6"/><path d="m12 9 3 3-3 3"/></svg><i class="devicon-git-plain colored icon-lg"></i><i class="devicon-vercel-original icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="How to Migrate a Website Off Replit to Production (Vercel + GitHub)" loading="lazy"></div>
           <span class="b-tag">Web Development</span>
           <h3>How to Migrate a Website Off Replit to Production (Vercel + GitHub)</h3>
           <p>A practical guide to moving a project built on Replit into a real production setup with GitHub version control and Vercel hosting.</p>
           <span class="blog-readtime">7 min read</span>
         </a>
         <a class="blog-card" href="building-school-management-system-lessons.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9.5 12 5l10 4.5-10 4.5-10-4.5z"/><path d="M6 11.8v4.7c0 1.5 2.7 2.7 6 2.7s6-1.2 6-2.7v-4.7"/><path d="M20 9.5v6"/></svg><i class="devicon-typescript-plain colored icon-lg"></i><i class="devicon-nextjs-original icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Building a School Management System: Lessons from a Real Project" loading="lazy"></div>
           <span class="b-tag">Case Studies</span>
           <h3>Building a School Management System: Lessons from a Real Project</h3>
           <p>Real lessons from building SchoolOS, a full school management system with role-based portals, gradebooks, fee payments and admissions workflows.</p>
           <span class="blog-readtime">8 min read</span>
         </a>
         <a class="blog-card" href="ecommerce-cart-bugs-losing-sales.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg><i class="devicon-woocommerce-plain colored icon-lg"></i><i class="devicon-react-original colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="E-Commerce Cart Bugs That Are Silently Losing You Sales" loading="lazy"></div>
           <span class="b-tag">E-Commerce</span>
           <h3>E-Commerce Cart Bugs That Are Silently Losing You Sales</h3>
           <p>Common WooCommerce and e-commerce cart bugs - wrong product images, mismatched variants, and state sync issues - that quietly cost stores real revenue.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="mysql-vs-mongodb.html">
-          <div class="blog-card-cover"><i class="devicon-mysql-plain colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-mongodb-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="MySQL vs MongoDB: Which Database Fits Your Project?" loading="lazy"></div>
           <span class="b-tag">Web Development</span>
           <h3>MySQL vs MongoDB: Which Database Fits Your Project?</h3>
           <p>A practical comparison of MySQL and MongoDB - structured vs flexible data, scalability, and which one actually fits different types of web projects.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="realistic-website-timeline.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><i class="devicon-git-plain colored icon-lg"></i><i class="devicon-vercel-original icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1772588627527-db42040f3a8b?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="How Long Should a Website Take to Build? A Realistic Timeline" loading="lazy"></div>
           <span class="b-tag">Pricing & Business</span>
           <h3>How Long Should a Website Take to Build? A Realistic Timeline</h3>
           <p>Realistic timelines for landing pages, business sites, e-commerce stores and custom apps - and what actually causes projects to run long.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="freelancer-vs-agency.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><circle cx="18" cy="8" r="2.5"/><path d="M15 20c.3-2 1.5-4 3-4s2.7 2 3 4"/></svg><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-react-original colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="The Real Difference Between a Freelancer and an Agency" loading="lazy"></div>
           <span class="b-tag">Hiring & Freelancing</span>
           <h3>The Real Difference Between a Freelancer and an Agency</h3>
           <p>An honest comparison of hiring a freelance developer versus a web agency - cost, communication, accountability and when each makes more sense.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="how-to-write-a-website-brief.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16"/><path d="M6 16l10-10 3 3-10 10H6z"/></svg><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 2 2 4-4"/><line x1="7" y1="15" x2="17" y2="15"/></svg><i class="devicon-react-original colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="How to Write a Website Brief That Gets You Accurate Quotes" loading="lazy"></div>
           <span class="b-tag">Hiring & Freelancing</span>
           <h3>How to Write a Website Brief That Gets You Accurate Quotes</h3>
           <p>A practical template and guide for writing a website brief that gets you accurate, comparable quotes from developers instead of vague guesses.</p>
           <span class="blog-readtime">6 min read</span>
         </a>
         <a class="blog-card" href="structured-data-schema-guide.html">
-          <div class="blog-card-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 6-5 6 5 6"/><path d="m16 6 5 6-5 6"/><line x1="14" y1="4" x2="10" y2="20"/></svg><i class="devicon-google-plain colored icon-lg"></i><i class="devicon-javascript-plain colored icon-sm down"></i></div>
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Structured Data and Schema Markup: A Practical Guide for Small Sites" loading="lazy"></div>
           <span class="b-tag">SEO & Performance</span>
           <h3>Structured Data and Schema Markup: A Practical Guide for Small Sites</h3>
           <p>What structured data (schema markup) actually does for your SEO, which schema types matter most for small business sites, and how to implement them.</p>
