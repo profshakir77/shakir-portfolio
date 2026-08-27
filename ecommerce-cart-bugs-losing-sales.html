@@ -3,28 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Shakir Hussain | Full-Stack Web Developer &amp; CS Lecturer</title>
-<meta name="description" content="Shakir Hussain is a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan, with 213+ websites delivered since 2020.">
+<title>E-Commerce Cart Bugs That Are Silently Losing You Sales | Shakir Hussain</title>
+<meta name="description" content="Common WooCommerce and e-commerce cart bugs - wrong product images, mismatched variants, and state sync issues - that quietly cost stores real revenue.">
 <meta name="author" content="Shakir Hussain">
-<link rel="canonical" href="https://shakir-portfolio-azure.vercel.app/about.html">
+<link rel="canonical" href="https://shakir-portfolio-azure.vercel.app/ecommerce-cart-bugs-losing-sales.html">
 <meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="RrD1NyX0B5qQoBq5hIUxQQ4bTpGCJoWXtoDCrc9wsac" />
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About Shakir Hussain | Full-Stack Web Developer &amp; CS Lecturer">
-<meta property="og:description" content="Shakir Hussain is a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan, with 213+ websites delivered since 2020.">
-<meta property="og:url" content="https://shakir-portfolio-azure.vercel.app/about.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="E-Commerce Cart Bugs That Are Silently Losing You Sales | Shakir Hussain">
+<meta property="og:description" content="Common WooCommerce and e-commerce cart bugs - wrong product images, mismatched variants, and state sync issues - that quietly cost stores real revenue.">
+<meta property="og:url" content="https://shakir-portfolio-azure.vercel.app/ecommerce-cart-bugs-losing-sales.html">
 <meta property="og:site_name" content="Shakir Hussain - Full-Stack Developer">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About Shakir Hussain | Full-Stack Web Developer &amp; CS Lecturer">
-<meta name="twitter:description" content="Shakir Hussain is a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan, with 213+ websites delivered since 2020.">
-<meta name="twitter:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
-
+<meta name="twitter:title" content="E-Commerce Cart Bugs That Are Silently Losing You Sales | Shakir Hussain">
+<meta name="twitter:description" content="Common WooCommerce and e-commerce cart bugs - wrong product images, mismatched variants, and state sync issues - that quietly cost stores real revenue.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
@@ -202,11 +197,15 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .proj-cover{ margin:-26px -26px 20px -26px; border-radius:var(--radius) var(--radius) 0 0; overflow:hidden; background:var(--ink); border-bottom:1px solid var(--line); }
 .proj-cover-bar{display:flex; gap:6px; padding:12px 16px; background:var(--surface-tint);}
 .proj-cover-bar span{width:8px; height:8px; border-radius:50%; background:var(--line);}
-.proj-monogram{ height:110px; display:flex; align-items:center; justify-content:center; gap:10px; font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em; color:var(--brass); background:linear-gradient(135deg, rgba(37,99,235,0.12), rgba(249,115,22,0.10)); transition:transform 0.3s ease; }
+.proj-monogram{ height:150px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em; color:var(--brass); background:linear-gradient(135deg, rgba(37,99,235,0.14), rgba(249,115,22,0.12)), radial-gradient(circle, rgba(37,99,235,0.16) 1.5px, transparent 1.5px); background-size:100% 100%, 18px 18px; transition:transform 0.3s ease; position:relative; overflow:hidden; }
 .proj-photo{ height:150px; overflow:hidden; transition:transform 0.3s ease; }
 .proj-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 .proj-card:hover .proj-photo img{transform:scale(1.06);}
 .proj-monogram i{font-size:30px;}
+.proj-monogram .icon-lg{font-size:46px; position:relative; z-index:1; filter:drop-shadow(0 6px 14px rgba(15,23,42,0.18));}
+.proj-monogram .icon-sm{font-size:24px; opacity:0.55; position:relative; z-index:1;}
+.proj-monogram .icon-sm.up{transform:translateY(-12px);}
+.proj-monogram .icon-sm.down{transform:translateY(12px);}
 .proj-card:hover .proj-monogram{transform:scale(1.06);}
 .proj-card h3{font-size:1.1rem; margin-bottom:8px;}
 .proj-card p{color:var(--paper-dim); font-size:13.8px; margin-bottom:12px;}
@@ -438,13 +437,41 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   .hero-stat .num{font-size:1.6rem;}
 }
 </style>
-<script>
-  (function(){
-    var saved = localStorage.getItem('theme');
-    var theme = saved || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-  })();
-</script>
+
+<style>
+.article-hero{padding:56px 0 0;}
+.breadcrumb{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim); margin-bottom:18px;}
+.breadcrumb a{color:var(--brass); text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.article-meta{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:18px;}
+.article-cat{font-family:'JetBrains Mono', monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--brass); background:rgba(37,99,235,0.1); padding:5px 12px; border-radius:20px;}
+.article-readtime{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
+.article-hero h1{font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:18px; line-height:1.15;}
+.article-lede{font-size:1.1rem; color:var(--paper-dim); max-width:720px; margin-bottom:32px;}
+.article-cover{ height:280px; border-radius:8px; overflow:hidden; position:relative; margin-bottom:0; display:flex; align-items:center; justify-content:center; gap:20px;
+  background-image:linear-gradient(135deg, rgba(37,99,235,0.14), rgba(249,115,22,0.12)), radial-gradient(circle, rgba(37,99,235,0.16) 1.8px, transparent 1.8px);
+  background-size:100% 100%, 20px 20px; }
+.article-cover .icon-lg{font-size:72px; color:var(--brass); position:relative; z-index:1; filter:drop-shadow(0 8px 18px rgba(15,23,42,0.18));}
+.article-cover .icon-sm{font-size:36px; opacity:0.55; position:relative; z-index:1;}
+.article-cover .icon-sm.up{transform:translateY(-20px);}
+.article-cover .icon-sm.down{transform:translateY(20px);}
+.article-body{max-width:760px; margin:0 auto; padding:56px 0;}
+.article-body h2{font-size:1.5rem; margin:40px 0 16px;}
+.article-body h2:first-child{margin-top:0;}
+.article-body p{color:var(--paper-dim); font-size:16px; line-height:1.75; margin-bottom:18px;}
+.article-body ul, .article-body ol{color:var(--paper-dim); font-size:16px; line-height:1.75; margin:0 0 18px 22px;}
+.article-body li{margin-bottom:8px;}
+.article-body strong{color:var(--paper); font-weight:600;}
+.article-body a{color:var(--brass); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.2s;}
+.article-body a:hover{border-color:var(--brass);}
+.article-cta{ background:var(--ink-2); border:1px solid var(--line); border-radius:8px; padding:32px; margin-top:48px; text-align:center; }
+.article-cta h3{font-size:1.2rem; margin-bottom:10px;}
+.article-cta p{color:var(--paper-dim); margin-bottom:20px;}
+.article-back{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass); text-decoration:none; margin-top:40px;}
+.article-back:hover{text-decoration:underline;}
+@media (max-width:640px){ .article-cover{height:200px;} .article-cover .icon-lg{font-size:52px;} .article-cover .icon-sm{font-size:26px;} }
+</style>
+
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -456,8 +483,8 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
       <li><a href="services.html">Services</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
       
     </ul>
@@ -475,69 +502,58 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   </nav>
 </header>
 <main id="main">
-
-  <div class="page-hero"><div class="wrap"><span class="section-eyebrow">About</span><h1>Two disciplines, one standard: work that holds up.</h1><p>213+ websites delivered, alongside seven years teaching Computer Science.</p></div></div>
-
-  <section id="about-main">
-    <div class="wrap about-grid">
-      <div>
-        <div class="portrait-frame">
-          <div class="portrait-circle-wrap">
-            <img src="shakir-circle-512-ring-v2.png" alt="Shakir Hussain, full-stack web developer and Computer Science lecturer" width="280" height="280" loading="lazy">
-            <div class="portrait-badge"><i class="devicon-react-original colored"></i>Full-stack dev</div>
-          </div>
-          <div class="portrait-caption"><strong>Shakir Hussain</strong><span>&middot; Islamabad, PK</span></div>
-        </div>
-      </div>
-      <div>
-        <p>I split my time between building production web applications and teaching Computer Science - a combination that keeps my fundamentals sharp and my delivery practical. Clients get code that's built the way it's taught to be built: readable, tested against real use, and documented well enough that someone else could pick it up.</p>
-        <p>I work across the full stack - from responsive front ends to APIs, databases and deployment - and I'm comfortable owning a project end to end or slotting into an existing team and codebase. That approach has added up to 213+ delivered websites since 2020.</p>
-        <div class="stat-row">
-          <div class="stat"><div class="num" data-count="213" data-suffix="+">0+</div><div class="label">Websites delivered</div></div>
-          <div class="stat"><div class="num">2020</div><div class="label">Building production apps since</div></div>
-        </div>
-        <ul class="about-contact-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg><span>Shakir Hussain</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg><a href="https://wa.me/923059494585">+92 305 9494585</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg><a href="mailto:mr.shakir77@gmail.com">mr.shakir77@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section-alt">
+  <section class="article-hero">
     <div class="wrap">
-      <div class="section-head"><span class="section-eyebrow">Skills</span><h2>What I build with</h2><p>A stack chosen for speed of delivery without cutting corners on performance, security or SEO.</p></div>
-      <div class="skills-grid">
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-html5-plain colored"></i></div><h3>Front End</h3><ul><li><i class="devicon-html5-plain colored"></i>HTML5 &amp; CSS3</li><li><i class="devicon-javascript-plain colored"></i>JavaScript (ES6+)</li><li><i class="devicon-react-original colored"></i>React.js</li><li><i class="devicon-tailwindcss-plain colored"></i>Tailwind CSS</li><li><i class="devicon-bootstrap-plain colored"></i>Bootstrap</li></ul></div>
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-nodejs-plain colored"></i></div><h3>Back End</h3><ul><li><i class="devicon-nodejs-plain colored"></i>Node.js &amp; Express</li><li><i class="devicon-php-plain colored"></i>PHP</li><li><i class="devicon-postman-plain colored"></i>RESTful API design</li><li><i class="devicon-nodejs-plain"></i>Authentication &amp; sessions</li></ul></div>
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-mongodb-plain colored"></i></div><h3>Data &amp; CMS</h3><ul><li><i class="devicon-mysql-plain colored"></i>MySQL</li><li><i class="devicon-mongodb-plain colored"></i>MongoDB</li><li><i class="devicon-wordpress-plain colored"></i>WordPress</li><li><i class="devicon-woocommerce-plain colored"></i>WooCommerce</li></ul></div>
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-git-plain colored"></i></div><h3>Workflow &amp; Delivery</h3><ul><li><i class="devicon-git-plain colored"></i>Git &amp; GitHub</li><li><i class="devicon-docker-plain colored"></i>Docker</li><li><i class="devicon-vercel-original"></i>Cloud-based dev &amp; deployment</li><li><i class="devicon-google-plain colored"></i>On-page SEO &amp; performance tuning</li></ul></div>
+      <div class="breadcrumb"><a href="blog.html">Blog</a> / E-Commerce</div>
+      <div class="article-meta"><span class="article-cat">E-Commerce</span><span class="article-readtime">6 min read</span></div>
+      <h1>E-Commerce Cart Bugs That Are Silently Losing You Sales</h1>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="article-cover"><svg class="icon-sm up" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg><i class="devicon-woocommerce-plain colored icon-lg"></i><i class="devicon-react-original colored icon-sm down"></i></div>
+  </div>
+  <div class="wrap">
+    <div class="article-body">
+      
+<p>Some of the most damaging e-commerce bugs are also the easiest to miss, because they don't crash anything - the site keeps working, orders keep coming in, and the actual lost revenue never shows up as an error in any dashboard. Here are real bugs I've found and fixed on live stores, and why each one costs real money.</p>
+
+<h2>Bug 1: Product variants not treated as separate line items</h2>
+<p>If a customer adds a red shirt and a blue shirt (same product, different color variant) to their cart, and the store merges them into one line item showing "2x Shirt" without distinguishing color, that's a real fulfillment risk - the wrong color could ship, and the customer's actual selection gets lost between checkout and warehouse picking. Each distinct variant combination needs to be its own line item, always.</p>
+
+<h2>Bug 2: Cart images not matching the selected variant</h2>
+<p>A closely related bug: the customer selects the blue version of a product, but the cart and checkout continue showing the default (often the first-listed) product image, not the blue one they actually chose. This creates real doubt at the worst possible moment - right before checkout - about whether the order will actually be correct, and doubt at checkout directly drives cart abandonment.</p>
+
+<h2>Bug 3: Cart state not syncing across pages</h2>
+<p>If a customer adds an item to their cart on the product page, then navigates to a different page and the cart icon still shows the old count - or worse, the cart appears empty until a manual refresh - that's a state management bug, common in custom React storefronts where cart state isn't properly shared via context or a global store. It looks like the site "lost" their selection, which is exactly the kind of moment that makes a customer give up and leave.</p>
+
+<h2>Bug 4: Prices not updating with variant/quantity selection</h2>
+<p>If selecting a different size or increasing quantity doesn't immediately update the displayed price, customers either don't trust the number they see at checkout, or worse, get an unpleasant surprise when the final total differs from what they expected - both outcomes hurt conversion and trust.</p>
+
+<h2>Bug 5: Abandoned cart data lost on browser close</h2>
+<p>If cart contents aren't persisted (via cookies, local storage, or a logged-in account), a customer who closes the tab to check something and comes back later finds an empty cart and has to start over - a meaningful share of these customers simply won't bother re-adding everything.</p>
+
+<h2>Why these bugs are so easy to miss</h2>
+<p>None of these throw a visible error. The site "works" in the sense that it doesn't crash and orders do come through - it's just that some percentage of potential orders quietly don't, and there's no error log entry for "customer got confused and left." This is why real testing has to include actually using the store as a customer would, on multiple devices, not just checking that the admin dashboard functions correctly.</p>
+
+<h2>How to catch these on your own store</h2>
+<ul>
+<li>Actually place test orders yourself, regularly, including with product variants if you have them</li>
+<li>Test on mobile specifically, not just desktop - cart bugs often behave differently across viewport sizes</li>
+<li>Check your cart abandonment rate in analytics - a rate significantly higher than industry benchmarks (roughly 60-70% is typical, but a much higher rate deserves investigation) can be a signal something structural is broken, not just normal browsing behavior</li>
+<li>Ask a few real customers, informally, if anything about the checkout process ever felt confusing</li>
+</ul>
+
+<h2>The real cost of leaving these unfixed</h2>
+<p>Unlike a site outage, these bugs don't generate urgency - nothing is obviously broken from the owner's perspective. But the revenue impact compounds silently over months, which is exactly why they're worth a dedicated audit rather than waiting for a customer complaint that may never actually arrive.</p>
+
+      <div class="article-cta">
+        <h3>Suspect your store has a cart bug like this?</h3>
+        <p>I've fixed exactly these issues on live client stores - happy to take a look at yours.</p>
+        <a href="contact.html" class="btn btn-primary">Get in touch</a>
       </div>
+      <a href="blog.html" class="article-back">&larr; Back to Blog</a>
     </div>
-  </section>
-
-  <section id="experience">
-    <div class="wrap">
-      <div class="section-head"><span class="section-eyebrow">Experience</span><h2>My career, as a commit log</h2><p>Every developer's history is a sequence of commits. Here's mine.</p></div>
-      <div class="log">
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2025</span><span>current</span></div><h3>feat: Junior Lecturer, Air University</h3><p>Delivering Computer Science lectures at Air University, Islamabad, using modern tools and teaching methods - while continuing to build client projects in parallel.</p></div>
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2018-2025</span></div><h3>feat: Lecturer - Computer Science, Punjab College, Kharian</h3><p>Taught core CS and web development courses for seven years, translating theory into practical, buildable skills for students.</p></div>
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2020</span><span>ongoing</span></div><h3>feat: Full-Stack Website Developer, Skyittec Software House - Multan (Remote)</h3><p>Building and shipping full-stack, WordPress-based web applications for clients - 213+ delivered to date.</p></div>
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2017</span></div><h3>init: BS Computer Science - University of Sargodha</h3><p>Graduated with a foundation in software engineering, data structures and web technologies.</p></div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="avail">
-    <div class="wrap">
-      <h2>Want to work together?</h2>
-      <p>Full-stack development backed by 6 years of experience and 213+ delivered projects.</p>
-      <a href="contact.html" class="btn btn-primary">Get in touch</a>
-    </div>
-  </section>
-
+  </div>
 </main>
 <footer>
   <div class="wrap footer-grid">

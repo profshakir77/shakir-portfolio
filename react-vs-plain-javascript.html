@@ -3,28 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Shakir Hussain | Full-Stack Web Developer &amp; CS Lecturer</title>
-<meta name="description" content="Shakir Hussain is a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan, with 213+ websites delivered since 2020.">
+<title>React vs Plain JavaScript: When to Use Which for Your Project | Shakir Hussain</title>
+<meta name="description" content="When a React frontend is worth the added complexity, and when plain JavaScript (or a lighter framework) is the better, faster choice for your project.">
 <meta name="author" content="Shakir Hussain">
-<link rel="canonical" href="https://shakir-portfolio-azure.vercel.app/about.html">
+<link rel="canonical" href="https://shakir-portfolio-azure.vercel.app/react-vs-plain-javascript.html">
 <meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="RrD1NyX0B5qQoBq5hIUxQQ4bTpGCJoWXtoDCrc9wsac" />
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About Shakir Hussain | Full-Stack Web Developer &amp; CS Lecturer">
-<meta property="og:description" content="Shakir Hussain is a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan, with 213+ websites delivered since 2020.">
-<meta property="og:url" content="https://shakir-portfolio-azure.vercel.app/about.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React vs Plain JavaScript: When to Use Which for Your Project | Shakir Hussain">
+<meta property="og:description" content="When a React frontend is worth the added complexity, and when plain JavaScript (or a lighter framework) is the better, faster choice for your project.">
+<meta property="og:url" content="https://shakir-portfolio-azure.vercel.app/react-vs-plain-javascript.html">
 <meta property="og:site_name" content="Shakir Hussain - Full-Stack Developer">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About Shakir Hussain | Full-Stack Web Developer &amp; CS Lecturer">
-<meta name="twitter:description" content="Shakir Hussain is a full-stack web developer and Computer Science lecturer based in Islamabad, Pakistan, with 213+ websites delivered since 2020.">
-<meta name="twitter:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
-
+<meta name="twitter:title" content="React vs Plain JavaScript: When to Use Which for Your Project | Shakir Hussain">
+<meta name="twitter:description" content="When a React frontend is worth the added complexity, and when plain JavaScript (or a lighter framework) is the better, faster choice for your project.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
@@ -202,11 +197,15 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .proj-cover{ margin:-26px -26px 20px -26px; border-radius:var(--radius) var(--radius) 0 0; overflow:hidden; background:var(--ink); border-bottom:1px solid var(--line); }
 .proj-cover-bar{display:flex; gap:6px; padding:12px 16px; background:var(--surface-tint);}
 .proj-cover-bar span{width:8px; height:8px; border-radius:50%; background:var(--line);}
-.proj-monogram{ height:110px; display:flex; align-items:center; justify-content:center; gap:10px; font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em; color:var(--brass); background:linear-gradient(135deg, rgba(37,99,235,0.12), rgba(249,115,22,0.10)); transition:transform 0.3s ease; }
+.proj-monogram{ height:150px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'JetBrains Mono', monospace; font-weight:700; font-size:34px; letter-spacing:0.04em; color:var(--brass); background:linear-gradient(135deg, rgba(37,99,235,0.14), rgba(249,115,22,0.12)), radial-gradient(circle, rgba(37,99,235,0.16) 1.5px, transparent 1.5px); background-size:100% 100%, 18px 18px; transition:transform 0.3s ease; position:relative; overflow:hidden; }
 .proj-photo{ height:150px; overflow:hidden; transition:transform 0.3s ease; }
 .proj-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 .proj-card:hover .proj-photo img{transform:scale(1.06);}
 .proj-monogram i{font-size:30px;}
+.proj-monogram .icon-lg{font-size:46px; position:relative; z-index:1; filter:drop-shadow(0 6px 14px rgba(15,23,42,0.18));}
+.proj-monogram .icon-sm{font-size:24px; opacity:0.55; position:relative; z-index:1;}
+.proj-monogram .icon-sm.up{transform:translateY(-12px);}
+.proj-monogram .icon-sm.down{transform:translateY(12px);}
 .proj-card:hover .proj-monogram{transform:scale(1.06);}
 .proj-card h3{font-size:1.1rem; margin-bottom:8px;}
 .proj-card p{color:var(--paper-dim); font-size:13.8px; margin-bottom:12px;}
@@ -438,13 +437,41 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   .hero-stat .num{font-size:1.6rem;}
 }
 </style>
-<script>
-  (function(){
-    var saved = localStorage.getItem('theme');
-    var theme = saved || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-  })();
-</script>
+
+<style>
+.article-hero{padding:56px 0 0;}
+.breadcrumb{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim); margin-bottom:18px;}
+.breadcrumb a{color:var(--brass); text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.article-meta{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:18px;}
+.article-cat{font-family:'JetBrains Mono', monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--brass); background:rgba(37,99,235,0.1); padding:5px 12px; border-radius:20px;}
+.article-readtime{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
+.article-hero h1{font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:18px; line-height:1.15;}
+.article-lede{font-size:1.1rem; color:var(--paper-dim); max-width:720px; margin-bottom:32px;}
+.article-cover{ height:280px; border-radius:8px; overflow:hidden; position:relative; margin-bottom:0; display:flex; align-items:center; justify-content:center; gap:20px;
+  background-image:linear-gradient(135deg, rgba(37,99,235,0.14), rgba(249,115,22,0.12)), radial-gradient(circle, rgba(37,99,235,0.16) 1.8px, transparent 1.8px);
+  background-size:100% 100%, 20px 20px; }
+.article-cover .icon-lg{font-size:72px; color:var(--brass); position:relative; z-index:1; filter:drop-shadow(0 8px 18px rgba(15,23,42,0.18));}
+.article-cover .icon-sm{font-size:36px; opacity:0.55; position:relative; z-index:1;}
+.article-cover .icon-sm.up{transform:translateY(-20px);}
+.article-cover .icon-sm.down{transform:translateY(20px);}
+.article-body{max-width:760px; margin:0 auto; padding:56px 0;}
+.article-body h2{font-size:1.5rem; margin:40px 0 16px;}
+.article-body h2:first-child{margin-top:0;}
+.article-body p{color:var(--paper-dim); font-size:16px; line-height:1.75; margin-bottom:18px;}
+.article-body ul, .article-body ol{color:var(--paper-dim); font-size:16px; line-height:1.75; margin:0 0 18px 22px;}
+.article-body li{margin-bottom:8px;}
+.article-body strong{color:var(--paper); font-weight:600;}
+.article-body a{color:var(--brass); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.2s;}
+.article-body a:hover{border-color:var(--brass);}
+.article-cta{ background:var(--ink-2); border:1px solid var(--line); border-radius:8px; padding:32px; margin-top:48px; text-align:center; }
+.article-cta h3{font-size:1.2rem; margin-bottom:10px;}
+.article-cta p{color:var(--paper-dim); margin-bottom:20px;}
+.article-back{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--brass); text-decoration:none; margin-top:40px;}
+.article-back:hover{text-decoration:underline;}
+@media (max-width:640px){ .article-cover{height:200px;} .article-cover .icon-lg{font-size:52px;} .article-cover .icon-sm{font-size:26px;} }
+</style>
+
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -456,8 +483,8 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
       <li><a href="services.html">Services</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
       
     </ul>
@@ -475,69 +502,51 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   </nav>
 </header>
 <main id="main">
-
-  <div class="page-hero"><div class="wrap"><span class="section-eyebrow">About</span><h1>Two disciplines, one standard: work that holds up.</h1><p>213+ websites delivered, alongside seven years teaching Computer Science.</p></div></div>
-
-  <section id="about-main">
-    <div class="wrap about-grid">
-      <div>
-        <div class="portrait-frame">
-          <div class="portrait-circle-wrap">
-            <img src="shakir-circle-512-ring-v2.png" alt="Shakir Hussain, full-stack web developer and Computer Science lecturer" width="280" height="280" loading="lazy">
-            <div class="portrait-badge"><i class="devicon-react-original colored"></i>Full-stack dev</div>
-          </div>
-          <div class="portrait-caption"><strong>Shakir Hussain</strong><span>&middot; Islamabad, PK</span></div>
-        </div>
-      </div>
-      <div>
-        <p>I split my time between building production web applications and teaching Computer Science - a combination that keeps my fundamentals sharp and my delivery practical. Clients get code that's built the way it's taught to be built: readable, tested against real use, and documented well enough that someone else could pick it up.</p>
-        <p>I work across the full stack - from responsive front ends to APIs, databases and deployment - and I'm comfortable owning a project end to end or slotting into an existing team and codebase. That approach has added up to 213+ delivered websites since 2020.</p>
-        <div class="stat-row">
-          <div class="stat"><div class="num" data-count="213" data-suffix="+">0+</div><div class="label">Websites delivered</div></div>
-          <div class="stat"><div class="num">2020</div><div class="label">Building production apps since</div></div>
-        </div>
-        <ul class="about-contact-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg><span>Shakir Hussain</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg><a href="https://wa.me/923059494585">+92 305 9494585</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg><a href="mailto:mr.shakir77@gmail.com">mr.shakir77@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section-alt">
+  <section class="article-hero">
     <div class="wrap">
-      <div class="section-head"><span class="section-eyebrow">Skills</span><h2>What I build with</h2><p>A stack chosen for speed of delivery without cutting corners on performance, security or SEO.</p></div>
-      <div class="skills-grid">
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-html5-plain colored"></i></div><h3>Front End</h3><ul><li><i class="devicon-html5-plain colored"></i>HTML5 &amp; CSS3</li><li><i class="devicon-javascript-plain colored"></i>JavaScript (ES6+)</li><li><i class="devicon-react-original colored"></i>React.js</li><li><i class="devicon-tailwindcss-plain colored"></i>Tailwind CSS</li><li><i class="devicon-bootstrap-plain colored"></i>Bootstrap</li></ul></div>
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-nodejs-plain colored"></i></div><h3>Back End</h3><ul><li><i class="devicon-nodejs-plain colored"></i>Node.js &amp; Express</li><li><i class="devicon-php-plain colored"></i>PHP</li><li><i class="devicon-postman-plain colored"></i>RESTful API design</li><li><i class="devicon-nodejs-plain"></i>Authentication &amp; sessions</li></ul></div>
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-mongodb-plain colored"></i></div><h3>Data &amp; CMS</h3><ul><li><i class="devicon-mysql-plain colored"></i>MySQL</li><li><i class="devicon-mongodb-plain colored"></i>MongoDB</li><li><i class="devicon-wordpress-plain colored"></i>WordPress</li><li><i class="devicon-woocommerce-plain colored"></i>WooCommerce</li></ul></div>
-        <div class="skill-card"><div class="skill-icon"><i class="devicon-git-plain colored"></i></div><h3>Workflow &amp; Delivery</h3><ul><li><i class="devicon-git-plain colored"></i>Git &amp; GitHub</li><li><i class="devicon-docker-plain colored"></i>Docker</li><li><i class="devicon-vercel-original"></i>Cloud-based dev &amp; deployment</li><li><i class="devicon-google-plain colored"></i>On-page SEO &amp; performance tuning</li></ul></div>
+      <div class="breadcrumb"><a href="blog.html">Blog</a> / Web Development</div>
+      <div class="article-meta"><span class="article-cat">Web Development</span><span class="article-readtime">6 min read</span></div>
+      <h1>React vs Plain JavaScript: When to Use Which for Your Project</h1>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="article-cover"><i class="devicon-react-original colored icon-sm up"></i><svg class="icon-lg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M5 8l-3 6a4 4 0 0 0 8 0z"/><path d="M19 8l-3 6a4 4 0 0 0 8 0z"/><path d="M5 8h14"/></svg><i class="devicon-javascript-plain colored icon-sm down"></i></div>
+  </div>
+  <div class="wrap">
+    <div class="article-body">
+      
+<p>React gets recommended by default for almost everything now, and that's often the wrong call. It's a genuinely great tool for the right job, and genuine overkill for plenty of others. Here's how to actually tell the difference.</p>
+
+<h2>What plain JavaScript still does well</h2>
+<p>For a mostly-static site with a bit of interactivity - a mobile menu toggle, a contact form, a simple image carousel, some scroll animations - plain JavaScript (or a small library, not a full framework) is faster to build, faster to load, and has nothing to "hydrate" or configure. There's no build step required, no framework version to keep updated, and any developer can maintain it without learning your specific tooling choices.</p>
+
+<h2>Where React earns its complexity</h2>
+<p>React shines when your UI has genuinely complex, interconnected state - a dashboard where filtering one panel updates three others, a multi-step form with conditional logic, a real-time collaborative interface, or any application-like experience where the "page" concept breaks down into a dynamic app. It also makes sense when you're building something that will keep growing in features over time - the component structure pays off as complexity increases.</p>
+
+<h2>The performance tradeoff people underestimate</h2>
+<p>A React app ships JavaScript to the browser that has to be downloaded, parsed, and executed before the page becomes interactive - even with modern optimizations like server-side rendering and code splitting, this is real overhead a static HTML/CSS/JS page doesn't have. For a marketing site where every second of load time affects conversion and SEO, that overhead is often not worth paying for content that isn't actually interactive.</p>
+
+<h2>A practical decision framework</h2>
+<ul>
+<li><strong>Use plain JavaScript when:</strong> the site is content-first, interactivity is limited to a few isolated widgets, page speed and SEO are top priorities, and you want the lowest possible maintenance burden</li>
+<li><strong>Use React when:</strong> you're building an application (not just a website), state is genuinely complex and shared across multiple UI pieces, you need a rich component ecosystem, or the project will keep growing feature by feature over months or years</li>
+<li><strong>Consider a middle ground:</strong> a mostly-static site built with a framework like Astro or Next.js, using React only for the specific interactive islands that need it, gets you the best of both</li>
+</ul>
+
+<h2>What this looks like in real projects</h2>
+<p>My AI Resume Tool and SchoolOS both use React/Next.js because they're genuinely applications - state-heavy, interactive, growing in features. Jabeen Jewels and Gouda Giggle run on WordPress/WooCommerce with mostly server-rendered pages, because they're primarily content and catalog-driven, not application-like. Neither choice was about which technology is "better" - it was about what each project actually needed to do.</p>
+
+<h2>The honest bottom line</h2>
+<p>Choosing React by default because it's popular, or avoiding it entirely because it's trendy, are both worse strategies than actually looking at what your project needs to do. If you're not sure which category your project falls into, that's a good five-minute conversation to have before any code gets written.</p>
+
+      <div class="article-cta">
+        <h3>Not sure which approach fits your project?</h3>
+        <p>I build with both - happy to give you an honest read on what your specific project actually needs.</p>
+        <a href="contact.html" class="btn btn-primary">Get in touch</a>
       </div>
+      <a href="blog.html" class="article-back">&larr; Back to Blog</a>
     </div>
-  </section>
-
-  <section id="experience">
-    <div class="wrap">
-      <div class="section-head"><span class="section-eyebrow">Experience</span><h2>My career, as a commit log</h2><p>Every developer's history is a sequence of commits. Here's mine.</p></div>
-      <div class="log">
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2025</span><span>current</span></div><h3>feat: Junior Lecturer, Air University</h3><p>Delivering Computer Science lectures at Air University, Islamabad, using modern tools and teaching methods - while continuing to build client projects in parallel.</p></div>
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2018-2025</span></div><h3>feat: Lecturer - Computer Science, Punjab College, Kharian</h3><p>Taught core CS and web development courses for seven years, translating theory into practical, buildable skills for students.</p></div>
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2020</span><span>ongoing</span></div><h3>feat: Full-Stack Website Developer, Skyittec Software House - Multan (Remote)</h3><p>Building and shipping full-stack, WordPress-based web applications for clients - 213+ delivered to date.</p></div>
-        <div class="log-entry"><div class="log-meta"><span class="hash">#2017</span></div><h3>init: BS Computer Science - University of Sargodha</h3><p>Graduated with a foundation in software engineering, data structures and web technologies.</p></div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="avail">
-    <div class="wrap">
-      <h2>Want to work together?</h2>
-      <p>Full-stack development backed by 6 years of experience and 213+ delivered projects.</p>
-      <a href="contact.html" class="btn btn-primary">Get in touch</a>
-    </div>
-  </section>
-
+  </div>
 </main>
 <footer>
   <div class="wrap footer-grid">

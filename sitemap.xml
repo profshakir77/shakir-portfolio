@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://shakir-portfolio-azure.vercel.app/</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/services.html</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/work.html</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/testimonials.html</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/about.html</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/blog.html</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/contact.html</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/website-cost-pakistan-2026.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/wordpress-vs-custom-development.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/woocommerce-vs-shopify-2026.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/how-to-hire-a-full-stack-developer.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/signs-your-website-needs-redesign.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/core-web-vitals-beginners-guide.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/postex-courier-woocommerce-integration.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/react-vs-plain-javascript.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/page-speed-losing-customers.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/on-page-seo-checklist-small-business.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/why-your-site-needs-a-cost-calculator.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/nodejs-vs-php-backend.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/migrate-off-replit-to-production.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/building-school-management-system-lessons.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/ecommerce-cart-bugs-losing-sales.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/mysql-vs-mongodb.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/realistic-website-timeline.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/freelancer-vs-agency.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/how-to-write-a-website-brief.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://shakir-portfolio-azure.vercel.app/structured-data-schema-guide.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
 </urlset>
