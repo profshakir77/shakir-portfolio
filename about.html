@@ -196,6 +196,14 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .skill-card li:last-child{border-bottom:none;}
 .skill-card li i{font-size:26px; width:30px; text-align:center; flex:none;}
 
+.teach-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.teach-card{border:1px solid var(--line); border-radius:var(--radius); padding:26px; background:var(--ink-2);}
+.teach-badge{font-family:'JetBrains Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--teal); background:rgba(249,115,22,0.1); padding:5px 12px; border-radius:20px; display:inline-block; margin-bottom:14px;}
+.teach-card h3{font-size:1.1rem; margin-bottom:8px;}
+.teach-card p{color:var(--paper-dim); font-size:14px; margin-bottom:14px;}
+.teach-card .proj-tags{display:flex; gap:8px; flex-wrap:wrap;}
+.teach-by{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--paper-dim); margin-top:14px; display:block;}
+
 .log{border-left:1px solid var(--line); margin-left:8px;}
 .log-entry{position:relative; padding:0 0 40px 34px;}
 .log-entry:last-child{padding-bottom:0;}
@@ -423,7 +431,7 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
   .skills-grid{grid-template-columns:repeat(2,1fr);}
   .projects-grid, .blog-grid, .skeleton-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:repeat(2,1fr);}
-  .testi-grid, .review-grid{grid-template-columns:1fr;}
+  .testi-grid, .review-grid, .teach-grid{grid-template-columns:1fr;}
   .packages-grid{grid-template-columns:1fr; max-width:440px; margin:0 auto;}
   .footer-grid{grid-template-columns:1fr; gap:32px;}
   .portrait-badge{right:8px;}
@@ -522,6 +530,64 @@ footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--
         <div class="skill-card"><div class="skill-icon"><i class="devicon-nodejs-plain colored"></i></div><h3>Back End</h3><ul><li><i class="devicon-nodejs-plain colored"></i>Node.js &amp; Express</li><li><i class="devicon-php-plain colored"></i>PHP</li><li><i class="devicon-postman-plain colored"></i>RESTful API design</li><li><i class="devicon-nodejs-plain"></i>Authentication &amp; sessions</li></ul></div>
         <div class="skill-card"><div class="skill-icon"><i class="devicon-mongodb-plain colored"></i></div><h3>Data &amp; CMS</h3><ul><li><i class="devicon-mysql-plain colored"></i>MySQL</li><li><i class="devicon-mongodb-plain colored"></i>MongoDB</li><li><i class="devicon-wordpress-plain colored"></i>WordPress</li><li><i class="devicon-woocommerce-plain colored"></i>WooCommerce</li></ul></div>
         <div class="skill-card"><div class="skill-icon"><i class="devicon-git-plain colored"></i></div><h3>Workflow &amp; Delivery</h3><ul><li><i class="devicon-git-plain colored"></i>Git &amp; GitHub</li><li><i class="devicon-docker-plain colored"></i>Docker</li><li><i class="devicon-vercel-original"></i>Cloud-based dev &amp; deployment</li><li><i class="devicon-google-plain colored"></i>On-page SEO &amp; performance tuning</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="wrap">
+      <div class="section-head"><span class="section-eyebrow">Teaching</span><h2>Also in the classroom</h2><p>As a CS lecturer, I supervise student full-stack projects - these are pieces of student coursework I taught and reviewed, not my own client deliverables.</p></div>
+      <div class="teach-grid">
+        <div class="teach-card">
+          <span class="teach-badge">Student Project</span>
+          <h3>Secure ToDo App</h3>
+          <p>A MERN-stack task manager built by a student - registration and login with hashed passwords, JWT-based auth, and per-user task ownership checks to prevent one user from accessing another's tasks.</p>
+          <div class="proj-tags"><span><i class="devicon-react-original colored"></i>React</span><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><span><i class="devicon-mongodb-plain colored"></i>MongoDB</span></div>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Student Capstone</span>
+          <h3>AETHERS Cyber Defense Platform</h3>
+          <p>An ambitious MERN + Python platform built by a student - 10 local security scanner engines (port scanning, vulnerability analysis, SSL/TLS auditing and more) behind a full SaaS-style frontend with a local AI security assistant.</p>
+          <div class="proj-tags"><span><i class="devicon-react-original colored"></i>React</span><span><i class="devicon-python-plain colored"></i>Python</span><span><i class="devicon-mongodb-plain colored"></i>MongoDB</span></div>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Course Lab</span>
+          <h3>Lab 13: JWT Authentication API</h3>
+          <p>A focused backend exercise from my full-stack course - a login endpoint that issues a JWT, and a protected route that verifies the token before granting access.</p>
+          <div class="proj-tags"><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><span><i class="devicon-express-original"></i>Express</span></div>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Student Project</span>
+          <h3>Velora Watches</h3>
+          <p>A luxury watch showcase site built by a student - multiple brand pages, a sale popup, scroll-triggered animations and a fully responsive mobile nav, built with vanilla HTML, CSS and JavaScript.</p>
+          <div class="proj-tags"><span><i class="devicon-html5-plain colored"></i>HTML5</span><span><i class="devicon-css3-plain colored"></i>CSS3</span><span><i class="devicon-javascript-plain colored"></i>JavaScript</span></div>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Student Project</span>
+          <h3>Local Services Marketplace</h3>
+          <p>A React frontend prototype for booking local service workers - role-based UX for customers, workers and admins, a custom component library, and category-filtered service browsing.</p>
+          <div class="proj-tags"><span><i class="devicon-react-original colored"></i>React</span><span><i class="devicon-tailwindcss-plain colored"></i>Tailwind CSS</span></div>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Final Project</span>
+          <h3>CareSync - Healthcare Management</h3>
+          <p>A role-based healthcare platform (admin, doctor, patient) with real OWASP Top 10 security work - bcrypt hashing, JWT expiry, NoSQL injection sanitization, rate-limited auth routes and secure HTTP headers via Helmet.</p>
+          <div class="proj-tags"><span><i class="devicon-react-original colored"></i>React</span><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><span><i class="devicon-mongodb-plain colored"></i>MongoDB</span></div>
+          <span class="teach-by">By Ali Hamza &amp; Abu Huraira</span>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Semester Project</span>
+          <h3>Petal &amp; Pip - Boutique E-Commerce</h3>
+          <p>A polished clothing boutique storefront - live search &amp; category filtering, Cash on Delivery checkout with real-time stock updates, a customer order tracker, and an admin panel with image upload management.</p>
+          <div class="proj-tags"><span><i class="devicon-react-original colored"></i>React</span><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><span><i class="devicon-mongodb-plain colored"></i>MongoDB</span></div>
+          <span class="teach-by">By Abiha</span>
+        </div>
+        <div class="teach-card">
+          <span class="teach-badge">Security Project</span>
+          <h3>SENTINEL Security Dashboard</h3>
+          <p>A hands-on security teaching tool - a Python scanner audits HTTP security headers on a demo target, paired with a local clickjacking demo showing exactly what a missing X-Frame-Options header allows.</p>
+          <div class="proj-tags"><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><span><i class="devicon-python-plain colored"></i>Python</span></div>
+        </div>
       </div>
     </div>
   </section>
