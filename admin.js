@@ -74,6 +74,45 @@
   // If a password is already stashed in this tab's session, skip the gate.
   if (getPassword()) tryUnlock(getPassword());
 
+  // --- Cover image auto-generation ---------------------------------------
+  var coverInput = document.getElementById('postCoverInput');
+  var coverPreview = document.getElementById('postCoverPreview');
+  var _autoGenCover = ''; // track the last auto-generated URL so manual edits aren't overwritten
+
+  function buildCoverUrl(title, category, slug) {
+    if (!title) return '';
+    var p = new URLSearchParams({ title: title, category: category || 'Blog', slug: slug || '' });
+    return '/api/cover?' + p.toString();
+  }
+
+  function updateCoverPreview() {
+    var url = coverInput.value.trim();
+    if (coverPreview) {
+      if (url) {
+        coverPreview.src = url;
+        coverPreview.hidden = false;
+      } else {
+        coverPreview.hidden = true;
+      }
+    }
+  }
+
+  function syncCover() {
+    var title = (document.getElementById('postTitleInput').value || '').trim();
+    var category = (document.getElementById('postCategoryInput').value || '').trim();
+    var current = coverInput.value.trim();
+    // Only auto-fill if the field is empty or still holds our last generated URL
+    if (!current || current === _autoGenCover) {
+      _autoGenCover = buildCoverUrl(title, category, '');
+      coverInput.value = _autoGenCover;
+      updateCoverPreview();
+    }
+  }
+
+  document.getElementById('postTitleInput').addEventListener('input', syncCover);
+  document.getElementById('postCategoryInput').addEventListener('input', syncCover);
+  coverInput.addEventListener('input', updateCoverPreview);
+
   // --- New post form -----------------------------------------------------
   document.getElementById('newPostForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -104,6 +143,8 @@
           statusEl.style.color = 'var(--brass)';
           statusEl.textContent = 'Published: ' + result.data.post.title;
           document.getElementById('newPostForm').reset();
+          _autoGenCover = '';
+          if (coverPreview) coverPreview.hidden = true;
           loadPosts();
         } else {
           statusEl.style.color = '#ef4444';

@@ -63,7 +63,11 @@
           <div class="form-group"><label for="postCategoryInput">Category</label><input type="text" id="postCategoryInput" placeholder="e.g. Web Development"></div>
         </div>
         <div class="form-group"><label for="postExcerptInput">Excerpt (optional -- shown on the blog card)</label><input type="text" id="postExcerptInput"></div>
-        <div class="form-group"><label for="postCoverInput">Cover image URL (optional)</label><input type="text" id="postCoverInput" placeholder="https://..."></div>
+        <div class="form-group">
+          <label for="postCoverInput">Cover image URL <span style="font-weight:400;color:var(--paper-dim);">(auto-generated from title — edit to override)</span></label>
+          <input type="text" id="postCoverInput" placeholder="/api/cover?title=...">
+          <img id="postCoverPreview" hidden alt="Cover preview" style="margin-top:10px;width:100%;max-height:180px;object-fit:cover;border-radius:6px;border:1px solid var(--line);">
+        </div>
         <div class="form-group"><label for="postContentInput">Content</label><textarea id="postContentInput" required placeholder="Write in plain paragraphs, separated by a blank line." style="min-height:220px;"></textarea></div>
         <button type="submit" class="form-submit" id="postSubmitBtn">Publish post</button>
         <p class="admin-status" id="postStatus"></p>
