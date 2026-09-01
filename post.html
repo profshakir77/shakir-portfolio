@@ -12,28 +12,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Shakir Hussain | Full-Stack Web Developer</title>
-<meta name="description" content="Get in touch with Shakir Hussain for your next web development project - full-stack developer with 213+ websites delivered for clients worldwide.">
-<meta name="author" content="Shakir Hussain">
-<link rel="canonical" href="https://shakir-portfolio-azure.vercel.app/contact.html">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="RrD1NyX0B5qQoBq5hIUxQQ4bTpGCJoWXtoDCrc9wsac" />
+<title id="pageTitle">Loading post... | Shakir Hussain</title>
+<meta name="description" id="pageDescription" content="Read the latest from Shakir Hussain's blog.">
+<meta name="robots" content="noindex, follow">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Contact Shakir Hussain | Full-Stack Web Developer">
-<meta property="og:description" content="Get in touch with Shakir Hussain for your next web development project - full-stack developer with 213+ websites delivered for clients worldwide.">
-<meta property="og:url" content="https://shakir-portfolio-azure.vercel.app/contact.html">
-<meta property="og:site_name" content="Shakir Hussain - Full-Stack Developer">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact Shakir Hussain | Full-Stack Web Developer">
-<meta name="twitter:description" content="Get in touch with Shakir Hussain for your next web development project - full-stack developer with 213+ websites delivered for clients worldwide.">
-<meta name="twitter:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,6 +40,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
 <link rel="stylesheet" href="/style.css">
+
 <script>
   (function(){
     var saved = localStorage.getItem('theme');
@@ -74,9 +60,8 @@
       <li><a href="work.html">Work</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
@@ -92,38 +77,25 @@
   </nav>
 </header>
 <main id="main">
-
-  <div class="page-hero"><div class="wrap"><span class="section-eyebrow">Contact</span><h1>Let's build something.</h1><p>Send a short brief - what you're building, your timeline and your budget range - and I'll reply with next steps.</p></div></div>
-
-  <section id="contact-main">
-    <div class="wrap contact-grid">
-      <div>
-        <form id="contactForm" novalidate>
-          <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
-          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-          <div class="form-group"><label for="budget">Budget range</label><input type="text" id="budget" name="budget" placeholder="e.g. $500-$1500"></div>
-          <div class="form-group"><label for="message">Project brief</label><textarea id="message" name="message" required placeholder="What are you building, and what's your timeline?"></textarea></div>
-          <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
-            <label for="website">Leave this field empty</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-          <button type="submit" class="form-submit" id="contactSubmit">Send message</button>
-          <p id="contactStatus" role="status" style="margin-top:14px; font-size:14px;"></p>
-        </form>
-      </div>
-      <div>
-        <p class="note">Prefer email or WhatsApp? Use the details below instead.</p>
-        <ul class="contact-list" style="margin-top:14px;">
-          <li><span class="k">Email</span><span class="v"><a href="mailto:mr.shakir77@gmail.com">mr.shakir77@gmail.com</a></span></li>
-          <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/shakir-hussain77/" target="_blank" rel="noopener">/in/shakir-hussain</a></span></li>
-          <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/profshakir77" target="_blank" rel="noopener">/profshakir77</a></span></li>
-          <li><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">+92 305 9494585</a></span></li>
-        </ul>
-      </div>
+  <section class="article-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="blog.html">Blog</a> / <span id="postCategory">&hellip;</span></div>
+      <div class="article-meta"><span class="article-cat" id="postCategoryBadge">&hellip;</span><span class="article-readtime" id="postReadTime"></span></div>
+      <h1 id="postTitle">Loading&hellip;</h1>
     </div>
   </section>
-
-
+  <div class="wrap" id="postCoverWrap" hidden>
+    <div class="article-cover-photo"><img id="postCoverImg" src="" alt="" loading="lazy"></div>
+  </div>
+  <div class="wrap">
+    <div class="article-body" id="postBody">
+      <p>Loading this post&hellip;</p>
+    </div>
+    <div id="postNotFound" hidden>
+      <p>This post couldn't be found &mdash; it may have been removed, or the link is off.</p>
+      <a href="blog.html" class="btn btn-primary">Back to Blog</a>
+    </div>
+  </div>
 </main>
 <footer>
   <div class="wrap footer-grid">
@@ -173,7 +145,7 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
 </button>
 <script src="/main.js" defer></script>
-<script src="/contact-form.js" defer></script>
+<script src="/post-view.js" defer></script>
 
 </body>
 </html>

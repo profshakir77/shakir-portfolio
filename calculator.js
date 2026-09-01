@@ -36,3 +36,54 @@ var typeOpts = document.querySelectorAll('.type-opt');
   feats.forEach(function(f){ f.addEventListener('change', calcEstimate); });
   rush.addEventListener('change', calcEstimate);
   calcEstimate();
+
+  var estimateForm = document.getElementById('estimateForm');
+  if (estimateForm) {
+    var estimateStatus = document.getElementById('estimateStatus');
+    var estimateSubmit = document.getElementById('estimateSubmit');
+    estimateForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var addonNames = [];
+      feats.forEach(function(f){ if (f.checked) { var label = f.closest('label'); addonNames.push(label ? label.textContent.trim() : f.id); } });
+
+      var payload = {
+        projectType: activeType,
+        pages: parseInt(pagesSlider.value, 10),
+        addons: addonNames,
+        estimateLow: parseInt(lowPrice.textContent.replace(/,/g, ''), 10),
+        estimateHigh: parseInt(highPrice.textContent.replace(/,/g, ''), 10),
+        name: document.getElementById('estName').value.trim(),
+        email: document.getElementById('estEmail').value.trim(),
+        website: document.getElementById('estWebsite').value, // honeypot
+      };
+
+      estimateSubmit.disabled = true;
+      estimateSubmit.textContent = 'Sending...';
+      estimateStatus.textContent = '';
+
+      fetch('/api/estimate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+        .then(function(result){
+          if (result.ok) {
+            estimateStatus.style.color = 'var(--brass)';
+            estimateStatus.textContent = payload.email ? 'Sent -- check your inbox.' : 'Got it, thanks!';
+            estimateForm.reset();
+          } else {
+            estimateStatus.style.color = '#ef4444';
+            estimateStatus.textContent = result.data.error || 'Something went wrong. Please try again.';
+          }
+        })
+        .catch(function(){
+          estimateStatus.style.color = '#ef4444';
+          estimateStatus.textContent = 'Could not reach the server. Please try again.';
+        })
+        .finally(function(){
+          estimateSubmit.disabled = false;
+          estimateSubmit.textContent = 'Email me this estimate';
+        });
+    });
+  }

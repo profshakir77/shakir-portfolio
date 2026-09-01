@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | Shakir Hussain</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>
+  (function(){
+    var saved = localStorage.getItem('theme');
+    document.documentElement.setAttribute('data-theme', saved || 'light');
+  })();
+</script>
+<style>
+  body{ background:var(--ink); color:var(--paper); }
+  .admin-wrap{ max-width:880px; margin:0 auto; padding:40px 20px 80px; }
+  .admin-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; }
+  .admin-header a{ color:var(--brass); text-decoration:none; font-family:'JetBrains Mono', monospace; font-size:13px; }
+  .admin-card{ background:var(--ink-2); border:1px solid var(--line); border-radius:8px; padding:28px; margin-bottom:24px; }
+  .admin-card h2{ font-size:1.2rem; margin-bottom:6px; }
+  .admin-card .hint{ color:var(--paper-dim); font-size:13.5px; margin-bottom:20px; }
+  .admin-row{ display:flex; gap:12px; flex-wrap:wrap; }
+  .admin-row .form-group{ flex:1; min-width:180px; }
+  .post-item, .lead-item{ border-top:1px solid var(--line); padding:14px 0; display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+  .post-item:first-child, .lead-item:first-child{ border-top:none; padding-top:0; }
+  .post-item h4, .lead-item h4{ font-size:14.5px; margin-bottom:4px; }
+  .post-item p, .lead-item p{ font-size:13px; color:var(--paper-dim); margin:0; }
+  .del-btn{ font-family:'JetBrains Mono', monospace; font-size:12px; color:#ef4444; background:none; border:1px solid #ef4444; border-radius:4px; padding:6px 12px; cursor:pointer; white-space:nowrap; }
+  .del-btn:hover{ background:#ef4444; color:#fff; }
+  #loginGate{ max-width:360px; margin:80px auto; text-align:center; }
+  #loginGate input{ margin-bottom:14px; }
+  #dashboard{ display:none; }
+  #dashboard.visible{ display:block; }
+  .empty-note{ color:var(--paper-dim); font-size:13.5px; }
+  .admin-status{ font-size:13px; margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="admin-wrap">
+  <div class="admin-header">
+    <strong style="font-family:'JetBrains Mono', monospace;">shakir.dev / admin</strong>
+    <a href="index.html">&larr; Back to site</a>
+  </div>
+
+  <div id="loginGate" class="admin-card">
+    <h2>Admin access</h2>
+    <p class="hint">Enter the admin password to manage posts and view leads.</p>
+    <div class="form-group"><input type="password" id="adminPassword" placeholder="Admin password"></div>
+    <button type="button" class="form-submit" id="unlockBtn" style="width:100%;">Unlock</button>
+    <p class="admin-status" id="loginStatus"></p>
+  </div>
+
+  <div id="dashboard">
+    <div class="admin-card">
+      <h2>Add a new blog post</h2>
+      <p class="hint">This publishes to <code>blog.html</code>'s "Fresh posts" section and a live page at <code>post.html?slug=...</code>. Your 20 existing articles are untouched.</p>
+      <form id="newPostForm" novalidate>
+        <div class="admin-row">
+          <div class="form-group"><label for="postTitleInput">Title</label><input type="text" id="postTitleInput" required></div>
+          <div class="form-group"><label for="postCategoryInput">Category</label><input type="text" id="postCategoryInput" placeholder="e.g. Web Development"></div>
+        </div>
+        <div class="form-group"><label for="postExcerptInput">Excerpt (optional -- shown on the blog card)</label><input type="text" id="postExcerptInput"></div>
+        <div class="form-group"><label for="postCoverInput">Cover image URL (optional)</label><input type="text" id="postCoverInput" placeholder="https://..."></div>
+        <div class="form-group"><label for="postContentInput">Content</label><textarea id="postContentInput" required placeholder="Write in plain paragraphs, separated by a blank line." style="min-height:220px;"></textarea></div>
+        <button type="submit" class="form-submit" id="postSubmitBtn">Publish post</button>
+        <p class="admin-status" id="postStatus"></p>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h2>Manage posts</h2>
+      <p class="hint">Posts created through this panel. Delete removes them permanently.</p>
+      <div id="postsList"><p class="empty-note">Loading&hellip;</p></div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Estimate requests</h2>
+      <p class="hint">Leads captured from the services page cost calculator.</p>
+      <div id="leadsList"><p class="empty-note">Loading&hellip;</p></div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Contact form messages</h2>
+      <p class="hint">These aren't stored here -- every submission from <code>contact.html</code> is emailed straight to your inbox.</p>
+    </div>
+
+    <button type="button" class="btn btn-ghost" id="logoutBtn">Log out</button>
+  </div>
+</div>
+<script src="/admin.js" defer></script>
+</body>
+</html>

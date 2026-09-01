@@ -1,0 +1,9 @@
+{
+  "name": "shakir-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site with a small set of Vercel serverless functions under /api.",
+  "engines": {
+    "node": ">=18"
+  }
+}
