@@ -30,14 +30,16 @@ async function readJsonBody(req) {
   });
 }
 
-// Vercel KV (Upstash Redis) REST API -- https://vercel.com/docs/storage/vercel-kv/kv-reference
-// Requires KV_REST_API_URL and KV_REST_API_TOKEN, which Vercel injects
-// automatically once a KV store is linked to the project. Commands are sent
-// as a JSON array body (rather than URL path segments) so long values --
-// a full blog post's JSON -- never risk hitting a URL length limit.
+// Upstash Redis REST API, connected via the Vercel Marketplace (Vercel's old
+// native "KV" product was retired in Dec 2024 and replaced by this
+// integration -- see https://vercel.com/docs/redis). Depending on how the
+// integration was installed, Vercel injects either the legacy KV_REST_API_*
+// names or Upstash's own UPSTASH_REDIS_REST_* names, so both are checked.
+// Commands are sent as a JSON array body (rather than URL path segments) so
+// long values -- a full blog post's JSON -- never risk a URL length limit.
 async function kvRequest(commandParts) {
-  const base = process.env.KV_REST_API_URL;
-  const token = process.env.KV_REST_API_TOKEN;
+  const base = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
   if (!base || !token) {
     const err = new Error('KV_NOT_CONFIGURED');
     err.code = 'KV_NOT_CONFIGURED';
