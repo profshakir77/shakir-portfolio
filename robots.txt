@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin.html
+Disallow: /api/
 
-Sitemap: https://YOURDOMAIN.com/sitemap.xml
+Sitemap: https://shakir-portfolio-azure.vercel.app/sitemap.xml

@@ -55,6 +55,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
 <link rel="stylesheet" href="/style.css">
+<style>
+  .cat-filter-btn { padding: 7px 16px; border-radius: 999px; border: 1px solid var(--line, #e2e8f0); background: none; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-muted, #64748b); transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
+  .cat-filter-btn:hover { background: var(--surface, #f1f5f9); }
+  .cat-filter-btn.active { background: var(--brass, #b5891a); border-color: var(--brass, #b5891a); color: #fff; }
+</style>
 <script>
   (function(){
     var saved = localStorage.getItem('theme');
@@ -97,7 +102,20 @@
 
   <section id="blog-list">
     <div class="wrap">
-      <div class="blog-grid">
+      <!-- Category filter -->
+      <div id="categoryFilters" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+        <button class="cat-filter-btn active" data-cat="all" onclick="filterCategory('all')">All</button>
+        <button class="cat-filter-btn" data-cat="Web Development" onclick="filterCategory('Web Development')">Web Development</button>
+        <button class="cat-filter-btn" data-cat="SEO & Performance" onclick="filterCategory('SEO & Performance')">SEO &amp; Performance</button>
+        <button class="cat-filter-btn" data-cat="E-Commerce" onclick="filterCategory('E-Commerce')">E-Commerce</button>
+        <button class="cat-filter-btn" data-cat="Pricing & Business" onclick="filterCategory('Pricing & Business')">Pricing &amp; Business</button>
+        <button class="cat-filter-btn" data-cat="Web Design" onclick="filterCategory('Web Design')">Web Design</button>
+        <button class="cat-filter-btn" data-cat="Hiring & Freelancing" onclick="filterCategory('Hiring & Freelancing')">Hiring &amp; Freelancing</button>
+        <button class="cat-filter-btn" data-cat="JavaScript" onclick="filterCategory('JavaScript')">JavaScript</button>
+        <button class="cat-filter-btn" data-cat="Business" onclick="filterCategory('Business')">Business</button>
+        <button class="cat-filter-btn" data-cat="CS Education" onclick="filterCategory('CS Education')">CS Education</button>
+      </div>
+      <div class="blog-grid" id="staticBlogGrid">
         <a class="blog-card" href="website-cost-pakistan-2026.html">
           <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1772588627527-db42040f3a8b?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How Much Does a Website Cost in Pakistan? A 2026 Pricing Guide" loading="lazy"></div>
           <span class="b-tag">Pricing & Business</span>
@@ -241,6 +259,50 @@
       </div>
     </div>
   </section>
+<script>
+// Assign data-cat to each static blog card based on its .b-tag text
+(function(){
+  var grid = document.getElementById('staticBlogGrid');
+  if (!grid) return;
+  grid.querySelectorAll('.blog-card').forEach(function(card){
+    var tag = card.querySelector('.b-tag');
+    if (tag) card.dataset.cat = tag.textContent.trim();
+  });
+})();
+
+function filterCategory(cat) {
+  // Update button states
+  document.querySelectorAll('.cat-filter-btn').forEach(function(btn){
+    btn.classList.toggle('active', btn.dataset.cat === cat);
+  });
+  // Filter static cards
+  var grid = document.getElementById('staticBlogGrid');
+  if (grid) {
+    grid.querySelectorAll('.blog-card').forEach(function(card){
+      var match = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = match ? '' : 'none';
+    });
+  }
+  // Filter dynamic cards
+  var dynGrid = document.getElementById('dynamicPostsGrid');
+  if (dynGrid) {
+    dynGrid.querySelectorAll('.blog-card').forEach(function(card){
+      var tag = card.querySelector('.b-tag');
+      var cardCat = tag ? tag.textContent.trim() : '';
+      var match = cat === 'all' || cardCat === cat;
+      card.style.display = match ? '' : 'none';
+    });
+    // Show/hide the dynamic section heading
+    var dynSection = document.getElementById('dynamic-posts');
+    if (dynSection && cat !== 'all') {
+      var visible = dynGrid.querySelectorAll('.blog-card:not([style*="display: none"])').length;
+      if (!visible) dynSection.hidden = true;
+    }
+  }
+  window._currentFilter = cat;
+}
+window.filterCategory = filterCategory;
+</script>
     </div>
   </section>
 
