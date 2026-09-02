@@ -32,6 +32,9 @@
     dashboard.classList.add('visible');
     loadPosts();
     loadLeads();
+    loadStudents();
+    loadAdminProjects();
+    loadReviews();
   }
 
   function tryUnlock(pw) {
@@ -194,6 +197,77 @@
     authedFetch('/api/posts/' + encodeURIComponent(slug), { method: 'DELETE' })
       .then(function (res) { if (res.ok) loadPosts(); else alert('Could not delete that post.'); })
       .catch(function () { alert('Could not reach the server.'); });
+  }
+
+  // --- Students list ---------------------------------------------------
+  function loadStudents() {
+    var listEl = document.getElementById('studentsList');
+    if (!listEl) return;
+    authedFetch('/api/students')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var students = data.students || [];
+        if (!students.length) { listEl.innerHTML = '<p class="empty-note">No student registrations yet.</p>'; return; }
+        listEl.innerHTML = students.map(function (s) {
+          var col = s.status === 'approved' ? '#16a34a' : s.status === 'rejected' ? '#ef4444' : '#92400e';
+          var approveBtn = '<button class="del-btn" style="border-color:#16a34a;color:#16a34a" data-id="' + escapeHtml(s.id) + '" data-action="approve">Approve</button>';
+          var rejectBtn = '<button class="del-btn" data-id="' + escapeHtml(s.id) + '" data-action="reject">Reject</button>';
+          var actions = s.status === 'pending' ? approveBtn + ' ' + rejectBtn : s.status === 'approved' ? rejectBtn : approveBtn;
+          return '<div class="lead-item"><div><h4>' + escapeHtml(s.name) + '</h4><p>' + escapeHtml(s.email) + (s.github ? ' &middot; <a href="' + escapeHtml(s.github) + '" target="_blank" rel="noopener" style="color:var(--brass)">GitHub</a>' : '') + '</p>' + (s.bio ? '<p>' + escapeHtml(s.bio) + '</p>' : '') + '</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap"><span style="font-size:12px;font-family:\'JetBrains Mono\',monospace;color:' + col + '">' + escapeHtml(s.status) + '</span><div style="display:flex;gap:6px">' + actions + '</div></div></div>';
+        }).join('');
+        listEl.querySelectorAll('button[data-action]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            authedFetch('/api/students/' + encodeURIComponent(btn.dataset.id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: btn.dataset.action }) })
+              .then(function (res) { if (res.ok) loadStudents(); else alert('Could not update student.'); });
+          });
+        });
+      })
+      .catch(function () { listEl.innerHTML = '<p class="empty-note">Could not load students.</p>'; });
+  }
+
+  // --- Admin projects list ---------------------------------------------
+  function loadAdminProjects() {
+    var listEl = document.getElementById('adminProjectsList');
+    if (!listEl) return;
+    authedFetch('/api/projects?admin=1')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var projects = data.projects || [];
+        if (!projects.length) { listEl.innerHTML = '<p class="empty-note">No projects submitted yet.</p>'; return; }
+        listEl.innerHTML = projects.map(function (p) {
+          return '<div class="lead-item"><div><h4>' + escapeHtml(p.title) + '</h4><p>by ' + escapeHtml(p.studentName) + (p.githubUrl ? ' &middot; <a href="' + escapeHtml(p.githubUrl) + '" target="_blank" rel="noopener" style="color:var(--brass)">GitHub</a>' : '') + '</p><p>' + escapeHtml((p.tech || []).join(', ')) + '</p></div><div style="display:flex;gap:6px;flex-shrink:0"><button class="del-btn" style="border-color:#16a34a;color:#16a34a" data-id="' + escapeHtml(p.id) + '" data-action="approve">Approve</button><button class="del-btn" data-id="' + escapeHtml(p.id) + '" data-action="reject">Reject</button></div></div>';
+        }).join('');
+        listEl.querySelectorAll('button[data-action]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            authedFetch('/api/projects/' + encodeURIComponent(btn.dataset.id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: btn.dataset.action }) })
+              .then(function (res) { if (res.ok) loadAdminProjects(); else alert('Could not update project.'); });
+          });
+        });
+      })
+      .catch(function () { listEl.innerHTML = '<p class="empty-note">Could not load projects.</p>'; });
+  }
+
+  // --- Reviews list ----------------------------------------------------
+  function loadReviews() {
+    var listEl = document.getElementById('reviewsList');
+    if (!listEl) return;
+    authedFetch('/api/reviews?admin=1')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var reviews = data.reviews || [];
+        if (!reviews.length) { listEl.innerHTML = '<p class="empty-note">No reviews yet.</p>'; return; }
+        listEl.innerHTML = reviews.map(function (r) {
+          var stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+          return '<div class="lead-item"><div><h4>' + escapeHtml(r.name) + (r.role ? ' <span style="font-weight:400;font-size:13px;color:var(--paper-dim)">— ' + escapeHtml(r.role) + '</span>' : '') + '</h4><p style="color:#f59e0b">' + stars + '</p><p>' + escapeHtml(r.content) + '</p></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap"><p style="font-size:12px;color:var(--paper-dim)">' + new Date(r.createdAt).toLocaleDateString() + '</p><div style="display:flex;gap:6px"><button class="del-btn" style="border-color:#16a34a;color:#16a34a" data-id="' + escapeHtml(r.id) + '" data-action="approve">Approve</button><button class="del-btn" data-id="' + escapeHtml(r.id) + '" data-action="reject">Reject</button></div></div></div>';
+        }).join('');
+        listEl.querySelectorAll('button[data-action]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            authedFetch('/api/reviews/' + encodeURIComponent(btn.dataset.id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: btn.dataset.action }) })
+              .then(function (res) { if (res.ok) loadReviews(); else alert('Could not update review.'); });
+          });
+        });
+      })
+      .catch(function () { listEl.innerHTML = '<p class="empty-note">Could not load reviews.</p>'; });
   }
 
   // --- Leads list ------------------------------------------------------

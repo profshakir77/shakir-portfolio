@@ -96,6 +96,27 @@
       <a href="blog.html" class="btn btn-primary">Back to Blog</a>
     </div>
   </div>
+
+  <!-- Comments section -->
+  <div class="wrap" id="commentsSection" style="margin-top:60px; padding-bottom:80px;">
+    <h2 style="font-size:1.4rem; margin-bottom:24px;">Comments</h2>
+
+    <!-- Post a comment -->
+    <div style="background:var(--surface,#f8fafc); border:1px solid var(--line,#e2e8f0); border-radius:10px; padding:24px; margin-bottom:36px;">
+      <h3 style="font-size:1rem; margin-bottom:16px;">Leave a comment</h3>
+      <form id="commentForm" novalidate>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div class="form-group" style="flex:1;min-width:180px;"><label for="commentName">Your name</label><input type="text" id="commentName" required placeholder="e.g. Ahmed Khan"></div>
+        </div>
+        <div class="form-group"><label for="commentContent">Comment</label><textarea id="commentContent" required placeholder="Share your thoughts..." style="min-height:100px;"></textarea></div>
+        <button type="submit" class="btn btn-primary" id="commentBtn" style="padding:10px 24px;">Post comment</button>
+        <span id="commentStatus" style="font-size:13px;margin-left:12px;"></span>
+      </form>
+    </div>
+
+    <!-- Comments list -->
+    <div id="commentsList"><p style="color:var(--text-muted,#94a3b8);font-size:14px;">Loading comments...</p></div>
+  </div>
 </main>
 <footer>
   <div class="wrap footer-grid">
@@ -146,6 +167,7 @@
 </button>
 <script src="/main.js" defer></script>
 <script src="/post-view.js" defer></script>
+<script src="/comments.js" defer></script>
 
 </body>
 </html>

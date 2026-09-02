@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ET1PWB9NZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4ET1PWB9NZ');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review | Shakir Hussain</title>
+<meta name="description" content="Share your experience working with Shakir Hussain - full-stack web developer.">
+<meta name="author" content="Shakir Hussain">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>
+  (function(){
+    var saved = localStorage.getItem('theme');
+    document.documentElement.setAttribute('data-theme', saved || 'light');
+  })();
+</script>
+<style>
+  .review-form-wrap{ max-width:560px; margin:0 auto; padding:60px 20px 100px; }
+  .stars-row{ display:flex; gap:8px; margin-bottom:6px; }
+  .star-btn{ background:none; border:none; font-size:28px; cursor:pointer; color:#d1d5db; transition:color .15s; padding:0; line-height:1; }
+  .star-btn.active, .star-btn:hover, .star-btn.hover{ color:#f59e0b; }
+  .review-status{ font-size:14px; margin-top:12px; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner wrap">
+    <a href="index.html" class="nav-logo" aria-label="Home">
+      <img src="logo.svg" width="36" height="36" alt="Shakir Hussain logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Start a project &rarr;</a>
+  </div>
+</nav>
+
+<div class="review-form-wrap">
+  <div class="section-head" style="margin-bottom:32px;">
+    <span class="section-eyebrow">Reviews</span>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.2rem);">Share your experience</h1>
+    <p style="color:var(--paper-dim);">Your honest feedback helps others make informed decisions. All reviews appear on the homepage after a quick check.</p>
+  </div>
+
+  <div id="successMsg" hidden style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:20px 24px;margin-bottom:24px;">
+    <p style="color:#15803d;font-size:15px;margin:0;font-weight:600;">Thank you for your review!</p>
+    <p style="color:#166534;font-size:14px;margin:8px 0 0;">It will appear on the homepage after a quick review. I appreciate the feedback.</p>
+  </div>
+
+  <form id="reviewForm" novalidate>
+    <div class="form-group">
+      <label for="reviewName">Your name</label>
+      <input type="text" id="reviewName" placeholder="e.g. Ahmed Khan" required maxlength="80">
+    </div>
+
+    <div class="form-group">
+      <label for="reviewRole">Your role or company <span style="font-weight:400;color:var(--paper-dim);">(optional)</span></label>
+      <input type="text" id="reviewRole" placeholder="e.g. Owner, Khan Digital Store" maxlength="80">
+    </div>
+
+    <div class="form-group">
+      <label>Rating</label>
+      <div class="stars-row" id="starsRow" role="group" aria-label="Rating">
+        <button type="button" class="star-btn" data-v="1" aria-label="1 star">&#9733;</button>
+        <button type="button" class="star-btn" data-v="2" aria-label="2 stars">&#9733;</button>
+        <button type="button" class="star-btn" data-v="3" aria-label="3 stars">&#9733;</button>
+        <button type="button" class="star-btn" data-v="4" aria-label="4 stars">&#9733;</button>
+        <button type="button" class="star-btn" data-v="5" aria-label="5 stars">&#9733;</button>
+      </div>
+      <input type="hidden" id="reviewRating" value="5">
+    </div>
+
+    <div class="form-group">
+      <label for="reviewContent">Your review</label>
+      <textarea id="reviewContent" required placeholder="Describe your experience working with Shakir — what was the project, what did you find valuable, what results did you see?" style="min-height:160px;" maxlength="1000"></textarea>
+    </div>
+
+    <button type="submit" class="form-submit" id="reviewSubmitBtn">Submit review</button>
+    <p class="review-status" id="reviewStatus"></p>
+  </form>
+</div>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="footer-avatar">
+        <img src="assets/avatar.webp" width="48" height="48" alt="Shakir Hussain">
+      </div>
+      <p>Full-Stack Web Developer helping businesses grow online.</p>
+    </div>
+    <div class="footer-col">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="mentorship.html">Mentorship</a>
+    </div>
+    <div class="footer-col">
+      <a href="contact.html">Contact</a>
+      <a href="leave-review.html">Leave a Review</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap footer-bottom-inner">
+      <p>&copy; 2025 Shakir Hussain. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Star rating
+  var rating = 5;
+  var stars = document.querySelectorAll('.star-btn');
+  var ratingInput = document.getElementById('reviewRating');
+
+  function setRating(v) {
+    rating = v;
+    ratingInput.value = v;
+    stars.forEach(function(s){ s.classList.toggle('active', Number(s.dataset.v) <= v); });
+  }
+
+  setRating(5);
+
+  stars.forEach(function(s){
+    s.addEventListener('click', function(){ setRating(Number(s.dataset.v)); });
+    s.addEventListener('mouseenter', function(){
+      var hv = Number(s.dataset.v);
+      stars.forEach(function(st){ st.classList.toggle('hover', Number(st.dataset.v) <= hv); });
+    });
+  });
+  document.getElementById('starsRow').addEventListener('mouseleave', function(){
+    stars.forEach(function(st){ st.classList.remove('hover'); });
+  });
+
+  // Form submit
+  document.getElementById('reviewForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var statusEl = document.getElementById('reviewStatus');
+    var btn = document.getElementById('reviewSubmitBtn');
+    var name = document.getElementById('reviewName').value.trim();
+    var role = document.getElementById('reviewRole').value.trim();
+    var content = document.getElementById('reviewContent').value.trim();
+
+    if (!name) { statusEl.style.color='#ef4444'; statusEl.textContent='Please enter your name.'; return; }
+    if (content.length < 20) { statusEl.style.color='#ef4444'; statusEl.textContent='Review must be at least 20 characters.'; return; }
+
+    btn.disabled = true; btn.textContent = 'Submitting...'; statusEl.textContent = '';
+
+    fetch('/api/reviews', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ name:name, role:role, rating:rating, content:content }),
+    })
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
+    .then(function(res){
+      if (res.ok) {
+        document.getElementById('reviewForm').hidden = true;
+        document.getElementById('successMsg').hidden = false;
+      } else {
+        statusEl.style.color='#ef4444';
+        statusEl.textContent = res.d.error || 'Could not submit review.';
+        btn.disabled = false; btn.textContent = 'Submit review';
+      }
+    })
+    .catch(function(){
+      statusEl.style.color='#ef4444'; statusEl.textContent='Could not reach the server.';
+      btn.disabled = false; btn.textContent = 'Submit review';
+    });
+  });
+})();
+</script>
+</body>
+</html>
