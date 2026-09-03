@@ -10,7 +10,8 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
   if (!checkAdminAuth(req)) return res.status(401).json({ error: 'Unauthorized' });
 
-  const id = (req.query.id || [])[0];
+  const _p = req.query.id || [];
+  const id = (_p.length && _p[0] !== '_') ? _p[0] : undefined;
 
   // ── collection (/api/students) ────────────────────────────────────────────
   if (!id) {

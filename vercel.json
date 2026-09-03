@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/api/reviews",  "destination": "/api/reviews/_"  },
+    { "source": "/api/projects", "destination": "/api/projects/_" },
+    { "source": "/api/students", "destination": "/api/students/_" },
+    { "source": "/api/posts",    "destination": "/api/posts/_"    }
+  ]
+}

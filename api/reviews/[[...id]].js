@@ -10,7 +10,8 @@ module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Admin-Password');
   if (req.method === 'OPTIONS') return res.status(204).end();
 
-  const id = (req.query.id || [])[0];
+  const _p = req.query.id || [];
+  const id = (_p.length && _p[0] !== '_') ? _p[0] : undefined;
 
   // ── collection (/api/reviews) ─────────────────────────────────────────────
   if (!id) {

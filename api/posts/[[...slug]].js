@@ -11,7 +11,8 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   // slug is undefined for /api/posts, 'my-post' for /api/posts/my-post
-  const slug = (req.query.slug || [])[0];
+  const _p = req.query.slug || [];
+  const slug = (_p.length && _p[0] !== '_') ? _p[0] : undefined;
 
   // ── collection (/api/posts) ──────────────────────────────────────────────
   if (!slug) {
