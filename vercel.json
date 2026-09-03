@@ -1,8 +1,1 @@
-﻿{
-  "rewrites": [
-    { "source": "/api/reviews/:id",  "destination": "/api/reviews?id=:id"   },
-    { "source": "/api/projects/:id", "destination": "/api/projects?id=:id"  },
-    { "source": "/api/students/:id", "destination": "/api/students?id=:id"  },
-    { "source": "/api/posts/:slug",  "destination": "/api/posts?slug=:slug" }
-  ]
-}
+{"rewrites":[{"source":"/api/reviews/:id","destination":"/api/reviews?id=:id"},{"source":"/api/projects/:id","destination":"/api/projects?id=:id"},{"source":"/api/students/:id","destination":"/api/students?id=:id"},{"source":"/api/posts/:slug","destination":"/api/posts?slug=:slug"}]}
