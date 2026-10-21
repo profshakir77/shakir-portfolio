@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ET1PWB9NZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4ET1PWB9NZ');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Web Dev, SEO &amp; Hiring Guides - Shakir Hussain</title>
+<meta name="description" content="20 practical guides on web development, SEO, e-commerce and hiring a developer - written from real client work across 213+ delivered websites.">
+<meta name="author" content="Shakir Hussain">
+<link rel="canonical" href="https://shakir-portfolio-azure.vercel.app/blog.html">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="RrD1NyX0B5qQoBq5hIUxQQ4bTpGCJoWXtoDCrc9wsac" />
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | Shakir Hussain - Full-Stack Web Developer">
+<meta property="og:description" content="20 practical guides on web development, SEO, e-commerce and hiring a developer - written from real client work across 213+ delivered websites.">
+<meta property="og:url" content="https://shakir-portfolio-azure.vercel.app/blog.html">
+<meta property="og:site_name" content="Shakir Hussain - Full-Stack Developer">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | Shakir Hussain - Full-Stack Web Developer">
+<meta name="twitter:description" content="20 practical guides on web development, SEO, e-commerce and hiring a developer - written from real client work across 213+ delivered websites.">
+<meta name="twitter:image" content="https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shakir Hussain",
+  "url": "https://shakir-portfolio-azure.vercel.app/",
+  "image": "https://shakir-portfolio-azure.vercel.app/shakir-profile.jpg",
+  "email": "mailto:mr.shakir77@gmail.com",
+  "telephone": "+92-305-9494585",
+  "jobTitle": "Full-Stack Web Developer",
+  "description": "Full-stack web developer who has delivered 213+ websites for clients worldwide, specializing in React, Node.js, PHP, MySQL, MongoDB and WordPress.",
+  "knowsAbout": ["React.js", "Node.js", "Express.js", "PHP", "MySQL", "MongoDB", "WordPress", "WooCommerce", "Tailwind CSS", "Bootstrap", "Docker", "Git"],
+  "sameAs": ["https://www.linkedin.com/in/shakir-hussain77/", "https://github.com/profshakir77"],
+  "worksFor": {"@type": "Organization", "name": "Skyittec Software House"},
+  "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of Sargodha"}, {"@type": "CollegeOrUniversity", "name": "Air University"}]
+}
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .cat-filter-btn { padding: 7px 16px; border-radius: 999px; border: 1px solid var(--line, #e2e8f0); background: none; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-muted, #64748b); transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
+  .cat-filter-btn:hover { background: var(--surface, #f1f5f9); }
+  .cat-filter-btn.active { background: var(--brass, #b5891a); border-color: var(--brass, #b5891a); color: #fff; }
+</style>
+<script>
+  (function(){
+    var saved = localStorage.getItem('theme');
+    var theme = saved || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header>
+  <nav class="wrap" aria-label="Primary">
+    <a href="/" class="logo"><img src="logo.svg" alt="Shakir Hussain logo" width="30" height="30">shakir<span>.</span>dev</a>
+    <ul class="navlinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/prototyping">Prototyping</a></li>
+      <li><a href="/full-stack">Full-Stack</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/mentorship.html">Mentorship</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
+      </button>
+      <a href="contact.html" class="nav-cta">Start a project &rarr;</a>
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+<main id="main">
+
+  <div class="page-hero"><div class="wrap"><span class="section-eyebrow">Blog</span><h1>20 guides on web development, SEO &amp; hiring</h1><p>Practical, no-fluff write-ups from 213+ real client projects - pricing, platform choices, SEO, and lessons learned building for clients worldwide.</p></div></div>
+
+  <section id="blog-list">
+    <div class="wrap">
+      <!-- Category filter -->
+      <div id="categoryFilters" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+        <button class="cat-filter-btn active" data-cat="all" onclick="filterCategory('all')">All</button>
+        <button class="cat-filter-btn" data-cat="Web Development" onclick="filterCategory('Web Development')">Web Development</button>
+        <button class="cat-filter-btn" data-cat="SEO & Performance" onclick="filterCategory('SEO & Performance')">SEO &amp; Performance</button>
+        <button class="cat-filter-btn" data-cat="E-Commerce" onclick="filterCategory('E-Commerce')">E-Commerce</button>
+        <button class="cat-filter-btn" data-cat="Pricing & Business" onclick="filterCategory('Pricing & Business')">Pricing &amp; Business</button>
+        <button class="cat-filter-btn" data-cat="Web Design" onclick="filterCategory('Web Design')">Web Design</button>
+        <button class="cat-filter-btn" data-cat="Hiring & Freelancing" onclick="filterCategory('Hiring & Freelancing')">Hiring &amp; Freelancing</button>
+        <button class="cat-filter-btn" data-cat="JavaScript" onclick="filterCategory('JavaScript')">JavaScript</button>
+        <button class="cat-filter-btn" data-cat="Business" onclick="filterCategory('Business')">Business</button>
+        <button class="cat-filter-btn" data-cat="CS Education" onclick="filterCategory('CS Education')">CS Education</button>
+      </div>
+      <div class="blog-grid" id="staticBlogGrid">
+        <a class="blog-card" href="website-cost-pakistan-2026.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1772588627527-db42040f3a8b?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How Much Does a Website Cost in Pakistan? A 2026 Pricing Guide" loading="lazy"></div>
+          <span class="b-tag">Pricing & Business</span>
+          <h3>How Much Does a Website Cost in Pakistan? A 2026 Pricing Guide</h3>
+          <p>A realistic breakdown of website costs in Pakistan for 2026 - landing pages, business sites, e-commerce stores and custom web apps, plus what actually drives the price up or down.</p>
+          <span class="blog-readtime">7 min read</span>
+        </a>
+        <a class="blog-card" href="wordpress-vs-custom-development.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="WordPress vs Custom Development: Which Is Right for Your Business?" loading="lazy"></div>
+          <span class="b-tag">Web Development</span>
+          <h3>WordPress vs Custom Development: Which Is Right for Your Business?</h3>
+          <p>A practical comparison of WordPress and custom-coded websites - cost, flexibility, maintenance and performance - to help you choose the right approach for your business.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="woocommerce-vs-shopify-2026.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="WooCommerce vs Shopify: Choosing the Right E-Commerce Platform in 2026" loading="lazy"></div>
+          <span class="b-tag">E-Commerce</span>
+          <h3>WooCommerce vs Shopify: Choosing the Right E-Commerce Platform in 2026</h3>
+          <p>WooCommerce and Shopify compared on cost, control, ease of use and scalability, to help you pick the right e-commerce platform for your store in 2026.</p>
+          <span class="blog-readtime">7 min read</span>
+        </a>
+        <a class="blog-card" href="how-to-hire-a-full-stack-developer.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How to Hire a Full-Stack Web Developer (Without Getting Burned)" loading="lazy"></div>
+          <span class="b-tag">Hiring & Freelancing</span>
+          <h3>How to Hire a Full-Stack Web Developer (Without Getting Burned)</h3>
+          <p>A practical guide to hiring a full-stack web developer - what to ask, red flags to avoid, and how to structure a project so it actually gets delivered on time.</p>
+          <span class="blog-readtime">8 min read</span>
+        </a>
+        <a class="blog-card" href="signs-your-website-needs-redesign.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="10 Signs Your Website Needs a Redesign" loading="lazy"></div>
+          <span class="b-tag">Web Design</span>
+          <h3>10 Signs Your Website Needs a Redesign</h3>
+          <p>Ten clear signs it's time to redesign your website - from slow load times and poor mobile experience to outdated design and falling search rankings.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="core-web-vitals-beginners-guide.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="A Beginner's Guide to Core Web Vitals and Why They Matter for SEO" loading="lazy"></div>
+          <span class="b-tag">SEO & Performance</span>
+          <h3>A Beginner's Guide to Core Web Vitals and Why They Matter for SEO</h3>
+          <p>What Core Web Vitals actually measure, why Google cares, and practical steps to improve your scores without needing to be a performance engineer.</p>
+          <span class="blog-readtime">7 min read</span>
+        </a>
+        <a class="blog-card" href="postex-courier-woocommerce-integration.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How to Integrate a Local Courier Service (PostEx) Into Your WooCommerce Store" loading="lazy"></div>
+          <span class="b-tag">E-Commerce</span>
+          <h3>How to Integrate a Local Courier Service (PostEx) Into Your WooCommerce Store</h3>
+          <p>A real-world walkthrough of integrating PostEx courier services into a WooCommerce store - order creation, tracking, and cancellation - based on an actual client project.</p>
+          <span class="blog-readtime">8 min read</span>
+        </a>
+        <a class="blog-card" href="react-vs-plain-javascript.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="React vs Plain JavaScript: When to Use Which for Your Project" loading="lazy"></div>
+          <span class="b-tag">Web Development</span>
+          <h3>React vs Plain JavaScript: When to Use Which for Your Project</h3>
+          <p>When a React frontend is worth the added complexity, and when plain JavaScript (or a lighter framework) is the better, faster choice for your project.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="page-speed-losing-customers.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="Why Page Speed Is Costing You Customers (And How to Fix It)" loading="lazy"></div>
+          <span class="b-tag">SEO & Performance</span>
+          <h3>Why Page Speed Is Costing You Customers (And How to Fix It)</h3>
+          <p>The real business impact of slow page load times, with practical, prioritized steps to speed up your website without a full rebuild.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="on-page-seo-checklist-small-business.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="On-Page SEO Checklist for Small Business Websites" loading="lazy"></div>
+          <span class="b-tag">SEO & Performance</span>
+          <h3>On-Page SEO Checklist for Small Business Websites</h3>
+          <p>A practical, no-fluff on-page SEO checklist small business owners can actually use - title tags, meta descriptions, headings, images, and internal linking done right.</p>
+          <span class="blog-readtime">7 min read</span>
+        </a>
+        <a class="blog-card" href="why-your-site-needs-a-cost-calculator.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="What Is a Cost Calculator and Why Your Service Website Needs One" loading="lazy"></div>
+          <span class="b-tag">Web Design</span>
+          <h3>What Is a Cost Calculator and Why Your Service Website Needs One</h3>
+          <p>Why an interactive cost calculator on your service business website reduces friction, pre-qualifies leads, and converts better than a plain contact form.</p>
+          <span class="blog-readtime">5 min read</span>
+        </a>
+        <a class="blog-card" href="nodejs-vs-php-backend.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="Node.js vs PHP: Choosing a Backend for Your Next Web App" loading="lazy"></div>
+          <span class="b-tag">Web Development</span>
+          <h3>Node.js vs PHP: Choosing a Backend for Your Next Web App</h3>
+          <p>A practical comparison of Node.js and PHP for backend development - performance, ecosystem, hosting cost and hiring pool - to help you pick the right one.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="migrate-off-replit-to-production.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How to Migrate a Website Off Replit to Production (Vercel + GitHub)" loading="lazy"></div>
+          <span class="b-tag">Web Development</span>
+          <h3>How to Migrate a Website Off Replit to Production (Vercel + GitHub)</h3>
+          <p>A practical guide to moving a project built on Replit into a real production setup with GitHub version control and Vercel hosting.</p>
+          <span class="blog-readtime">7 min read</span>
+        </a>
+        <a class="blog-card" href="building-school-management-system-lessons.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="Building a School Management System: Lessons from a Real Project" loading="lazy"></div>
+          <span class="b-tag">Case Studies</span>
+          <h3>Building a School Management System: Lessons from a Real Project</h3>
+          <p>Real lessons from building SchoolOS, a full school management system with role-based portals, gradebooks, fee payments and admissions workflows.</p>
+          <span class="blog-readtime">8 min read</span>
+        </a>
+        <a class="blog-card" href="ecommerce-cart-bugs-losing-sales.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="E-Commerce Cart Bugs That Are Silently Losing You Sales" loading="lazy"></div>
+          <span class="b-tag">E-Commerce</span>
+          <h3>E-Commerce Cart Bugs That Are Silently Losing You Sales</h3>
+          <p>Common WooCommerce and e-commerce cart bugs - wrong product images, mismatched variants, and state sync issues - that quietly cost stores real revenue.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="mysql-vs-mongodb.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="MySQL vs MongoDB: Which Database Fits Your Project?" loading="lazy"></div>
+          <span class="b-tag">Web Development</span>
+          <h3>MySQL vs MongoDB: Which Database Fits Your Project?</h3>
+          <p>A practical comparison of MySQL and MongoDB - structured vs flexible data, scalability, and which one actually fits different types of web projects.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="realistic-website-timeline.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1772588627527-db42040f3a8b?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How Long Should a Website Take to Build? A Realistic Timeline" loading="lazy"></div>
+          <span class="b-tag">Pricing & Business</span>
+          <h3>How Long Should a Website Take to Build? A Realistic Timeline</h3>
+          <p>Realistic timelines for landing pages, business sites, e-commerce stores and custom apps - and what actually causes projects to run long.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="freelancer-vs-agency.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="The Real Difference Between a Freelancer and an Agency" loading="lazy"></div>
+          <span class="b-tag">Hiring & Freelancing</span>
+          <h3>The Real Difference Between a Freelancer and an Agency</h3>
+          <p>An honest comparison of hiring a freelance developer versus a web agency - cost, communication, accountability and when each makes more sense.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="how-to-write-a-website-brief.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="How to Write a Website Brief That Gets You Accurate Quotes" loading="lazy"></div>
+          <span class="b-tag">Hiring & Freelancing</span>
+          <h3>How to Write a Website Brief That Gets You Accurate Quotes</h3>
+          <p>A practical template and guide for writing a website brief that gets you accurate, comparable quotes from developers instead of vague guesses.</p>
+          <span class="blog-readtime">6 min read</span>
+        </a>
+        <a class="blog-card" href="structured-data-schema-guide.html">
+          <div class="blog-card-photo"><img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&q=60&w=700&auto=format&fit=crop" alt="Structured Data and Schema Markup: A Practical Guide for Small Sites" loading="lazy"></div>
+          <span class="b-tag">SEO & Performance</span>
+          <h3>Structured Data and Schema Markup: A Practical Guide for Small Sites</h3>
+          <p>What structured data (schema markup) actually does for your SEO, which schema types matter most for small business sites, and how to implement them.</p>
+          <span class="blog-readtime">7 min read</span>
+        </a>
+      </div>
+    </div>
+  </section>
+<script>
+// Assign data-cat to each static blog card based on its .b-tag text
+(function(){
+  var grid = document.getElementById('staticBlogGrid');
+  if (!grid) return;
+  grid.querySelectorAll('.blog-card').forEach(function(card){
+    var tag = card.querySelector('.b-tag');
+    if (tag) card.dataset.cat = tag.textContent.trim();
+  });
+})();
+
+function filterCategory(cat) {
+  // Update button states
+  document.querySelectorAll('.cat-filter-btn').forEach(function(btn){
+    btn.classList.toggle('active', btn.dataset.cat === cat);
+  });
+  // Filter static cards
+  var grid = document.getElementById('staticBlogGrid');
+  if (grid) {
+    grid.querySelectorAll('.blog-card').forEach(function(card){
+      var match = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = match ? '' : 'none';
+    });
+  }
+  // Filter dynamic cards
+  var dynGrid = document.getElementById('dynamicPostsGrid');
+  if (dynGrid) {
+    dynGrid.querySelectorAll('.blog-card').forEach(function(card){
+      var tag = card.querySelector('.b-tag');
+      var cardCat = tag ? tag.textContent.trim() : '';
+      var match = cat === 'all' || cardCat === cat;
+      card.style.display = match ? '' : 'none';
+    });
+    // Show/hide the dynamic section heading
+    var dynSection = document.getElementById('dynamic-posts');
+    if (dynSection && cat !== 'all') {
+      var visible = dynGrid.querySelectorAll('.blog-card:not([style*="display: none"])').length;
+      if (!visible) dynSection.hidden = true;
+    }
+  }
+  window._currentFilter = cat;
+}
+window.filterCategory = filterCategory;
+</script>
+    </div>
+  </section>
+
+
+  <section id="dynamic-posts" hidden>
+    <div class="wrap">
+      <span class="section-eyebrow">Recently added</span>
+      <h2>Fresh posts</h2>
+      <div class="blog-grid" id="dynamicPostsGrid"></div>
+    </div>
+  </section>
+
+  <section class="avail">
+    <div class="wrap">
+      <h2>Have a project in mind?</h2>
+      <p>Don't wait for the blog - reach out and let's talk about your website.</p>
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="footer-avatar">
+        <img src="shakir-circle-128.webp" alt="Shakir Hussain">
+        <div><strong>Shakir Hussain</strong><span>213+ websites delivered</span></div>
+      </div>
+      <p>Full-stack web developer &amp; Computer Science educator, based in Islamabad, Pakistan. 213+ websites delivered for clients worldwide.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/shakir.hussain.3114935/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
+        <a href="https://www.instagram.com/shakir.hussain77/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@prof.shakir?lang=en" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.7-.77-1.09-1.77-1.09-2.82h-3.02v13.44c0 1.48-1.2 2.68-2.68 2.68a2.68 2.68 0 0 1-2.68-2.68 2.68 2.68 0 0 1 2.68-2.68c.28 0 .54.04.79.12v-3.07a5.7 5.7 0 0 0-.79-.06 5.7 5.7 0 0 0-5.7 5.7 5.7 5.7 0 0 0 5.7 5.7 5.7 5.7 0 0 0 5.7-5.7V9.4a8.24 8.24 0 0 0 4.8 1.54V7.92a4.85 4.85 0 0 1-3.71-2.1z"/></svg></a>
+        <a href="https://github.com/profshakir77" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.66.35-1.1.63-1.36-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49C19.14 20.61 22 16.77 22 12.25 22 6.58 17.52 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/shakir-hussain77/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg></a>
+        <a href="mailto:mr.shakir77@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></a>
+        <a href="https://wa.me/923059494585" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="/work">Work</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:mr.shakir77@gmail.com">mr.shakir77@gmail.com</a>
+      <a href="https://wa.me/923059494585" target="_blank" rel="noopener">+92 305 9494585</a>
+      <a href="contact.html">Send a message</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap footer-bottom-inner">
+      <p>&copy; 2026 Shakir Hussain. Built and maintained by hand.</p>
+      <p>Islamabad, Pakistan &middot; Available worldwide</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="float-btn whatsapp-btn" aria-label="Message Shakir on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg>
+</a>
+<button type="button" class="float-btn top-btn" id="topBtn" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+<script src="/main.js" defer></script>
+<script src="/blog-posts.js" defer></script>
+
+</body>
+</html>

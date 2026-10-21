@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentorship | Shakir Hussain</title>
+<meta name="description" content="Projects built by students under Shakir Hussain's mentorship. Real work, real skills.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>
+  (function(){
+    var saved = localStorage.getItem('theme');
+    document.documentElement.setAttribute('data-theme', saved || 'light');
+  })();
+</script>
+<style>
+  .mentor-hero { padding: 80px 0 48px; text-align: center; }
+  .mentor-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+  .mentor-hero p { color: var(--ink-dim, #64748b); max-width: 580px; margin: 0 auto 32px; font-size: 1.05rem; }
+  .mentor-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding: 0 0 80px; }
+  .proj-card { background: var(--card-bg, #fff); border: 1px solid var(--line, #e2e8f0); border-radius: 12px; overflow: hidden; transition: transform .2s, box-shadow .2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+  .proj-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+  .proj-img { aspect-ratio: 16/9; object-fit: cover; width: 100%; background: var(--ink-2, #f1f5f9); }
+  .proj-img-placeholder { aspect-ratio: 16/9; width: 100%; background: linear-gradient(135deg, var(--ink-2, #f1f5f9), var(--line, #e2e8f0)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+  .proj-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .proj-student { font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--brass, #b5891a); text-transform: uppercase; letter-spacing: .06em; }
+  .proj-title { font-weight: 700; font-size: 1.05rem; margin: 0; }
+  .proj-desc { font-size: 13.5px; color: var(--ink-dim, #64748b); flex: 1; }
+  .proj-tech { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tech-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 8px; background: var(--ink-2, #f1f5f9); border-radius: 4px; color: var(--ink-dim, #64748b); }
+  .proj-links { display: flex; gap: 10px; margin-top: 4px; }
+  .proj-links a { font-size: 13px; color: var(--brass, #b5891a); text-decoration: none; font-weight: 600; }
+  .proj-links a:hover { text-decoration: underline; }
+
+  .empty-state { text-align: center; padding: 80px 20px; color: var(--ink-dim, #64748b); }
+  .empty-state p { font-size: 1.1rem; margin-bottom: 24px; }
+
+  .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+  .section-sub { color: var(--ink-dim, #64748b); margin-bottom: 36px; }
+
+  #loadingMsg { text-align: center; color: var(--ink-dim, #64748b); padding: 60px 0; }
+</style>
+</head>
+<body>
+<!-- nav pulled from main style -->
+<header class="site-header container">
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="Shakir Hussain" class="site-logo"></a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="mentorship.html" class="nav-active">Mentorship</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="mentor-hero">
+    <h1>Mentorship Program</h1>
+    <p>Real projects built by students I work with. From final-year projects to freelance-ready websites, these are the results of focused, hands-on guidance.</p>
+    <div class="mentor-cta">
+      <a href="student-portal.html" class="btn btn-primary">Join as a Student</a>
+      <a href="contact.html" class="btn btn-ghost">Apply for Mentorship</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Student Projects</h2>
+    <p class="section-sub">Work submitted by mentees and approved for showcase.</p>
+    <div id="loadingMsg">Loading projects...</div>
+    <div class="projects-grid" id="projectsGrid" hidden></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <p>No projects to show yet. Be the first to share your work.</p>
+      <a href="student-portal.html" class="btn btn-primary">Submit Your Project</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer container">
+  <p>&copy; 2025 Shakir Hussain. Built with care.</p>
+</footer>
+
+<script>
+(function () {
+  function esc(s) {
+    return String(s || '').replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  fetch('/api/projects')
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      document.getElementById('loadingMsg').hidden = true;
+      var projects = data.projects || [];
+      if (!projects.length) {
+        document.getElementById('emptyState').hidden = false;
+        return;
+      }
+      var grid = document.getElementById('projectsGrid');
+      grid.hidden = false;
+      grid.innerHTML = projects.map(function(p) {
+        var img = p.imageUrl
+          ? '<img class="proj-img" src="' + esc(p.imageUrl) + '" alt="' + esc(p.title) + '" loading="lazy">'
+          : '<div class="proj-img-placeholder">💻</div>';
+        var techTags = (p.tech || []).filter(Boolean).map(function(t){ return '<span class="tech-tag">' + esc(t.trim()) + '</span>'; }).join('');
+        var links = '';
+        if (p.githubUrl) links += '<a href="' + esc(p.githubUrl) + '" target="_blank" rel="noopener">GitHub</a>';
+        if (p.liveUrl) links += '<a href="' + esc(p.liveUrl) + '" target="_blank" rel="noopener">Live Site</a>';
+        return (
+          '<div class="proj-card">' +
+            img +
+            '<div class="proj-body">' +
+              '<span class="proj-student">by ' + esc(p.studentName) + '</span>' +
+              '<h3 class="proj-title">' + esc(p.title) + '</h3>' +
+              '<p class="proj-desc">' + esc(p.description) + '</p>' +
+              (techTags ? '<div class="proj-tech">' + techTags + '</div>' : '') +
+              (links ? '<div class="proj-links">' + links + '</div>' : '') +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+    })
+    .catch(function() {
+      document.getElementById('loadingMsg').hidden = true;
+      document.getElementById('emptyState').hidden = false;
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portal | Shakir Hussain</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>
+  (function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light'); })();
+</script>
+<style>
+  .portal-wrap { max-width: 640px; margin: 0 auto; padding: 60px 20px 100px; }
+  .portal-tabs { display: flex; gap: 4px; margin-bottom: 28px; background: var(--ink-2, #f1f5f9); border-radius: 8px; padding: 4px; }
+  .portal-tab { flex: 1; padding: 10px; border: none; background: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink-dim, #64748b); transition: background .15s, color .15s; }
+  .portal-tab.active { background: var(--paper, #fff); color: var(--ink, #0f172a); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .portal-card { background: var(--card-bg, #fff); border: 1px solid var(--line, #e2e8f0); border-radius: 12px; padding: 32px; }
+  .portal-card h2 { font-size: 1.3rem; margin-bottom: 6px; }
+  .portal-card .hint { color: var(--ink-dim, #64748b); font-size: 13.5px; margin-bottom: 24px; }
+  .status-msg { font-size: 13.5px; margin-top: 12px; }
+  .status-ok { color: #16a34a; }
+  .status-err { color: #ef4444; }
+
+  /* Dashboard */
+  #dashSection { display: none; }
+  #dashSection.visible { display: block; }
+  .dash-greeting { margin-bottom: 28px; }
+  .dash-greeting h2 { font-size: 1.4rem; }
+  .dash-greeting p { color: var(--ink-dim, #64748b); font-size: 13.5px; }
+  .my-proj-item { border-top: 1px solid var(--line, #e2e8f0); padding: 14px 0; display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .my-proj-item:first-child { border-top: none; padding-top: 0; }
+  .my-proj-item h4 { font-size: 14px; margin-bottom: 2px; }
+  .my-proj-item p { font-size: 12.5px; color: var(--ink-dim, #64748b); margin: 0; }
+  .badge { font-size: 11px; font-family: 'JetBrains Mono', monospace; padding: 2px 8px; border-radius: 999px; }
+  .badge-pending { background: #fef3c7; color: #92400e; }
+  .badge-approved { background: #d1fae5; color: #065f46; }
+  .badge-rejected { background: #fee2e2; color: #991b1b; }
+  .file-hint { font-size: 12px; color: var(--ink-dim, #64748b); margin-top: 4px; }
+  .img-preview { max-width: 100%; max-height: 180px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line, #e2e8f0); margin-top: 8px; display: none; }
+  .rating-row { display: flex; gap: 8px; }
+  .rating-row input[type=radio] { display: none; }
+  .rating-row label { font-size: 22px; cursor: pointer; opacity: .4; transition: opacity .15s; }
+  .rating-row input[type=radio]:checked ~ label, .rating-row label:hover, .rating-row label:hover ~ label { opacity: 1; }
+  .star-row { display: flex; flex-direction: row-reverse; }
+  .star-row input[type=radio] { display: none; }
+  .star-row label { font-size: 24px; cursor: pointer; color: #d1d5db; transition: color .15s; }
+  .star-row input[type=radio]:checked ~ label,
+  .star-row label:hover,
+  .star-row label:hover ~ label { color: #f59e0b; }
+</style>
+</head>
+<body>
+<header class="site-header container">
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="Shakir Hussain" class="site-logo"></a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="mentorship.html">Mentorship</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="portal-wrap">
+
+    <!-- Auth section (login/register) -->
+    <div id="authSection">
+      <div class="portal-tabs">
+        <button class="portal-tab active" id="tabLogin" onclick="showTab('login')">Log in</button>
+        <button class="portal-tab" id="tabRegister" onclick="showTab('register')">Register</button>
+      </div>
+
+      <!-- Login form -->
+      <div id="loginPane" class="portal-card">
+        <h2>Student Login</h2>
+        <p class="hint">Log in to submit and manage your projects.</p>
+        <form id="loginForm" novalidate>
+          <div class="form-group"><label for="loginEmail">Email</label><input type="email" id="loginEmail" required autocomplete="email"></div>
+          <div class="form-group"><label for="loginPass">Password</label><input type="password" id="loginPass" required autocomplete="current-password"></div>
+          <button type="submit" class="form-submit" id="loginBtn">Log in</button>
+          <p class="status-msg" id="loginStatus"></p>
+        </form>
+      </div>
+
+      <!-- Register form -->
+      <div id="registerPane" class="portal-card" hidden>
+        <h2>Create an Account</h2>
+        <p class="hint">Register as a student. Your account will be reviewed before you can log in.</p>
+        <form id="registerForm" novalidate>
+          <div class="form-group"><label for="regName">Full name</label><input type="text" id="regName" required></div>
+          <div class="form-group"><label for="regEmail">Email</label><input type="email" id="regEmail" required autocomplete="email"></div>
+          <div class="form-group"><label for="regPass">Password <span style="font-weight:400;color:var(--ink-dim)">(min 8 characters)</span></label><input type="password" id="regPass" required autocomplete="new-password"></div>
+          <div class="form-group"><label for="regBio">Short bio <span style="font-weight:400;color:var(--ink-dim)">(optional)</span></label><textarea id="regBio" placeholder="e.g. CS student at FAST Karachi, interested in web development." style="min-height:80px"></textarea></div>
+          <div class="form-group"><label for="regGithub">GitHub URL <span style="font-weight:400;color:var(--ink-dim)">(optional)</span></label><input type="url" id="regGithub" placeholder="https://github.com/yourname"></div>
+          <div class="form-group"><label for="regLinkedin">LinkedIn URL <span style="font-weight:400;color:var(--ink-dim)">(optional)</span></label><input type="url" id="regLinkedin" placeholder="https://linkedin.com/in/yourname"></div>
+          <button type="submit" class="form-submit" id="registerBtn">Submit Registration</button>
+          <p class="status-msg" id="registerStatus"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard (shown after login) -->
+    <div id="dashSection">
+      <div class="dash-greeting">
+        <h2>Welcome, <span id="dashName"></span></h2>
+        <p>Submit your projects below. They will appear on the <a href="mentorship.html">Mentorship page</a> after approval.</p>
+      </div>
+
+      <!-- Submit project -->
+      <div class="portal-card" style="margin-bottom:24px">
+        <h2>Submit a Project</h2>
+        <p class="hint">Share what you built. Fill in as many details as you can.</p>
+        <form id="projectForm" novalidate>
+          <div class="form-group"><label for="projTitle">Project title</label><input type="text" id="projTitle" required placeholder="e.g. E-commerce Site for Local Bakery"></div>
+          <div class="form-group"><label for="projDesc">Description</label><textarea id="projDesc" required placeholder="What does this project do? What problem does it solve?" style="min-height:100px"></textarea></div>
+          <div class="form-group"><label for="projTech">Tech stack <span style="font-weight:400;color:var(--ink-dim)">(comma-separated)</span></label><input type="text" id="projTech" placeholder="e.g. React, Node.js, MongoDB"></div>
+          <div class="form-group"><label for="projGithub">GitHub URL</label><input type="url" id="projGithub" placeholder="https://github.com/..."></div>
+          <div class="form-group"><label for="projLive">Live URL</label><input type="url" id="projLive" placeholder="https://..."></div>
+          <div class="form-group">
+            <label for="projImageFile">Project screenshot <span style="font-weight:400;color:var(--ink-dim)">(or paste a URL below)</span></label>
+            <input type="file" id="projImageFile" accept="image/*">
+            <p class="file-hint">Max 5 MB. JPEG, PNG, WebP or GIF.</p>
+            <img id="projImagePreview" class="img-preview" alt="Preview">
+          </div>
+          <div class="form-group">
+            <label for="projImageUrl">Image URL <span style="font-weight:400;color:var(--ink-dim)">(paste if not uploading a file)</span></label>
+            <input type="url" id="projImageUrl" placeholder="https://...">
+          </div>
+          <button type="submit" class="form-submit" id="projectBtn">Submit Project</button>
+          <p class="status-msg" id="projectStatus"></p>
+        </form>
+      </div>
+
+      <!-- My projects list -->
+      <div class="portal-card" style="margin-bottom:24px">
+        <h2>My Submissions</h2>
+        <div id="myProjects"><p style="color:var(--ink-dim);font-size:13.5px">Loading...</p></div>
+      </div>
+
+      <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer container">
+  <p>&copy; 2025 Shakir Hussain.</p>
+</footer>
+
+<script>
+(function () {
+  var TOKEN_KEY = 'student_token';
+
+  function getToken() { try { return sessionStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; } }
+  function setToken(t) { try { sessionStorage.setItem(TOKEN_KEY, t); } catch {} }
+  function clearToken() { try { sessionStorage.removeItem(TOKEN_KEY); } catch {} }
+
+  function authHeaders() {
+    return { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getToken() };
+  }
+
+  function showTab(tab) {
+    document.getElementById('tabLogin').classList.toggle('active', tab === 'login');
+    document.getElementById('tabRegister').classList.toggle('active', tab === 'register');
+    document.getElementById('loginPane').hidden = tab !== 'login';
+    document.getElementById('registerPane').hidden = tab !== 'register';
+  }
+  window.showTab = showTab;
+
+  function setStatus(id, msg, ok) {
+    var el = document.getElementById(id);
+    el.textContent = msg;
+    el.className = 'status-msg ' + (ok ? 'status-ok' : 'status-err');
+  }
+
+  // --- Login ---
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('loginBtn');
+    btn.disabled = true; btn.textContent = 'Logging in...';
+    fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: document.getElementById('loginEmail').value, password: document.getElementById('loginPass').value })
+    })
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d}; }); })
+    .then(function(res) {
+      if (res.ok) { setToken(res.d.token); showDashboard(res.d.student); }
+      else { setStatus('loginStatus', res.d.error || 'Login failed.', false); }
+    })
+    .catch(function(){ setStatus('loginStatus', 'Could not reach the server.', false); })
+    .finally(function(){ btn.disabled = false; btn.textContent = 'Log in'; });
+  });
+
+  // --- Register ---
+  document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('registerBtn');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+    fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: document.getElementById('regName').value,
+        email: document.getElementById('regEmail').value,
+        password: document.getElementById('regPass').value,
+        bio: document.getElementById('regBio').value,
+        github: document.getElementById('regGithub').value,
+        linkedin: document.getElementById('regLinkedin').value,
+      })
+    })
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d}; }); })
+    .then(function(res) {
+      if (res.ok) { setStatus('registerStatus', res.d.message || 'Registered!', true); document.getElementById('registerForm').reset(); }
+      else { setStatus('registerStatus', res.d.error || 'Registration failed.', false); }
+    })
+    .catch(function(){ setStatus('registerStatus', 'Could not reach the server.', false); })
+    .finally(function(){ btn.disabled = false; btn.textContent = 'Submit Registration'; });
+  });
+
+  // --- Image file preview + auto-upload intent ---
+  document.getElementById('projImageFile').addEventListener('change', function() {
+    var file = this.files[0];
+    if (!file) return;
+    var preview = document.getElementById('projImagePreview');
+    var reader = new FileReader();
+    reader.onload = function(e) { preview.src = e.target.result; preview.style.display = 'block'; };
+    reader.readAsDataURL(file);
+    // Clear the URL field when a file is chosen
+    document.getElementById('projImageUrl').value = '';
+  });
+
+  // --- Submit project ---
+  document.getElementById('projectForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('projectBtn');
+    var statusEl = document.getElementById('projectStatus');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+
+    var imageUrl = document.getElementById('projImageUrl').value.trim();
+    var fileInput = document.getElementById('projImageFile');
+
+    // Upload image file first if one is selected
+    if (fileInput.files[0] && !imageUrl) {
+      setStatus('projectStatus', 'Uploading image...', true);
+      var fd = new FormData();
+      fd.append('file', fileInput.files[0]);
+      try {
+        var upRes = await fetch('/api/upload', { method: 'POST', headers: { 'Authorization': 'Bearer ' + getToken() }, body: fd });
+        var upData = await upRes.json();
+        if (upRes.ok && upData.url) { imageUrl = upData.url; }
+        else { setStatus('projectStatus', upData.error || 'Image upload failed. Try pasting a URL instead.', false); btn.disabled = false; btn.textContent = 'Submit Project'; return; }
+      } catch { setStatus('projectStatus', 'Image upload failed.', false); btn.disabled = false; btn.textContent = 'Submit Project'; return; }
+    }
+
+    fetch('/api/projects', {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({
+        title: document.getElementById('projTitle').value.trim(),
+        description: document.getElementById('projDesc').value.trim(),
+        tech: document.getElementById('projTech').value.trim(),
+        githubUrl: document.getElementById('projGithub').value.trim(),
+        liveUrl: document.getElementById('projLive').value.trim(),
+        imageUrl: imageUrl,
+      })
+    })
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d}; }); })
+    .then(function(res) {
+      if (res.ok) {
+        setStatus('projectStatus', res.d.message || 'Project submitted!', true);
+        document.getElementById('projectForm').reset();
+        document.getElementById('projImagePreview').style.display = 'none';
+        loadMyProjects();
+      } else {
+        setStatus('projectStatus', res.d.error || 'Submission failed.', false);
+        if (res.d.error && res.d.error.includes('logged in')) { clearToken(); location.reload(); }
+      }
+    })
+    .catch(function(){ setStatus('projectStatus', 'Could not reach the server.', false); })
+    .finally(function(){ btn.disabled = false; btn.textContent = 'Submit Project'; });
+  });
+
+  // --- Load my projects ---
+  function loadMyProjects() {
+    var el = document.getElementById('myProjects');
+    fetch('/api/projects', { headers: { 'Authorization': 'Bearer ' + getToken() } })
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      var token_payload = parseJWT(getToken());
+      var myId = token_payload && token_payload.id;
+      var all = (data.projects || []);
+      // Also fetch all including pending — we show the user their own regardless of status
+      // The GET /api/projects only returns approved ones, so pending won't show here
+      // That is fine; we note this below
+      if (!all.length) {
+        el.innerHTML = '<p style="color:var(--ink-dim);font-size:13.5px">No approved projects yet. Your submissions appear here once approved.</p>';
+        return;
+      }
+      var mine = all.filter(function(p){ return p.studentId === myId; });
+      if (!mine.length) {
+        el.innerHTML = '<p style="color:var(--ink-dim);font-size:13.5px">No approved projects yet. Pending submissions will appear after approval.</p>';
+        return;
+      }
+      el.innerHTML = mine.map(function(p) {
+        return '<div class="my-proj-item"><div><h4>' + esc(p.title) + '</h4><p>' + (p.tech||[]).join(', ') + '</p></div><span class="badge badge-approved">Approved</span></div>';
+      }).join('');
+    })
+    .catch(function(){ el.innerHTML = '<p style="color:var(--ink-dim);font-size:13.5px">Could not load projects.</p>'; });
+  }
+
+  function esc(s) {
+    return String(s||'').replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
+  }
+
+  function parseJWT(token) {
+    if (!token) return null;
+    try { return JSON.parse(atob(token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))); } catch { return null; }
+  }
+
+  // --- Dashboard ---
+  function showDashboard(student) {
+    document.getElementById('authSection').style.display = 'none';
+    var dash = document.getElementById('dashSection');
+    dash.classList.add('visible');
+    document.getElementById('dashName').textContent = student.name;
+    loadMyProjects();
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    clearToken(); location.reload();
+  });
+
+  // Auto-login if token is present
+  if (getToken()) {
+    fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + getToken() } })
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      if (data.student) showDashboard(data.student);
+    })
+    .catch(function(){});
+  }
+})();
+</script>
+</body>
+</html>
