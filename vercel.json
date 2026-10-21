@@ -18,7 +18,31 @@
     }
   ],
   "functions": {
-    "api/**/*.js": {
+    "api/auth/[action].js": {
+      "maxDuration": 10
+    },
+    "api/comments/[slug].js": {
+      "maxDuration": 10
+    },
+    "api/contact.js": {
+      "maxDuration": 10
+    },
+    "api/cover.js": {
+      "maxDuration": 10
+    },
+    "api/estimate.js": {
+      "maxDuration": 10
+    },
+    "api/posts.js": {
+      "maxDuration": 10
+    },
+    "api/projects.js": {
+      "maxDuration": 10
+    },
+    "api/reviews.js": {
+      "maxDuration": 10
+    },
+    "api/students.js": {
       "maxDuration": 10
     },
     "api/upload.js": {
