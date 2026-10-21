@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="wrap ftr-grid">
           <div>
             <a href="/" className="logo"><img src="/logo.svg" alt="" width="30" height="30" />shakir<b>.</b>dev</a>
-            <p>Full-stack web developer and Computer Science educator in Islamabad, Pakistan. 213+ websites delivered for clients worldwide since 2018.</p>
+            <p>Freelance full-stack web developer in Islamabad, Pakistan. Websites, online stores, AI chatbots and web apps for clients worldwide since 2018.</p>
             <div className="social">
               {links.map(([href, label, icon]) => (
                 <a key={label} href={href} target="_blank" rel="noopener" aria-label={label}><svg viewBox="0 0 24 24" fill="currentColor">{icon}</svg></a>
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           <div className="col">
             <h4>Explore</h4>
-            <a href="/work">Work</a><a href="/services.html">Services</a><a href="/prototyping">Prototyping</a><a href="/full-stack">Full-Stack</a><a href="/testimonials.html">Testimonials</a><a href="/blog.html">Blog</a>
+            <a href="/work">Work</a><a href="/services.html">Services</a><a href="/ai-websites">AI Websites</a><a href="/prototyping">Prototyping</a><a href="/full-stack">Full-Stack</a><a href="/mentorship.html">Mentorship</a><a href="/testimonials.html">Testimonials</a><a href="/blog.html">Blog</a>
           </div>
           <div className="col">
             <h4>Get in touch</h4>
@@ -39,7 +39,7 @@ export default function Footer() {
             <a href="/student-portal.html">Student portal</a>
           </div>
         </div>
-        <div className="wrap ftr-bot"><span>&copy; 2026 Shakir Hussain. Built with Next.js and Three.js.</span><span>Islamabad, Pakistan · Available worldwide</span></div>
+        <div className="wrap ftr-bot"><span>&copy; 2026 Shakir Hussain. Hand-built with Next.js and Three.js.</span><span>Islamabad, Pakistan · Available worldwide</span></div>
       </footer>
       <a className="wa" href={`${site.whatsapp}?text=Hi%20Shakir%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project.`} target="_blank" rel="noopener" aria-label="Message Shakir on WhatsApp"><WaIcon /></a>
     </>

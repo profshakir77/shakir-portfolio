@@ -5,12 +5,13 @@ import { site } from '../lib/data';
 
 export const metadata = {
   metadataBase: new URL(site.url),
-  title: { default: 'Shakir Hussain | Full-Stack Developer, 3D Web & UI Prototyping', template: '%s | Shakir Hussain' },
-  description: 'Shakir Hussain is a full-stack web developer in Islamabad, Pakistan: Next.js apps, 3D web experiences and UI prototyping. 213+ websites delivered for clients worldwide since 2018.',
+  title: { default: 'Shakir Hussain | Full-Stack Web Developer, AI Websites & Online Stores', template: '%s | Shakir Hussain' },
+  description: 'Freelance full-stack web developer in Islamabad, Pakistan. Websites, online stores, AI chatbots and web apps for clients in the US, UK and Europe. 213+ websites since 2018.',
   authors: [{ name: 'Shakir Hussain' }],
   alternates: { canonical: '/' },
-  openGraph: { type: 'website', siteName: 'Shakir Hussain, Full-Stack Developer', images: ['/shakir-profile.jpg'], locale: 'en_US' },
-  twitter: { card: 'summary_large_image', images: ['/shakir-profile.jpg'] },
+  openGraph: { type: 'website', siteName: 'Shakir Hussain, Full-Stack Developer', locale: 'en_US' },
+  twitter: { card: 'summary_large_image' },
+  robots: { index: true, follow: true, 'max-image-preview': 'large' },
   verification: { google: 'RrD1NyX0B5qQoBq5hIUxQQ4bTpGCJoWXtoDCrc9wsac' },
   icons: { icon: [{ url: '/logo.svg', type: 'image/svg+xml' }, { url: '/favicon-32.png', sizes: '32x32' }], apple: '/apple-touch-icon.png' },
 };
@@ -23,8 +24,8 @@ const gtag = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.pu
 const person = {
   '@context': 'https://schema.org', '@type': 'Person', name: 'Shakir Hussain', url: site.url, image: `${site.url}/shakir-profile.jpg`,
   email: `mailto:${site.email}`, jobTitle: 'Full-Stack Web Developer',
-  knowsAbout: ['Next.js', 'React', 'Three.js', 'Node.js', 'PHP', 'MySQL', 'PostgreSQL', 'MongoDB', 'WordPress', 'UI prototyping'],
-  sameAs: [site.linkedin, site.github],
+  knowsAbout: ['Next.js', 'React', 'Three.js', 'Node.js', 'PHP', 'Laravel', 'MySQL', 'PostgreSQL', 'MongoDB', 'WordPress', 'WooCommerce', 'Shopify', 'AI chatbots', 'SEO', 'UI prototyping'],
+  sameAs: [site.linkedin, site.github, site.facebook, site.instagram, site.tiktok],
   alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'University of Sargodha' }, { '@type': 'CollegeOrUniversity', name: 'Air University' }],
 };
 
