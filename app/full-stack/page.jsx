@@ -77,6 +77,7 @@ export default function FullStack() {
             ['Courses and lessons', 'Teachers create courses, plan lessons, mark free previews and see each student’s progress. Lessons unlock after enrollment.'],
             ['Payments', 'Stripe Checkout in PKR, confirmed on the server. Admins can also mark cash payments as paid.'],
             ['Admin panel', 'Live numbers, user roles, enrollments and admission inquiries from one dashboard.'],
+            ['Brand and SEO', 'A school crest logo, a page title and description for every page, Course and FAQ data for Google, and a sitemap that updates when a course is added.'],
           ].map(([t, d]) => <div className="card lrow" key={t}><b>{t}</b><p>{d}</p></div>)}
         </div>
       </section>
