@@ -189,6 +189,9 @@ html[data-theme="dark"] .proj .ph.mono{color:var(--text)}
 .proj h3{font-size:22px}
 .proj p{color:var(--muted);font-size:15px;flex:1}
 .proj .go{font-weight:600;font-size:14px;color:var(--text)}
+.proj .go-row{display:flex;gap:18px;flex-wrap:wrap}
+.proj .go-row a{text-decoration:none}
+.proj .go-row a:hover{color:var(--accent-ink)}
 @media (max-width:900px){.pgrid{grid-template-columns:1fr 1fr}.proj.wide{grid-column:span 2}}
 @media (max-width:620px){.pgrid{grid-template-columns:1fr}.proj.wide{grid-column:auto}}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}

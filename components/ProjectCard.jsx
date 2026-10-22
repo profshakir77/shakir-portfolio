@@ -11,12 +11,17 @@ export default function ProjectCard({ p, wide }) {
         <h3>{p.title}{p.isNew && <span className="new">NEW</span>}</h3>
         <p>{p.desc}</p>
         <div className="chips">{p.tech.map((t) => <span key={t}>{t}</span>)}</div>
-        {p.href && <span className="go">{p.href.includes('github.com') ? 'View on GitHub' : 'Visit site'} ↗</span>}
+        {p.repo ? (
+          <div className="go-row">
+            <a className="go" href={p.href} target="_blank" rel="noopener">Live demo ↗</a>
+            <a className="go" href={p.repo} target="_blank" rel="noopener">Code on GitHub ↗</a>
+          </div>
+        ) : p.href && <span className="go">{p.href.includes('github.com') ? 'View on GitHub' : 'Visit site'} ↗</span>}
       </div>
     </>
   );
   const cls = 'card proj' + (wide ? ' wide' : '');
-  return p.href
+  return p.href && !p.repo
     ? <Tilt as="a" className={cls} href={p.href} target="_blank" rel="noopener">{inner}</Tilt>
     : <Tilt className={cls}>{inner}</Tilt>;
 }
