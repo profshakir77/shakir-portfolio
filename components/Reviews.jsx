@@ -10,7 +10,7 @@ export default function Reviews() {
       .catch(() => setState({ loading: false, reviews: [] }));
   }, []);
   if (state.loading) return <p style={{ color: 'var(--muted)' }}>Loading reviews…</p>;
-  if (!state.reviews.length) return <p style={{ color: 'var(--muted)' }}>Be the first to leave a review.</p>;
+  if (!state.reviews.length) return <p className="empty-note">Reviews from recent clients will appear here. Worked with me? <a className="inline-link" href="/leave-review.html">Leave a review</a>.</p>;
   return (
     <div className="rgrid">
       {state.reviews.map((r, i) => (

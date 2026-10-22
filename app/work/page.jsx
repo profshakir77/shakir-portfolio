@@ -4,7 +4,7 @@ import JsonLd, { breadcrumb } from '../../components/JsonLd';
 
 export const metadata = {
   title: 'Portfolio: Websites, Online Stores & Web Apps',
-  description: 'Websites, online stores, web apps and AI tools built by Shakir Hussain for clients in the US, UK and Pakistan. Next.js, React, PHP, WordPress and Shopify projects.',
+  description: 'Websites, online stores, web apps and free tools built by Shakir Hussain. Next.js, React, PHP, WordPress and Shopify projects, with live demos.',
   alternates: { canonical: '/work' },
 };
 

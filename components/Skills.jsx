@@ -11,7 +11,7 @@ export default function Skills() {
             {g.items.map(([label, icon]) => (
               <li key={label}>
                 <span className="ico">
-                  {icon ? <img src={`/icons/${icon}.svg`} alt="" width="26" height="26" loading="lazy" /> : <span style={{ color: '#5E8E3E' }}><Icon name="bag" size={24} /></span>}
+                  {icon ? <img src={`/icons/${icon}.svg`} alt={`${label} logo`} width="26" height="26" loading="lazy" /> : <span style={{ color: '#5E8E3E' }}><Icon name="bag" size={24} /></span>}
                 </span>
                 {label}
               </li>

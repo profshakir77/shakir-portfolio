@@ -6,7 +6,7 @@ var typeOpts = document.querySelectorAll('.type-opt');
   var lowPrice = document.getElementById('lowPrice');
   var highPrice = document.getElementById('highPrice');
   var daysEst = document.getElementById('daysEst');
-  var perPageRate = { landing: 40, ecom: 55, app: 90 };
+  var perPageRate = { landing: 150, ecom: 200, app: 300 };
   var baseDays = { landing: [3,5], ecom: [5,7], app: [10,14] };
   var activeType = 'landing';
   function includedPages(type){ if(type === 'landing') return 1; if(type === 'ecom') return 5; return 6; }

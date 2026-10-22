@@ -77,11 +77,11 @@ export default function Hero3D() {
       const points = new THREE.Points(pg, pMat); scene.add(points);
 
       function applyTheme() {
-        const accent = col('--accent'); const text = col('--text'); const accent2 = col('--accent-2');
-        coreMat.color.copy(accent); coreMat.emissive.copy(accent).multiplyScalar(0.12);
-        wireMat.color.copy(text); orbitMat.color.copy(text); orbitMat.opacity = 0.28;
-        nodeMat.color.copy(accent2); plateMat.color.copy(text); pMat.color.copy(text);
-        rim.color.copy(accent2);
+        const core = col('--h-core'); const line = col('--h-line'); const node = col('--h-node');
+        coreMat.color.copy(core); coreMat.emissive.copy(core).multiplyScalar(0.06);
+        wireMat.color.copy(line); orbitMat.color.copy(line); orbitMat.opacity = 0.45;
+        nodeMat.color.copy(node); plateMat.color.copy(core); pMat.color.copy(line);
+        rim.color.copy(node);
       }
       applyTheme();
       const mo = new MutationObserver(applyTheme);
