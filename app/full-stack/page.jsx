@@ -1,5 +1,7 @@
 import ApiPlayground from '../../components/ApiPlayground';
 import JsonLd, { breadcrumb } from '../../components/JsonLd';
+import ProjectCard from '../../components/ProjectCard';
+import { projects } from '../../lib/data';
 
 export const metadata = {
   title: 'Full-Stack Web Development (Next.js, Node.js, PHP)',
@@ -60,6 +62,22 @@ export default function FullStack() {
   `}<span className="c">{'// only approved reviews are public'}</span>{`
   res.status(200).json({ reviews: reviews.filter(r => r?.status === `}<span className="s">&apos;approved&apos;</span>{`) });
 };`}</pre>
+        </div>
+      </section>
+
+      <section>
+        <div className="shead">
+          <div><div className="kicker"><b>04</b> / Case study</div><h2>A complete MERN app, live.</h2></div>
+          <p>Northstar Tuition Academy is a working school tuition platform built with MongoDB, Express, React and Node. Sign in with the demo accounts on the login page to try the student and teacher dashboards, or read the code on GitHub.</p>
+        </div>
+        <div className="pgrid">{projects.filter((p) => p.slug === 'northstar').map((p) => <ProjectCard key={p.slug} p={p} wide />)}</div>
+        <div className="layers" style={{ marginTop: 20 }}>
+          {[
+            ['Roles and auth', 'Student, teacher and admin accounts. Passwords hashed with bcrypt, sessions in httpOnly cookies, every API route checks the role.'],
+            ['Courses and lessons', 'Teachers create courses, plan lessons, mark free previews and see each student’s progress. Lessons unlock after enrollment.'],
+            ['Payments', 'Stripe Checkout in PKR, confirmed on the server. Admins can also mark cash payments as paid.'],
+            ['Admin panel', 'Live numbers, user roles, enrollments and admission inquiries from one dashboard.'],
+          ].map(([t, d]) => <div className="card lrow" key={t}><b>{t}</b><p>{d}</p></div>)}
         </div>
       </section>
 
