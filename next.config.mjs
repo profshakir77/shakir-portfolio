@@ -13,6 +13,7 @@ const nextConfig = {
       { source: '/work.html', destination: '/work', permanent: true },
       { source: '/prototyping.html', destination: '/prototyping', permanent: true },
       { source: '/full-stack.html', destination: '/full-stack', permanent: true },
+      { source: '/mentorship.html', destination: '/mentorship', permanent: true },
     ];
   },
 
@@ -29,7 +30,6 @@ const nextConfig = {
       { source: '/contact', destination: '/contact.html' },
       { source: '/testimonials', destination: '/testimonials.html' },
       { source: '/blog', destination: '/blog.html' },
-      { source: '/mentorship', destination: '/mentorship.html' },
       { source: '/student-portal', destination: '/student-portal.html' },
     ];
   },
