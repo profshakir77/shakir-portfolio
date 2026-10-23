@@ -200,7 +200,7 @@ export default function Home() {
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">Reviews</div><h2>What clients say.</h2></div>
-            <p>Worked with me before? <a href="/leave-review.html">Leave a review</a></p>
+            <p>Worked with me before? <a href="/leave-review">Leave a review</a></p>
           </div>
           <Reviews />
         </div>
