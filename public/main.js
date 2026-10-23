@@ -25,7 +25,7 @@ var topBtn = document.getElementById('topBtn');
       });
     });
     window.addEventListener('resize', function(){
-      if (window.innerWidth > 860) {
+      if (window.innerWidth > 900) {
         navLinksEl.classList.remove('mobile-open');
         navHamburger.setAttribute('aria-expanded', 'false');
       }

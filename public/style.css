@@ -404,7 +404,7 @@ footer{background:var(--ink-2); border-top:1px solid var(--line); padding-top:56
 @media (max-width:480px){ .float-btn{width:46px; height:46px; right:16px;} .whatsapp-btn{bottom:16px;} .top-btn{bottom:72px;} }
 footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
 
-@media (max-width:1240px){
+@media (max-width:900px){
   .navlinks{ display:none; position:absolute; top:68px; left:0; right:0; flex-direction:column; gap:0; background:var(--header-bg); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding:8px 28px 20px; box-shadow:0 20px 40px -20px var(--shadow); }
   .navlinks.mobile-open{display:flex;}
   .navlinks li{width:100%;}
@@ -584,4 +584,35 @@ nav.wrap{height:72px;}
 
 /* keep nav items and brand on one line */
 .navlinks a,.logo{white-space:nowrap;}
-@media (min-width:1241px) and (max-width:1340px){ .navlinks{gap:16px; font-size:14px;} }
+
+
+/* grouped menu with Services dropdown */
+.navlinks{align-items:center;}
+.navlinks>li{position:relative;}
+.drop-btn{display:flex;align-items:center;gap:5px;font:inherit;color:var(--paper-dim);background:none;border:0;padding:0 0 2px;cursor:pointer;transition:color .2s;}
+.drop-btn svg{width:14px;height:14px;transition:transform .25s;}
+.drop-btn:hover,.drop-btn.active,.has-drop:hover .drop-btn,.has-drop:focus-within .drop-btn{color:var(--paper);}
+.drop a b{font-weight:600;}
+@media (min-width:901px){
+  .navlinks{gap:26px;}
+  .has-drop:hover .drop-btn svg,.has-drop:focus-within .drop-btn svg{transform:rotate(180deg);}
+  .drop{position:absolute;top:100%;left:50%;min-width:270px;padding:8px;margin-top:12px;background:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 26px 50px -24px var(--shadow);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .2s,transform .2s,visibility .2s;z-index:60;}
+  .drop::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px;}
+  .has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:translate(-50%,0);}
+  .navlinks .drop a{display:flex;flex-direction:column;padding:10px 14px;border-radius:10px;color:var(--paper);}
+  .navlinks .drop a::after{display:none;}
+  .drop a:hover{background:var(--ink-2);}
+  .drop a small{font-size:12.5px;color:var(--paper-dim);font-weight:400;}
+  .drop a.active b{color:var(--brass);}
+}
+@media (min-width:901px) and (max-width:1020px){ .navlinks{gap:18px;font-size:14px;} }
+@media (max-width:900px){
+  .drop-btn{width:100%;justify-content:space-between;padding:14px 0;border-bottom:1px dashed var(--line);font-size:15px;}
+  .drop-btn svg{display:none;}
+  .drop{padding:0 0 0 14px;}
+  .navlinks .drop a{padding:11px 0;}
+  .drop a small{display:none;}
+  .drop a b{font-weight:500;}
+}
+@media (max-width:900px){ .navlinks.mobile-open{background:var(--ink);} }
+@media (max-width:560px){ .nav-cta{display:none;} }
