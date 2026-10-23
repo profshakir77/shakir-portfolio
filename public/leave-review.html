@@ -76,6 +76,20 @@
     </div>
 
     <div class="form-group">
+      <label for="reviewProject">Project or website link <span style="font-weight:400;color:var(--paper-dim);">(optional)</span></label>
+      <input type="text" inputmode="url" id="reviewProject" placeholder="e.g. yourstore.com" maxlength="200">
+    </div>
+
+    <div class="form-group">
+      <label for="reviewPhoto">Your photo or company logo <span style="font-weight:400;color:var(--paper-dim);">(optional)</span></label>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <img id="photoPreview" alt="" hidden width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line);">
+        <input type="file" id="reviewPhoto" accept="image/jpeg,image/png,image/webp" style="padding:10px;">
+      </div>
+      <p style="font-size:12.5px;color:var(--paper-dim);margin-top:6px;">Shown next to your review. Resized to a small square before upload.</p>
+    </div>
+
+    <div class="form-group">
       <label>Rating</label>
       <div class="stars-row" id="starsRow" role="group" aria-label="Rating">
         <button type="button" class="star-btn" data-v="1" aria-label="1 star">&#9733;</button>
@@ -148,6 +162,25 @@
     stars.forEach(function(st){ st.classList.remove('hover'); });
   });
 
+  // Optional photo: crop to a square and shrink to 160px JPEG in the browser.
+  var photoData = '';
+  document.getElementById('reviewPhoto').addEventListener('change', function (e) {
+    var f = e.target.files && e.target.files[0];
+    var prev = document.getElementById('photoPreview');
+    photoData = ''; prev.hidden = true;
+    if (!f || !/^image\//.test(f.type) || f.size > 10 * 1024 * 1024) return;
+    var img = new Image();
+    img.onload = function () {
+      var s = Math.min(img.width, img.height), c = document.createElement('canvas');
+      c.width = c.height = 160;
+      c.getContext('2d').drawImage(img, (img.width - s) / 2, (img.height - s) / 2, s, s, 0, 0, 160, 160);
+      photoData = c.toDataURL('image/jpeg', 0.82);
+      prev.src = photoData; prev.hidden = false;
+      URL.revokeObjectURL(img.src);
+    };
+    img.src = URL.createObjectURL(f);
+  });
+
   // Form submit
   document.getElementById('reviewForm').addEventListener('submit', function(e){
     e.preventDefault();
@@ -165,7 +198,7 @@
     fetch('/api/reviews', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ name:name, role:role, rating:rating, content:content }),
+      body: JSON.stringify({ name:name, role:role, rating:rating, content:content, photo:photoData, project:document.getElementById('reviewProject').value.trim() }),
     })
     .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
     .then(function(res){
