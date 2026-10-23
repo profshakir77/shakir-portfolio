@@ -260,12 +260,20 @@
           var stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
           var img = r.photo && /^data:image\/(jpeg|png|webp);base64,/.test(r.photo) ? '<img src="' + r.photo + '" alt="" width="44" height="44" style="width:44px;height:44px;border-radius:50%;object-fit:cover;float:left;margin-right:12px">' : '';
           var proj = r.project ? '<p style="font-size:13px"><a href="' + escapeHtml(r.project) + '" target="_blank" rel="noopener nofollow">' + escapeHtml(r.project) + '</a></p>' : '';
-          return '<div class="lead-item"><div>' + img + '<h4>' + escapeHtml(r.name) + (r.role ? ' <span style="font-weight:400;font-size:13px;color:var(--paper-dim)">— ' + escapeHtml(r.role) + '</span>' : '') + '</h4><p style="color:#f59e0b">' + stars + '</p><p>' + escapeHtml(r.content) + '</p>' + proj + '</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap"><p style="font-size:12px;color:var(--paper-dim)">' + new Date(r.createdAt).toLocaleDateString() + '</p><div style="display:flex;gap:6px"><button class="del-btn" style="border-color:#16a34a;color:#16a34a" data-id="' + escapeHtml(r.id) + '" data-action="approve">Approve</button><button class="del-btn" data-id="' + escapeHtml(r.id) + '" data-action="reject">Reject</button></div></div></div>';
+          return '<div class="lead-item"><div>' + img + '<h4>' + escapeHtml(r.name) + (r.role ? ' <span style="font-weight:400;font-size:13px;color:var(--paper-dim)">— ' + escapeHtml(r.role) + '</span>' : '') + '</h4><p style="color:#f59e0b">' + stars + '</p><p>' + escapeHtml(r.content) + '</p>' + proj + '</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap"><p style="font-size:12px;color:var(--paper-dim)">' + new Date(r.createdAt).toLocaleDateString() + '</p><span style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;' + (r.status === 'approved' ? 'background:#dcfce7;color:#15803d' : r.status === 'rejected' ? 'background:#fee2e2;color:#b91c1c' : 'background:#fef3c7;color:#92400e') + '">' + escapeHtml(r.status === 'approved' ? 'Live' : r.status === 'rejected' ? 'Rejected' : 'Pending') + '</span><div style="display:flex;gap:6px">' + (r.status !== 'approved' ? '<button class="del-btn" style="border-color:#16a34a;color:#16a34a" data-id="' + escapeHtml(r.id) + '" data-action="approve">Approve</button>' : '') + (r.status !== 'rejected' ? '<button class="del-btn" data-id="' + escapeHtml(r.id) + '" data-action="reject">' + (r.status === 'approved' ? 'Hide' : 'Reject') + '</button>' : '') + '<button class="del-btn" style="border-color:#b91c1c;color:#fff;background:#b91c1c" data-id="' + escapeHtml(r.id) + '" data-del="1">Delete</button></div></div></div>';
         }).join('');
         listEl.querySelectorAll('button[data-action]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             authedFetch('/api/reviews/' + encodeURIComponent(btn.dataset.id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: btn.dataset.action }) })
               .then(function (res) { if (res.ok) loadReviews(); else alert('Could not update review.'); });
+          });
+        });
+        listEl.querySelectorAll('button[data-del]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (!confirm('Delete this review permanently? This cannot be undone.')) return;
+            btn.disabled = true;
+            authedFetch('/api/reviews/' + encodeURIComponent(btn.dataset.id), { method: 'DELETE' })
+              .then(function (res) { if (res.ok) loadReviews(); else { btn.disabled = false; alert('Could not delete review.'); } });
           });
         });
       })
