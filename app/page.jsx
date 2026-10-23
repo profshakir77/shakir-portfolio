@@ -14,6 +14,14 @@ export const metadata = {
   keywords: ['freelance web developer Europe', 'full-stack developer remote', 'Next.js developer for hire', 'web developer Germany', 'web developer Netherlands', 'AI chatbot for website', 'WooCommerce developer EU', 'hire remote web developer'],
 };
 
+const whyMe = [
+  ['chart', 'I build for your business goal, not just the code.', 'Every site starts with what you want visitors to do: call, book, buy or enquire. The pages, copy and features are planned around that.'],
+  ['pen', 'Design and function together.', 'A layout that looks good where every element also has a job, so visitors find what they need and act on it.'],
+  ['code', 'Front to back, one developer.', 'Interface, server, database and hosting handled by one person, so there are fewer hand-offs and faster fixes.'],
+  ['cart', 'E-commerce that grows with you.', 'Stores built so you can add products, payment options and couriers later without starting again.'],
+  ['bolt', 'Speed and search built in.', 'Page speed, Core Web Vitals and on-page SEO are handled during the build, not bolted on at the end.'],
+];
+
 const ld = [
   {
     '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'Shakir Hussain, Web Development', url: site.url,
@@ -165,6 +173,25 @@ export default function Home() {
               </div>
               <span className="go">See the stack and a live API demo &rarr;</span>
             </Tilt>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-me">
+        <div className="wrap">
+          <div className="shead">
+            <div><div className="kicker">Why work with me</div><h2>What you get on every project.</h2></div>
+            <p>Five things I hold myself to, whether it&apos;s a one-page site or a full web app.</p>
+          </div>
+          <div className="whyme">
+            {whyMe.map(([icon, t, d], i) => (
+              <Tilt key={t} className={'card wm' + (i === 0 ? ' big' : '')} max={9}>
+                <span className="wm-ico lift"><Icon name={icon} size={24} /></span>
+                <span className="wm-n lift">0{i + 1}</span>
+                <h3 className="lift">{t}</h3>
+                <p>{d}</p>
+              </Tilt>
+            ))}
           </div>
         </div>
       </section>
