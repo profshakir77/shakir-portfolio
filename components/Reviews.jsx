@@ -14,7 +14,7 @@ const initials = (name) => (name || '?').split(/\s+/).filter(Boolean).slice(0, 2
 function hue(str) { let h = 0; for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) % 360; return h; }
 const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
 
-function Card({ r, active }) {
+export function Card({ r, active }) {
   const h = hue(r.name || '');
   const photo = r.photo && /^data:image\/(jpeg|png|webp);base64,/.test(r.photo) ? r.photo : '';
   return (
@@ -118,7 +118,7 @@ export default function Reviews() {
         <div>
           <h3>Your review could be the first one here.</h3>
           <p>Worked with me on a website, store or app? Share a few lines and, if you like, a photo or your logo. Reviews go live after a quick check.</p>
-          <a className="btn primary" href="/leave-review.html">Leave a review</a>
+          <a className="btn primary" href="/leave-review">Leave a review</a>
         </div>
       </div>
     );
