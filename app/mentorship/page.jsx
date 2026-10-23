@@ -6,7 +6,7 @@ import { site } from '../../lib/data';
 
 export const metadata = {
   title: 'Mentorship Program for CS Students and New Developers',
-  description: 'Hands-on mentorship from Shakir Hussain, full-stack developer and CS lab instructor at Air University. Final-year projects, portfolio websites and freelance readiness, with real projects you can show.',
+  description: 'Hands-on mentorship from Shakir Hussain, full-stack developer and Demonstrator in Computer Science at Air University. Final-year projects, portfolio websites and freelance readiness, with real projects you can show.',
   keywords: ['web development mentorship', 'final year project help', 'CS student mentor Islamabad', 'learn full-stack development', 'freelance web developer mentoring'],
   alternates: { canonical: '/mentorship' },
 };
@@ -47,7 +47,7 @@ export default function Mentorship() {
           <div className="mhero-copy">
             <span className="status"><i />Mentee intake open</span>
             <h1>Learn by building <span className="em">real things.</span></h1>
-            <p className="lede">A hands-on mentorship program for CS students and new developers. You build real projects, get honest code reviews and ship them live, guided by someone who has delivered 213+ websites and teaches CS labs at Air University.</p>
+            <p className="lede">A hands-on mentorship program for CS students and new developers. You build real projects, get honest code reviews and ship them live, guided by someone who has delivered 213+ websites and works as a Demonstrator in the Computer Science department at Air University.</p>
             <div className="cta">
               <a className="btn primary" href="/student-portal.html">Join as a student &rarr;</a>
               <a className="btn" href="#team">Meet the team</a>
