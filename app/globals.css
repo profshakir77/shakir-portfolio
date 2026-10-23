@@ -46,7 +46,7 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--text);font-weight:700;letter-sp
 .iconbtn:hover{color:var(--text);border-color:var(--muted)}
 .iconbtn svg{width:18px;height:18px}
 .burger{display:none}
-@media (max-width:1120px){
+@media (max-width:900px){
   .navl{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 18px;box-shadow:0 20px 30px -24px var(--shadow)}
   .navl.open{display:flex}
   .navl a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px}
@@ -165,14 +165,14 @@ html[data-theme="dark"] .ai-band{background:#13284A}
 @media (max-width:760px){.ai-band{grid-template-columns:1fr;padding:32px 24px}}
 
 /* skills */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .skill-group{padding:24px}
 .skill-group h3{font:600 12.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-.skill-group ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.skill-group ul{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .skill-group li{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:500;color:var(--text)}
 .skill-group .ico{width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:transform .2s}
 .skill-group li:hover .ico{transform:translateY(-2px)}
-@media (max-width:900px){.skills{grid-template-columns:1fr 1fr}}
+@media (max-width:1060px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.skills{grid-template-columns:1fr}}
 
 /* projects */
@@ -429,7 +429,6 @@ html[data-theme="dark"] .member .back{background:linear-gradient(160deg,#13284A,
 @media (max-width:640px){.empty-3d{grid-template-columns:1fr;padding:32px 24px;text-align:center}.cube{margin:10px auto}.empty-3d p{margin-inline:auto}}
 
 /* nav: 10 links fit at desktop widths */
-@media (max-width:1280px) and (min-width:1121px){.navl{gap:18px;font-size:14px}}
 
 /* ===== why me ===== */
 .whyme{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;perspective:1300px}
@@ -563,3 +562,34 @@ html[data-theme="dark"] .wm.big{background:#13284A;border-color:#24406B}
 .rv-hero{border-bottom:0}
 @media (max-width:560px){.rv-drop-txt{flex:1 1 calc(100% - 80px)}.rv-drop-btns{width:100%}.rv-drop-btns .btn{flex:1;justify-content:center}}
 .rv-wrap{overflow-x:clip;padding-bottom:20px}
+
+/* ===== grouped desktop menu ===== */
+.navl{align-items:center}
+.navl>li{position:relative}
+.drop-btn{display:flex;align-items:center;gap:5px;font:inherit;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;padding:6px 0;cursor:pointer;transition:color .2s}
+.drop-btn svg{width:14px;height:14px;transition:transform .25s}
+.drop-btn:hover,.has-drop.show .drop-btn{color:var(--text)}
+.drop-btn[aria-current="page"]{color:var(--text);border-color:var(--accent)}
+.has-drop.show .drop-btn svg{transform:rotate(180deg)}
+.skill-group li{min-width:0;overflow-wrap:anywhere}
+@media (min-width:901px){
+  .navl{gap:26px}
+  .drop{position:absolute;top:100%;left:50%;min-width:270px;padding:8px;margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 26px 50px -24px var(--shadow);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .2s,transform .2s,visibility .2s;z-index:60}
+  .drop::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+  .has-drop.show .drop{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .drop a{display:flex;flex-direction:column;padding:10px 14px;border-radius:10px;border:0;text-decoration:none;transition:background .15s}
+  .drop a:hover,.drop a:focus-visible{background:var(--bg2)}
+  .drop a b{font-weight:600;font-size:14.5px;color:var(--text)}
+  .drop a small{font-size:12.5px;color:var(--muted)}
+  .drop a[aria-current="page"] b{color:var(--accent-ink)}
+}
+@media (min-width:901px) and (max-width:1020px){.navl{gap:18px;font-size:14px}.logo .lt small{display:none}}
+@media (max-width:900px){
+  .navl>li{width:100%}
+  .drop-btn{width:100%;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+  .drop{display:none;padding:4px 0 8px 14px;border-bottom:1px solid var(--line)}
+  .has-drop.show .drop{display:grid}
+  .drop a{display:block;padding:10px 0!important;border:0!important;font-size:15px}
+  .drop a small{display:none}
+  .drop a b{font-weight:500}
+}
