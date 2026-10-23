@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
           <div className="col">
             <h4>More</h4>
-            <a href="/about.html">About</a><a href="/blog.html">Blog</a><a href="/testimonials.html">Testimonials</a><a href="/mentorship.html">Mentorship</a><a href="https://ai-website-auditor-self.vercel.app/" target="_blank" rel="noopener">Free website audit</a><a href="https://ai-resume-tool-azure.vercel.app/" target="_blank" rel="noopener">Free resume builder</a>
+            <a href="/about.html">About</a><a href="/blog.html">Blog</a><a href="/testimonials.html">Testimonials</a><a href="/mentorship">Mentorship</a><a href="https://ai-website-auditor-self.vercel.app/" target="_blank" rel="noopener">Free website audit</a><a href="https://ai-resume-tool-azure.vercel.app/" target="_blank" rel="noopener">Free resume builder</a>
           </div>
           <div className="col">
             <h4>Get in touch</h4>
