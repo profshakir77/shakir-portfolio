@@ -14,6 +14,7 @@ const nextConfig = {
       { source: '/prototyping.html', destination: '/prototyping', permanent: true },
       { source: '/full-stack.html', destination: '/full-stack', permanent: true },
       { source: '/mentorship.html', destination: '/mentorship', permanent: true },
+      { source: '/leave-review.html', destination: '/leave-review', permanent: true },
     ];
   },
 
