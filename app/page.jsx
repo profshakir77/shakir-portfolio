@@ -211,7 +211,7 @@ export default function Home() {
           <div className="shead"><div><div className="kicker">Teaching</div><h2>I also teach this.</h2></div><p>Explaining code to students every week keeps my own work clear and well documented.</p></div>
           <div className="teach">
             <div className="card">
-              <h3>Labs I run at Air University, Islamabad</h3>
+              <h3>Demonstrator, Computer Science, Air University</h3>
               <p>Hands-on, project-based labs for BS Computer Science and IT students.</p>
               <div className="labs">{labs.map((l) => <span key={l}>{l}</span>)}</div>
             </div>
@@ -221,7 +221,7 @@ export default function Home() {
                 <li><b>Final-year projects:</b> helping students turn ideas into working products</li>
                 <li><b>Mentoring:</b> career paths, project ideas and internships</li>
                 <li><b>7+ years</b> teaching O Level, A Level and FSc computing</li>
-                <li><b>MS Computer Science</b> in progress at Air University</li>
+                <li><b>MS Computer Science:</b> currently studying at Air University, Islamabad</li>
               </ul>
               <div style={{ display: 'flex', gap: 10, marginTop: 18, flexWrap: 'wrap' }}>
                 <a className="btn sm" href="/mentorship">Mentorship</a><a className="btn sm" href="/student-portal.html">Student portal</a>
