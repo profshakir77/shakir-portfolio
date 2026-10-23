@@ -404,7 +404,7 @@ footer{background:var(--ink-2); border-top:1px solid var(--line); padding-top:56
 @media (max-width:480px){ .float-btn{width:46px; height:46px; right:16px;} .whatsapp-btn{bottom:16px;} .top-btn{bottom:72px;} }
 footer p{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--paper-dim);}
 
-@media (max-width:1100px){
+@media (max-width:1240px){
   .navlinks{ display:none; position:absolute; top:68px; left:0; right:0; flex-direction:column; gap:0; background:var(--header-bg); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding:8px 28px 20px; box-shadow:0 20px 40px -20px var(--shadow); }
   .navlinks.mobile-open{display:flex;}
   .navlinks li{width:100%;}
@@ -581,3 +581,7 @@ nav.wrap{height:72px;}
 .float-btn.top-btn{background:var(--teal); color:var(--cta-ink);}
 .article-body h2{font-size:1.6rem;}
 .breadcrumb a,.article-back,.blog-card .b-tag,.proj-link{color:var(--brass);}
+
+/* keep nav items and brand on one line */
+.navlinks a,.logo{white-space:nowrap;}
+@media (min-width:1241px) and (max-width:1340px){ .navlinks{gap:16px; font-size:14px;} }

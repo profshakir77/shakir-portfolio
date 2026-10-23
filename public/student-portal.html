@@ -52,16 +52,36 @@
 </style>
 </head>
 <body>
-<header class="site-header container">
-  <a href="index.html" class="logo-link"><img src="logo.svg" alt="Shakir Hussain" class="site-logo"></a>
-  <nav class="site-nav">
-    <a href="index.html">Home</a>
-    <a href="mentorship.html">Mentorship</a>
-    <a href="contact.html">Contact</a>
+<header>
+  <nav class="wrap" aria-label="Primary">
+    <a href="/" class="logo" aria-label="Shakir Hussain, home"><img src="/logo.svg" alt="" width="36" height="36">Shakir Hussain</a>
+    <ul class="navlinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/prototyping">Prototyping</a></li>
+      <li><a href="/full-stack">Full-Stack</a></li>
+      <li><a href="/mentorship">Mentorship</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/ai-websites">AI Websites</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
+      </button>
+      <a href="contact.html" class="nav-cta">Start a project &rarr;</a>
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
   </nav>
 </header>
 
-<main class="container">
+<main id="main" class="wrap">
   <div class="portal-wrap">
 
     <!-- Auth section (login/register) -->
@@ -104,7 +124,7 @@
     <div id="dashSection">
       <div class="dash-greeting">
         <h2>Welcome, <span id="dashName"></span></h2>
-        <p>Submit your projects below. They will appear on the <a href="mentorship.html">Mentorship page</a> after approval.</p>
+        <p>Submit your projects below. They will appear on the <a href="/mentorship">Mentorship page</a> after approval.</p>
       </div>
 
       <!-- Submit project -->
@@ -144,7 +164,7 @@
   </div>
 </main>
 
-<footer class="site-footer container">
+<footer class="site-footer wrap" style="padding:40px 0;color:var(--paper-dim);font-size:14px">
   <p>&copy; 2025 Shakir Hussain.</p>
 </footer>
 
@@ -343,5 +363,6 @@
   }
 })();
 </script>
+<script src="/main.js" defer></script>
 </body>
 </html>
