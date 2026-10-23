@@ -562,3 +562,4 @@ html[data-theme="dark"] .wm.big{background:#13284A;border-color:#24406B}
 @media (max-width:560px){.rv-form{padding:24px 18px}.rv-two{grid-template-columns:1fr}.rv-drop{flex-wrap:wrap}.rv-stars button{font-size:36px}.rv-hero .rv-head{padding:44px 16px 110px}}
 .rv-hero{border-bottom:0}
 @media (max-width:560px){.rv-drop-txt{flex:1 1 calc(100% - 80px)}.rv-drop-btns{width:100%}.rv-drop-btns .btn{flex:1;justify-content:center}}
+.rv-wrap{overflow-x:clip;padding-bottom:20px}
