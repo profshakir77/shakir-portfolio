@@ -197,7 +197,7 @@ export default function Home() {
                 <li><b>MS Computer Science</b> in progress at Air University</li>
               </ul>
               <div style={{ display: 'flex', gap: 10, marginTop: 18, flexWrap: 'wrap' }}>
-                <a className="btn sm" href="/mentorship.html">Mentorship</a><a className="btn sm" href="/student-portal.html">Student portal</a>
+                <a className="btn sm" href="/mentorship">Mentorship</a><a className="btn sm" href="/student-portal.html">Student portal</a>
               </div>
             </div>
           </div>
