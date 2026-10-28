@@ -104,3 +104,8 @@ var topBtn = document.getElementById('topBtn');
       setInterval(pulseGlow, 3200);
     }
   }
+
+// Services dropdown: open on tap/click (touch screens and Safari do not focus buttons, so hover/focus-within alone fail).
+document.querySelectorAll('.has-drop').forEach(function(li){ var btn = li.querySelector('.drop-btn'); if (!btn) return; btn.setAttribute('aria-expanded','false'); btn.addEventListener('click', function(e){ e.stopPropagation(); var open = li.classList.toggle('show'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }); });
+document.addEventListener('click', function(e){ document.querySelectorAll('.has-drop.show').forEach(function(li){ if (!li.contains(e.target)) { li.classList.remove('show'); li.querySelector('.drop-btn').setAttribute('aria-expanded','false'); } }); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') document.querySelectorAll('.has-drop.show').forEach(function(li){ li.classList.remove('show'); }); });
