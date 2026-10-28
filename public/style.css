@@ -616,3 +616,5 @@ nav.wrap{height:72px;}
 }
 @media (max-width:900px){ .navlinks.mobile-open{background:var(--ink);} }
 @media (max-width:560px){ .nav-cta{display:none;} }
+
+@media (min-width:901px){.has-drop.show .drop{opacity:1;visibility:visible;transform:translate(-50%,0);}}
