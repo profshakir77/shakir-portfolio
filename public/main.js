@@ -1,10 +1,12 @@
 var topBtn = document.getElementById('topBtn');
+  if (topBtn) {
   function toggleTopBtn(){ if (window.scrollY > 600) topBtn.classList.add('visible'); else topBtn.classList.remove('visible'); }
   window.addEventListener('scroll', toggleTopBtn); toggleTopBtn();
   topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  }
 
   var themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', function(){
+  if (themeToggle) themeToggle.addEventListener('click', function(){
     var current = document.documentElement.getAttribute('data-theme');
     var next = current === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
