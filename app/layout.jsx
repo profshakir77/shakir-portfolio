@@ -19,7 +19,6 @@ export const metadata = {
 export const viewport = { themeColor: '#0B1F3A' };
 
 const themeInit = `(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','light')}})();`;
-const gtag = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4ET1PWB9NZ');`;
 
 const person = {
   '@context': 'https://schema.org', '@type': 'Person', name: 'Shakir Hussain', url: site.url, image: `${site.url}/shakir-profile.jpg`,
@@ -37,8 +36,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&family=JetBrains+Mono:wght@400;600&display=swap" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ET1PWB9NZ" />
-        <script dangerouslySetInnerHTML={{ __html: gtag }} />
+        <script src="/consent.js" defer />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />
       </head>
       <body>
