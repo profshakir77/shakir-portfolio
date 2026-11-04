@@ -603,3 +603,7 @@ html[data-theme="dark"] .wm.big{background:#13284A;border-color:#24406B}
 .acard p{color:var(--muted);font-size:14.5px;margin:0 22px 22px}
 @media(max-width:900px){.agrid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.agrid{grid-template-columns:1fr}}
+
+.book-call{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:24px 28px;margin-top:22px}
+.book-call h3{margin:0 0 4px;font-size:20px}.book-call p{margin:0;color:var(--muted)}
+.bc-btns{display:flex;gap:10px;flex-wrap:wrap}

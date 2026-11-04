@@ -51,6 +51,7 @@ export default function Home() {
             <p className="lede">I&apos;m Shakir, a full-stack developer working with businesses across Europe. I plan, design and build fast websites, online stores and custom web apps, with clear fixed prices in EUR and calls that fit your working day.</p>
             <div className="cta">
               <a className="btn primary" href="/contact.html">Get a fixed quote &rarr;</a>
+              <a className="btn" href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%27d%20like%20to%20book%20a%2015-minute%20call%20about%20a%20project.%20My%20preferred%20day%20and%20time%20(CET)%20is%3A%20" target="_blank" rel="noopener">Book a 15-min call</a>
               <a className="btn" href="/work">See my work</a>
             </div>
             <div className="trust">
@@ -126,7 +127,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="price-note">Prices exclude VAT where applicable. Invoices in EUR for clients in the EU, UK and US.</p>
+          <p className="price-note">Prices exclude VAT where applicable. Invoices in EUR for clients in the EU, UK and US. Pay securely by Visa or Mastercard.</p>
+          <div className="card book-call">
+            <div><h3>Book a free 15-minute call</h3><p>Tell me your preferred day and time (CET) and I&apos;ll confirm within a few hours.</p></div>
+            <div className="bc-btns"><a className="btn primary" href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%27d%20like%20to%20book%20a%2015-minute%20call%20about%20a%20project.%20My%20preferred%20day%20and%20time%20(CET)%20is%3A%20" target="_blank" rel="noopener">Book on WhatsApp</a><a className="btn" href="mailto:mr.shakir77@gmail.com?subject=Book%20a%2015-minute%20call&body=Hi%20Shakir%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20call.%0APreferred%20day%20and%20time%20(CET)%3A%20%0AProject%3A%20">Book by email</a></div>
+          </div>
         </div>
       </section>
 
