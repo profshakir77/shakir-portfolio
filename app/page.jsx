@@ -36,6 +36,8 @@ const ld = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
 ];
 
+const latestPosts = [{"s": "web-developer-islamabad", "c": "Local web design", "t": "Web Developer in Islamabad & Rawalpindi", "i": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?fm=jpg&q=60&w=600&auto=format&fit=crop", "d": "Websites for clinics, salons, shops and workshops, with WhatsApp, Maps and local SEO built in."}, {"s": "local-seo-google-business-profile-pakistan", "c": "SEO", "t": "Local SEO for Islamabad & Rawalpindi Businesses", "i": "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?fm=jpg&q=60&w=600&auto=format&fit=crop", "d": "How to rank on Google Maps with a Business Profile, a fast site and real reviews."}, {"s": "ai-chatbot-for-small-business-website", "c": "AI", "t": "Does Your Website Need an AI Chatbot in 2026?", "i": "https://images.unsplash.com/photo-1677442136019-21780ecad995?fm=jpg&q=60&w=600&auto=format&fit=crop", "d": "When a chatbot saves time and wins customers, and when it just annoys visitors."}, {"s": "website-security-checklist-small-business", "c": "Security", "t": "Website Security Checklist for Small Businesses", "i": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?fm=jpg&q=60&w=600&auto=format&fit=crop", "d": "HTTPS, updates, backups and logins: the basics that stop most attacks."}, {"s": "mobile-first-website-design-2026", "c": "Web Design", "t": "Mobile-First Web Design and Your Sales", "i": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?fm=jpg&q=60&w=600&auto=format&fit=crop", "d": "Most visitors arrive on a phone. The mistakes that cost sales and a quick test."}, {"s": "website-cost-pakistan-2026", "c": "Pricing", "t": "How Much Does a Website Cost in Pakistan in 2026?", "i": "https://images.unsplash.com/photo-1772588627527-db42040f3a8b?fm=jpg&q=60&w=600&auto=format&fit=crop", "d": "A realistic breakdown of website costs, from landing pages to custom web apps."}];
+
 export default function Home() {
   const featured = projects.filter((p) => p.featured);
   return (
@@ -191,6 +193,25 @@ export default function Home() {
                 <h3 className="lift">{t}</h3>
                 <p>{d}</p>
               </Tilt>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="articles">
+        <div className="wrap">
+          <div className="shead">
+            <div><div className="kicker">Latest articles</div><h2>Guides from real client work.</h2></div>
+            <p>Practical write-ups on pricing, SEO and building websites. <a href="/blog.html">All articles</a></p>
+          </div>
+          <div className="agrid">
+            {latestPosts.map((a) => (
+              <a key={a.s} href={`/${a.s}.html`} className="card acard">
+                <img src={a.i} alt={a.t} loading="lazy" width="600" height="300" />
+                <span className="atag">{a.c}</span>
+                <h3>{a.t}</h3>
+                <p>{a.d}</p>
+              </a>
             ))}
           </div>
         </div>

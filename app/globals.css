@@ -593,3 +593,13 @@ html[data-theme="dark"] .wm.big{background:#13284A;border-color:#24406B}
   .drop a small{display:none}
   .drop a b{font-weight:500}
 }
+
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.acard{display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden;transition:transform .2s,border-color .2s}
+.acard:hover{transform:translateY(-3px);border-color:var(--accent)}
+.acard img{width:100%;height:160px;object-fit:cover;display:block}
+.acard .atag{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-ink);margin:18px 22px 6px}
+.acard h3{font-size:18px;margin:0 22px 8px;line-height:1.35}
+.acard p{color:var(--muted);font-size:14.5px;margin:0 22px 22px}
+@media(max-width:900px){.agrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.agrid{grid-template-columns:1fr}}
