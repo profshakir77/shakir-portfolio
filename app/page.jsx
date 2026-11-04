@@ -128,6 +128,12 @@ export default function Home() {
             ))}
           </div>
           <p className="price-note">Prices exclude VAT where applicable. Invoices in EUR for clients in the EU, UK and US. Pay securely by Visa or Mastercard.</p>
+          <div className="promise">
+            <div><b>30 days free support</b><span>Fixes and small changes after launch, included.</span></div>
+            <div><b>Free redesign of the first concept</b><span>Not happy with the first design? I redo it before building.</span></div>
+            <div><b>Care plan from &euro;49/month</b><span>Updates, backups, uptime checks and small edits.</span></div>
+            <div><b>You own everything</b><span>Code, domain, hosting and all logins are yours.</span></div>
+          </div>
           <div className="card book-call">
             <div><h3>Book a free 15-minute call</h3><p>Tell me your preferred day and time (CET) and I&apos;ll confirm within a few hours.</p></div>
             <div className="bc-btns"><a className="btn primary" href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%27d%20like%20to%20book%20a%2015-minute%20call%20about%20a%20project.%20My%20preferred%20day%20and%20time%20(CET)%20is%3A%20" target="_blank" rel="noopener">Book on WhatsApp</a><a className="btn" href="mailto:mr.shakir77@gmail.com?subject=Book%20a%2015-minute%20call&body=Hi%20Shakir%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20call.%0APreferred%20day%20and%20time%20(CET)%3A%20%0AProject%3A%20">Book by email</a></div>
