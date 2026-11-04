@@ -29,7 +29,7 @@ export default function Privacy() {
             <li><b>Contact and quote forms:</b> your name, email, and what you write. Used only to reply to you and prepare a quote (legal basis: steps prior to a contract, Art. 6(1)(b) GDPR). Messages are delivered to my inbox by email.</li>
             <li><b>Reviews:</b> the name, role and text you submit. Reviews are only published after I approve them (legal basis: your consent, Art. 6(1)(a)).</li>
             <li><b>Student portal:</b> for my students only. Name, email, password (stored as a secure hash) and project uploads, used to run the course (legal basis: contract / legitimate interest).</li>
-            <li><b>Analytics:</b> Google Analytics measures anonymous visit statistics such as pages viewed and device type, so I can improve the site (legal basis: consent where required).</li>
+            <li><b>Analytics:</b> Google Analytics measures anonymous visit statistics such as pages viewed and device type, so I can improve the site (legal basis: your consent, only loaded after you click Accept in the cookie banner).</li>
             <li><b>Server logs:</b> the hosting provider briefly records technical data like IP address and browser to keep the site secure and working.</li>
           </ul>
 
@@ -49,7 +49,7 @@ export default function Privacy() {
           <p>You can ask to see, correct, export or delete your personal data, object to or restrict how it is used, and withdraw consent at any time. Email me and I&apos;ll respond within 30 days. You also have the right to complain to a data protection authority in your EU country.</p>
 
           <h2>Cookies</h2>
-          <p>This site uses a small local setting to remember light or dark mode, and Google Analytics cookies for visit statistics. No advertising cookies are used.</p>
+          <p>This site uses a small local setting to remember light or dark mode, and, only if you accept in the cookie banner, Google Analytics cookies for visit statistics. If you reject, no analytics cookies are set. No advertising cookies are used. You can change your choice at any time with the &ldquo;Cookie settings&rdquo; link in the footer.</p>
         </div>
       </section>
     </div>
