@@ -43,7 +43,7 @@ export default function Footer() {
             <a href="/student-portal.html">Student portal</a>
           </div>
         </div>
-        <div className="wrap ftr-bot"><span>&copy; 2026 Shakir Hussain · <a href="/privacy">Privacy &amp; imprint</a> · <a href="#cookie-settings" data-cookie-settings="">Cookie settings</a></span><span>Based in Islamabad, Pakistan · Working with clients across Europe</span></div>
+        <div className="wrap ftr-bot"><span>&copy; 2026 Shakir Hussain · <a href="/privacy">Privacy &amp; imprint</a> · <a href="#cookie-settings" data-cookie-settings="">Cookie settings</a> · <a href="/webentwickler.html" hrefLang="de" lang="de">Deutsch</a></span><span>Based in Islamabad, Pakistan · Working with clients across Europe</span></div>
       </footer>
       <a className="wa" href={`${site.whatsapp}?text=Hi%20Shakir%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project.`} target="_blank" rel="noopener" aria-label="Message Shakir on WhatsApp"><WaIcon /></a>
     </>
