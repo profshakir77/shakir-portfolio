@@ -169,6 +169,10 @@ section{padding:84px 0; border-bottom:1px solid var(--line);}
 .teach-card h3{font-size:1.1rem; margin-bottom:8px;}
 .teach-card p{color:var(--paper-dim); font-size:14px; margin-bottom:14px;}
 .teach-card .proj-tags{display:flex; gap:8px; flex-wrap:wrap;}
+.teach-card .btn-link{display:inline-block; font-size:14px; font-weight:600; color:var(--brass); text-decoration:none;}
+.teach-card .btn-link:hover{text-decoration:underline;}
+#certifications .teach-cover{height:190px;}
+#certifications .teach-cover img{object-fit:contain; background:#fff;}
 .teach-by{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--paper-dim); margin-top:14px; display:block;}
 
 .log{border-left:1px solid var(--line); margin-left:8px;}
