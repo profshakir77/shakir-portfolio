@@ -35,3 +35,11 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', banner); else banner();
   }
 })();
+
+// Language picker (see /translate.js).
+(function () {
+  var s = document.createElement('script');
+  s.src = '/translate.js';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
