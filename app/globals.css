@@ -615,3 +615,5 @@ html[data-theme="dark"] .wm.big{background:#13284A;border-color:#24406B}
 .promise b{font-size:15.5px}.promise span{color:var(--muted);font-size:14px}
 @media(max-width:900px){.promise{grid-template-columns:1fr 1fr}.promise div:nth-child(3){border-left:0}.promise div:nth-child(n+3){border-top:1px solid var(--line)}}
 @media(max-width:600px){.promise{grid-template-columns:1fr}.promise div+div{border-left:0;border-top:1px solid var(--line)}}
+
+.hero-me{display:flex;align-items:center;gap:14px;margin-bottom:18px}.hero-me img{width:64px;height:64px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 0 0 5px #f97316}.hero-me b{display:block;font-size:17px}.hero-me small{font-size:13px;opacity:.75}

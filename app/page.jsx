@@ -8,7 +8,7 @@ import JsonLd from '../components/JsonLd';
 import { projects, services, marquee, labs, faqs, plans, whyEu, site } from '../lib/data';
 
 export const metadata = {
-  title: { absolute: 'Shakir Hussain | Full-Stack Web Developer for EU Businesses' },
+  title: { absolute: 'Shakir Hussain Portfolio | Full-Stack Web Developer for EU Businesses' },
   description: 'Full-stack web developer for European businesses: websites, online stores, web apps and AI chatbots. Fixed quotes in EUR, CET-friendly hours.',
   alternates: { canonical: '/' },
   keywords: ['freelance web developer Europe', 'full-stack developer remote', 'Next.js developer for hire', 'web developer Germany', 'web developer Netherlands', 'AI chatbot for website', 'WooCommerce developer EU', 'hire remote web developer'],
@@ -46,9 +46,13 @@ export default function Home() {
       <section className="hero" id="top" style={{ padding: 0 }}>
         <div className="wrap hero-grid">
           <div>
+            <div className="hero-me">
+              <img src="/shakir-circle-128.webp" alt="Shakir Hussain, full-stack web developer in Islamabad" width="64" height="64" fetchPriority="high" />
+              <div><b>Shakir Hussain</b><small>Full-Stack Web Developer &middot; Islamabad</small></div>
+            </div>
             <span className="status"><i />Available for new projects in Europe</span>
             <h1>Websites and web apps that win you <span className="em">clients.</span></h1>
-            <p className="lede">I&apos;m Shakir, a full-stack developer working with businesses across Europe. I plan, design and build fast websites, online stores and custom web apps, with clear fixed prices in EUR and calls that fit your working day.</p>
+            <p className="lede">I&apos;m Shakir Hussain, a full-stack developer working with businesses across Europe. I plan, design and build fast websites, online stores and custom web apps, with clear fixed prices in EUR and calls that fit your working day.</p>
             <div className="cta">
               <a className="btn primary" href="/contact.html">Get a fixed quote &rarr;</a>
               <a className="btn" href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%27d%20like%20to%20book%20a%2015-minute%20call%20about%20a%20project.%20My%20preferred%20day%20and%20time%20(CET)%20is%3A%20" target="_blank" rel="noopener">Book a 15-min call</a>
