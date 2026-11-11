@@ -1,4 +1,5 @@
 import Mentor3D from '../../components/Mentor3D';
+import Float3D from '../../components/Float3D';
 import Tilt from '../../components/Tilt';
 import JsonLd, { breadcrumb } from '../../components/JsonLd';
 import { Team, StudentProjects } from '../../components/MentorLive';
@@ -64,6 +65,7 @@ export default function Mentorship() {
       </section>
 
       <section id="program">
+        <Float3D shape="cubes" side="right" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker"><b>01</b> / The program</div><h2>What you get as a mentee.</h2></div>
@@ -82,6 +84,7 @@ export default function Mentorship() {
       </section>
 
       <section id="tracks">
+        <Float3D shape="gem" side="left" />
         <div className="wrap">
           <div className="shead"><div><div className="kicker"><b>02</b> / Tracks</div><h2>Pick the path that fits your goal.</h2></div></div>
           <div className="tracks">
@@ -98,6 +101,7 @@ export default function Mentorship() {
       </section>
 
       <section id="how">
+        <Float3D shape="rings" side="right" />
         <div className="wrap">
           <div className="shead"><div><div className="kicker"><b>03</b> / How it works</div><h2>Four steps from sign-up to showcase.</h2></div></div>
           <ol className="path">
@@ -109,6 +113,7 @@ export default function Mentorship() {
       </section>
 
       <section id="team">
+        <Float3D shape="sphere" side="left" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker"><b>04</b> / The team</div><h2>Meet the mentees.</h2></div>
@@ -119,6 +124,7 @@ export default function Mentorship() {
       </section>
 
       <section id="projects">
+        <Float3D shape="knot" side="right" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker"><b>05</b> / Showcase</div><h2>Projects built by mentees.</h2></div>
@@ -129,6 +135,7 @@ export default function Mentorship() {
       </section>
 
       <section id="faq">
+        <Float3D shape="gem" side="left" />
         <div className="wrap">
           <div className="shead"><div><div className="kicker"><b>06</b> / FAQ</div><h2>Questions students ask.</h2></div></div>
           <div className="faq">
@@ -138,7 +145,8 @@ export default function Mentorship() {
       </section>
 
       <div className="wrap">
-        <div className="band">
+        <div className="band band3d">
+          <Float3D shape="rocket" side="mid" />
           <div><h2>Ready to build something real?</h2><p>Create your student account, tell me your goal and we will plan your first project together.</p></div>
           <div className="acts"><a className="btn primary" href="/student-portal.html">Join as a student</a><a className="btn" href={site.whatsapp} target="_blank" rel="noopener">Ask on WhatsApp</a></div>
         </div>
