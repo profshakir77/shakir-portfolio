@@ -1,5 +1,6 @@
 import Hero3D from '../components/Hero3D';
 import Float3D from '../components/Float3D';
+import SkillsGlobe3D from '../components/SkillsGlobe3D';
 import ProjectCard from '../components/ProjectCard';
 import Reviews from '../components/Reviews';
 import Tilt from '../components/Tilt';
@@ -163,12 +164,12 @@ export default function Home() {
       </section>
 
       <section id="skills">
-        <Float3D shape="knot" side="left" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">Skills</div><h2>The tools I use every week.</h2></div>
             <p>I choose the stack that suits your project and budget, not the one that&apos;s trending.</p>
           </div>
+          <SkillsGlobe3D />
           <Skills />
         </div>
       </section>
