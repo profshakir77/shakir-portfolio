@@ -89,9 +89,13 @@
     <div class="wrap about-grid">
       <div>
         <div class="portrait-frame">
-          <div class="portrait-circle-wrap">
-            <img src="shakir-circle-512-ring-v2.webp" alt="Shakir Hussain, full-stack web developer and Computer Science educator" width="280" height="280" loading="lazy">
-            <div class="portrait-badge"><i class="devicon-react-original colored"></i>Full-stack dev</div>
+          <div class="p3d" id="p3d">
+            <div class="p3d-glow"></div>
+            <div class="p3d-orbit" id="p3dOrbit"></div>
+            <div class="portrait-circle-wrap p3d-card">
+              <img src="shakir-circle-512-ring-v2.webp" alt="Shakir Hussain, full-stack web developer and Computer Science educator" width="280" height="280" loading="lazy">
+              <div class="portrait-badge"><i class="devicon-react-original colored"></i>Full-stack dev</div>
+            </div>
           </div>
           <div class="portrait-caption"><strong>Shakir Hussain</strong><span>&middot; Islamabad, PK</span></div>
         </div>
@@ -318,5 +322,47 @@
 </button>
 <script src="/main.js" defer></script>
 
+<style>
+/* 3D portrait */
+.p3d{position:relative;width:340px;height:340px;display:flex;align-items:center;justify-content:center;perspective:900px;margin:0 auto}
+.p3d-card{transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform;z-index:5}
+.p3d-card img{border-radius:50%;box-shadow:0 30px 60px -20px rgba(11,31,58,.45),0 0 0 6px rgba(255,255,255,.6)}
+.p3d-card .portrait-badge{transform:translateZ(60px)}
+.p3d-glow{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(232,96,60,.45),rgba(22,50,92,.25) 55%,transparent 72%);filter:blur(18px);animation:p3dPulse 4s ease-in-out infinite}
+@keyframes p3dPulse{50%{transform:scale(1.12);opacity:.75}}
+.p3d-orbit{position:absolute;inset:0;pointer-events:none}
+.p3d-chip img{width:58%;height:58%}
+.p3d-chip{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 8px 18px -6px rgba(11,31,58,.35);border:2px solid rgba(232,96,60,.35)}
+.p3d-card,.p3d-card img{animation:p3dFloat 6s ease-in-out infinite}
+@keyframes p3dFloat{50%{translate:0 -8px}}
+@media (max-width:760px){.p3d{width:270px;height:270px}.p3d-chip{width:36px;height:36px;margin:-18px 0 0 -18px;font-size:19px}}
+@media (prefers-reduced-motion:reduce){.p3d-glow,.p3d-card,.p3d-card img{animation:none}}
+</style>
+<script>
+(function(){
+  var stage=document.getElementById('p3d'); if(!stage) return;
+  var card=stage.querySelector('.p3d-card'), orbit=document.getElementById('p3dOrbit');
+  var icons=['react-original','nextjs-plain','nodejs-plain','php-plain','laravel-original','mongodb-plain','mysql-original','tailwindcss-original','wordpress-plain','typescript-plain'];
+  var chips=icons.map(function(c){var d=document.createElement('div');d.className='p3d-chip';d.innerHTML='<img src="/icons/'+c+'.svg" alt="" width="24" height="24">';orbit.appendChild(d);return d;});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, a=0, tx=0, ty=0, cx=0, cy=0, vis=true;
+  function place(){
+    var R=stage.clientWidth*0.6, r=R*0.22, oy=stage.clientWidth*0.3;
+    chips.forEach(function(d,i){
+      var t=a+i*Math.PI*2/chips.length, x=Math.cos(t)*R, y=Math.sin(t)*r, z=Math.sin(t);
+      var s=0.7+(z+1)*0.2;
+      d.style.transform='translate('+x.toFixed(1)+'px,'+(y+oy).toFixed(1)+'px) scale('+s.toFixed(2)+')';
+      d.style.zIndex=z>0?8:2; d.style.opacity=(0.45+(z+1)*0.27).toFixed(2);
+    });
+  }
+  stage.addEventListener('pointermove',function(e){var b=stage.getBoundingClientRect();tx=((e.clientX-b.left)/b.width-.5)*24;ty=((e.clientY-b.top)/b.height-.5)*-24;});
+  stage.addEventListener('pointerleave',function(){tx=ty=0;});
+  new IntersectionObserver(function(en){vis=en[0].isIntersecting;}).observe(stage);
+  function loop(){
+    if(vis){a+=0.006;cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;card.style.transform='rotateY('+cx.toFixed(2)+'deg) rotateX('+cy.toFixed(2)+'deg)';place();}
+    requestAnimationFrame(loop);
+  }
+  place(); if(!reduce) requestAnimationFrame(loop);
+})();
+</script>
 </body>
 </html>
