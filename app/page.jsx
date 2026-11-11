@@ -1,4 +1,5 @@
 import Hero3D from '../components/Hero3D';
+import Float3D from '../components/Float3D';
 import ProjectCard from '../components/ProjectCard';
 import Reviews from '../components/Reviews';
 import Tilt from '../components/Tilt';
@@ -76,6 +77,7 @@ export default function Home() {
       </div>
 
       <section id="services">
+        <Float3D shape="cubes" side="right" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">What I do</div><h2>One developer for the whole project, or the part you need.</h2></div>
@@ -93,6 +95,7 @@ export default function Home() {
       </section>
 
       <section id="why">
+        <Float3D shape="sphere" side="left" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">Working together</div><h2>Built for clients in Europe.</h2></div>
@@ -115,6 +118,7 @@ export default function Home() {
       </section>
 
       <section id="pricing">
+        <Float3D shape="gem" side="right" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">Pricing</div><h2>Clear starting prices.</h2></div>
@@ -159,6 +163,7 @@ export default function Home() {
       </section>
 
       <section id="skills">
+        <Float3D shape="knot" side="left" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">Skills</div><h2>The tools I use every week.</h2></div>
@@ -233,6 +238,7 @@ export default function Home() {
       </section>
 
       <section id="reviews">
+        <Float3D shape="rings" side="right" />
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">Reviews</div><h2>What clients say.</h2></div>
@@ -268,6 +274,7 @@ export default function Home() {
       </section>
 
       <section id="faq">
+        <Float3D shape="sphere" side="left" />
         <div className="wrap">
           <div className="shead"><div><div className="kicker">FAQ</div><h2>Questions clients usually ask.</h2></div></div>
           <div className="faq">

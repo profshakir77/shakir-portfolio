@@ -617,3 +617,13 @@ html[data-theme="dark"] .wm.big{background:#13284A;border-color:#24406B}
 @media(max-width:600px){.promise{grid-template-columns:1fr}.promise div+div{border-left:0;border-top:1px solid var(--line)}}
 
 .hero-me{display:flex;align-items:center;gap:14px;margin-bottom:18px}.hero-me img{width:64px;height:64px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 0 0 5px #f97316}.hero-me b{display:block;font-size:17px}.hero-me small{font-size:13px;opacity:.75}
+
+/* floating 3D accents */
+section{position:relative}
+section>.wrap{position:relative;z-index:1}
+.f3d{position:absolute;top:-36px;width:160px;height:160px;opacity:0;transition:opacity .9s ease;pointer-events:none;z-index:0}
+.f3d.on{opacity:.75}
+.f3d-right{right:2%}
+.f3d-left{left:2%}
+.f3d canvas{width:100%!important;height:100%!important;display:block}
+@media (max-width:759px){.f3d{display:none}}
