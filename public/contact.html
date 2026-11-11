@@ -83,12 +83,12 @@
 </header>
 <main id="main">
 
-  <div class="page-hero"><div class="wrap"><span class="section-eyebrow">Contact</span><h1>Let's build something.</h1><p>Send a short brief - what you're building, your timeline and your budget range - and I'll reply with next steps.</p></div></div>
+  <div class="page-hero c3d-hero"><div class="c3d-scene" id="c3dScene" aria-hidden="true"></div><div class="wrap"><span class="section-eyebrow">Contact</span><h1>Let's build something.</h1><p>Send a short brief - what you're building, your timeline and your budget range - and I'll reply with next steps.</p></div></div>
 
   <section id="contact-main">
     <div class="wrap contact-grid">
       <div>
-        <form id="contactForm" novalidate>
+        <form id="contactForm" class="c3d-form" novalidate>
           <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
           <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
           <div class="form-group"><label for="budget">Budget range</label><input type="text" id="budget" name="budget" placeholder="e.g. $500-$1500"></div>
@@ -166,5 +166,94 @@
 <script src="/main.js" defer></script>
 <script src="/contact-form.js" defer></script>
 
+<style>
+/* 3D contact page */
+.c3d-hero{position:relative;overflow:hidden;min-height:340px;background:radial-gradient(ellipse at 78% 50%,rgba(232,96,60,.16),transparent 55%),radial-gradient(ellipse at 95% 10%,rgba(22,50,92,.14),transparent 50%),var(--ink-2)}
+.c3d-hero .wrap{position:relative;z-index:2}
+.c3d-scene{position:absolute;top:0;right:0;width:52%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity 1s}
+.c3d-scene.on{opacity:1}
+.c3d-scene canvas{width:100%!important;height:100%!important;display:block}
+.c3d-form{position:relative;padding:28px;border-radius:20px;background:var(--ink,#fff);box-shadow:0 30px 70px -35px rgba(11,31,58,.45);transform-style:preserve-3d;transition:transform .3s ease,box-shadow .3s ease}
+.c3d-form::before{content:"";position:absolute;inset:-2px;border-radius:22px;padding:2px;background:linear-gradient(135deg,#E8603C,#16325C,#E8603C);background-size:200% 200%;animation:c3dBorder 6s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+@keyframes c3dBorder{to{background-position:200% 0}}
+.c3d-form:focus-within{box-shadow:0 40px 90px -35px rgba(232,96,60,.5)}
+#contact-main .contact-grid>div:last-child>*{transition:transform .25s ease}
+#contact-main .contact-grid>div:last-child>*:hover{transform:translateX(6px)}
+@media (max-width:760px){.c3d-scene{width:100%;opacity:.35!important}.c3d-hero{min-height:0}}
+@media (prefers-reduced-motion:reduce){.c3d-form::before{animation:none}}
+</style>
+<script>
+(function(){
+  var form=document.querySelector('.c3d-form');
+  if(form&&matchMedia('(hover:hover)').matches){
+    form.addEventListener('pointermove',function(e){var b=form.getBoundingClientRect();var x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;form.style.transform='perspective(1100px) rotateY('+(x*5).toFixed(2)+'deg) rotateX('+(-y*5).toFixed(2)+'deg)';});
+    form.addEventListener('pointerleave',function(){form.style.transform='';});
+  }
+})();
+</script>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+const el=document.getElementById('c3dScene');
+if(el){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5)); el.appendChild(renderer.domElement);
+  const scene=new THREE.Scene(); const cam=new THREE.PerspectiveCamera(40,1,.1,100); cam.position.set(0,0,7.5);
+  const coral=new THREE.Color('#E8603C'), navy=new THREE.Color('#16325C');
+  scene.add(new THREE.AmbientLight(0xffffff,.7)); const key=new THREE.DirectionalLight(0xffffff,1.6); key.position.set(3,5,6); scene.add(key);
+  const pl=new THREE.PointLight(coral,16,14); pl.position.set(-2,-1,4); scene.add(pl);
+
+  // paper plane
+  const g=new THREE.BufferGeometry();
+  const v=new Float32Array([0,0,1.6, -1.1,0,-0.9, 0,0.05,-0.5,  0,0,1.6, 0,0.05,-0.5, 1.1,0,-0.9,  0,0,1.6, 0,-0.45,-0.7, 0,0.05,-0.5]);
+  g.setAttribute('position',new THREE.BufferAttribute(v,3)); g.computeVertexNormals();
+  const plane=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0xffffff,roughness:.45,metalness:.05,side:THREE.DoubleSide,flatShading:true}));
+  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(g),new THREE.LineBasicMaterial({color:coral}));
+  const planeG=new THREE.Group(); planeG.add(plane,edge); planeG.scale.setScalar(1.1); scene.add(planeG);
+
+  // trail
+  const N=60, trailPos=new Float32Array(N*3), trailG=new THREE.BufferGeometry();
+  trailG.setAttribute('position',new THREE.BufferAttribute(trailPos,3));
+  const trail=new THREE.Points(trailG,new THREE.PointsMaterial({color:coral,size:.11,transparent:true,opacity:.75})); scene.add(trail);
+
+  // envelope
+  const env=new THREE.Group();
+  env.add(new THREE.Mesh(new THREE.BoxGeometry(1.6,1.05,.08),new THREE.MeshStandardMaterial({color:navy,roughness:.35,metalness:.3})));
+  const flapG=new THREE.BufferGeometry(); flapG.setAttribute('position',new THREE.BufferAttribute(new Float32Array([-.8,.52,.05, .8,.52,.05, 0,-.12,.05]),3)); flapG.computeVertexNormals();
+  env.add(new THREE.Mesh(flapG,new THREE.MeshStandardMaterial({color:coral,side:THREE.DoubleSide})));
+  env.position.set(1.6,-.5,-.6);env.scale.setScalar(1.25); scene.add(env);
+
+  // chat bubbles
+  const bubbles=[[ -2.2,1.3,-.5,.42],[2.6,1.5,-1.5,.32],[-1.2,-1.6,.2,.26]].map(([x,y,z,r],i)=>{
+    const m=new THREE.Mesh(new THREE.SphereGeometry(r,32,32),new THREE.MeshStandardMaterial({color:i===1?coral:0xffffff,roughness:.25,metalness:.1}));
+    m.position.set(x,y,z); m.userData.y=y; scene.add(m);
+    for(let d=-1;d<=1;d++){const dot=new THREE.Mesh(new THREE.SphereGeometry(r*.14,12,12),new THREE.MeshBasicMaterial({color:i===1?0xffffff:navy}));dot.position.set(d*r*.42,0,r*.92);m.add(dot);}
+    return m;});
+
+  // particles
+  const P=new Float32Array(180*3); for(let i=0;i<P.length;i++)P[i]=(Math.random()-.5)*12;
+  const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(P,3));
+  scene.add(new THREE.Points(pg,new THREE.PointsMaterial({color:navy,size:.035,transparent:true,opacity:.5})));
+
+  const size=()=>{const w=el.clientWidth||1,h=el.clientHeight||1;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();};
+  size(); new ResizeObserver(size).observe(el);
+  let mx=0,my=0; addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5);},{passive:true});
+  const pos=(t)=>new THREE.Vector3(Math.sin(t)*2.6,Math.sin(t*2)*.9+.2,Math.cos(t)*1.6);
+  for(let i=0;i<N;i++){const p=pos(-i*.03);trailPos.set([p.x,p.y,p.z],i*3);}
+  let t=0,vis=true; new IntersectionObserver(en=>{vis=en[0].isIntersecting;}).observe(el);
+  const tmp=new THREE.Vector3();
+  function render(){
+    const p=pos(t), ahead=pos(t+.02);
+    planeG.position.copy(p); planeG.lookAt(ahead); planeG.rotateZ(Math.sin(t*2)*.5);
+    trailPos.copyWithin(3,0,(N-1)*3); trailPos.set([p.x,p.y,p.z],0); trailG.attributes.position.needsUpdate=true;
+    env.rotation.y=Math.sin(t*.8)*.5+mx*.6; env.rotation.x=my*.4; env.position.y=-.6+Math.sin(t*1.3)*.15;
+    bubbles.forEach((b,i)=>{b.position.y=b.userData.y+Math.sin(t*1.5+i*2)*.18;b.rotation.y=mx*.8;});
+    scene.rotation.y+=(mx*.25-scene.rotation.y)*.05; scene.rotation.x+=(my*.15-scene.rotation.x)*.05;
+    renderer.render(scene,cam);
+  }
+  function loop(){ if(vis){t+=.012;render();} requestAnimationFrame(loop); }
+  el.classList.add('on'); render(); if(!reduce) requestAnimationFrame(loop);
+}
+</script>
 </body>
 </html>
