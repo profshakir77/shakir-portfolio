@@ -58,6 +58,21 @@ export default function Float3D({ shape = 'knot', side = 'right' }) {
         add(new THREE.IcosahedronGeometry(1.3, 1), matB);
         add(new THREE.IcosahedronGeometry(1.7, 1), wire);
         add(new THREE.SphereGeometry(0.28, 24, 24), matA, [1.9, 0.9, 0.5]);
+      } else if (shape === 'rocket') {
+        const white = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.2, roughness: 0.35 });
+        const rocket = new THREE.Group();
+        const body = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 1.6, 32), white); rocket.add(body);
+        const nose = new THREE.Mesh(new THREE.ConeGeometry(0.42, 0.8, 32), matA); nose.position.y = 1.2; rocket.add(nose);
+        const win = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.05, 12, 32), matB); win.position.set(0, 0.35, 0.41); rocket.add(win);
+        const glass = new THREE.Mesh(new THREE.CircleGeometry(0.15, 24), new THREE.MeshStandardMaterial({ color: 0x9fd3ff, metalness: 0.6, roughness: 0.1 })); glass.position.set(0, 0.35, 0.43); rocket.add(glass);
+        for (let i = 0; i < 3; i++) {
+          const fin = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.55, 0.45), matA);
+          const a = (i / 3) * Math.PI * 2; fin.position.set(Math.sin(a) * 0.45, -0.65, Math.cos(a) * 0.45); fin.rotation.y = a; rocket.add(fin);
+        }
+        const flame = new THREE.Mesh(new THREE.ConeGeometry(0.28, 0.9, 24), new THREE.MeshBasicMaterial({ color: 0xffb347, transparent: true, opacity: 0.85 }));
+        flame.rotation.x = Math.PI; flame.position.y = -1.25; flame.name = 'flame'; rocket.add(flame);
+        rocket.rotation.z = -0.6; group.add(rocket);
+        [body, nose, win, glass, flame].forEach((m) => geos.push(m.geometry));
       } else {
         add(new THREE.TorusKnotGeometry(1.0, 0.32, 160, 20), matA);
       }
@@ -81,6 +96,7 @@ export default function Float3D({ shape = 'knot', side = 'right' }) {
         group.rotation.y += (tx + t * 0.6 - group.rotation.y) * 0.05;
         group.rotation.x += (ty + Math.sin(t) * 0.25 - group.rotation.x) * 0.05;
         group.position.y = Math.sin(t * 1.4) * 0.18;
+        const fl = group.getObjectByName('flame'); if (fl) fl.scale.y = 0.8 + Math.sin(t * 30) * 0.2;
         renderer.render(scene, camera);
         raf = requestAnimationFrame(frame);
       };
