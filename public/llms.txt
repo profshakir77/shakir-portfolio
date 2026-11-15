@@ -1,0 +1,23 @@
+# Shakir Hussain, Full-Stack Web Developer
+
+> Full-stack web developer and Computer Science educator based in Islamabad, Pakistan. Builds websites, online stores, web apps, 3D websites and AI chatbots for businesses in Europe, the UAE, the UK, the US and Pakistan. 213+ websites since 2018.
+
+Contact: WhatsApp +92 305 9494585, email mr.shakir77@gmail.com
+
+## Main pages
+- [Home](https://shakir-portfolio-azure.vercel.app/): services, selected work, pricing in EUR and AED, reviews
+- [Work](https://shakir-portfolio-azure.vercel.app/work): full project portfolio with live links
+- [Web design for UAE businesses](https://shakir-portfolio-azure.vercel.app/web-design-uae): Dubai, Sharjah and Ajman websites from AED 1,500, English and Arabic, WhatsApp booking
+- [Services and prices](https://shakir-portfolio-azure.vercel.app/services.html)
+- [AI websites and chatbots](https://shakir-portfolio-azure.vercel.app/ai-websites)
+- [Full-stack development](https://shakir-portfolio-azure.vercel.app/full-stack)
+- [UI prototyping](https://shakir-portfolio-azure.vercel.app/prototyping)
+- [About](https://shakir-portfolio-azure.vercel.app/about.html)
+- [Contact](https://shakir-portfolio-azure.vercel.app/contact.html)
+
+## Pricing
+- Europe: launch page from EUR 499, starter site EUR 1,500, business and e-commerce EUR 4,000, full-stack app EUR 9,000
+- UAE: salon and shop starter AED 1,500, business website AED 2,500, premium 3D and booking AED 4,500
+
+## Skills
+Next.js, React, Three.js, Node.js, PHP, Laravel, MySQL, PostgreSQL, MongoDB, WordPress, WooCommerce, Shopify, SEO, AI chatbots (OpenAI and Claude APIs)
