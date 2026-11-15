@@ -71,6 +71,16 @@ export default function WebDesignUae() {
       </section>
 
       <section>
+        <div className="shead"><div><div className="kicker"><b>05</b> / Guides</div><h2>Free guides for UAE businesses.</h2></div></div>
+        <ul className="uae-guides">
+          <li><a href="/website-cost-dubai-uae-2026.html">How much does a website cost in Dubai and the UAE in 2026?</a></li>
+          <li><a href="/salon-website-whatsapp-booking-uae.html">Why every UAE salon needs a website with WhatsApp booking</a></li>
+          <li><a href="/google-business-profile-uae-guide.html">Google Business Profile: rank on Google Maps in Dubai, Sharjah and Ajman</a></li>
+          <li><a href="/arabic-english-bilingual-website-guide.html">How to build a bilingual Arabic and English website that ranks</a></li>
+        </ul>
+      </section>
+
+      <section>
         <div className="shead"><div><div className="kicker"><b>04</b> / FAQ</div><h2>Questions UAE businesses ask.</h2></div></div>
         <div className="faq">{faqs.map(([q, a]) => <details key={q} className="card"><summary>{q}</summary><p>{a}</p></details>)}</div>
       </section>
