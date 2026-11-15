@@ -155,7 +155,7 @@ export default function Home() {
         <div className="wrap">
           <div className="shead">
             <div><div className="kicker">UAE &amp; Gulf</div><h2>Websites for businesses in Dubai, Sharjah and Ajman.</h2><div className="gulf-ar" lang="ar" dir="rtl">مواقع إلكترونية لأعمالك في الإمارات</div></div>
-            <p>Salons, clinics, restaurants and shops in the UAE get a site built for how their customers book: on WhatsApp, in English or Arabic, with prices in AED. <a href="https://uae-salon-preview.vercel.app/cleopatra/" target="_blank" rel="noopener">See a live example</a></p>
+            <p>Salons, clinics, restaurants and shops in the UAE get a site built for how their customers book: on WhatsApp, in English or Arabic, with prices in AED. <a href="/web-design-uae">UAE web design packages</a> · <a href="https://uae-salon-preview.vercel.app/cleopatra/" target="_blank" rel="noopener">live example</a></p>
           </div>
           <div className="why">
             {gulfPoints.map(([t, d], i) => <div key={t}><span className="num">0{i + 1}</span><h4>{t}</h4><p>{d}</p></div>)}
