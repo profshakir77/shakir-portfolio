@@ -335,6 +335,7 @@
 .p3d-chip{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 8px 18px -6px rgba(11,31,58,.35);border:2px solid rgba(232,96,60,.35)}
 .p3d-card,.p3d-card img{animation:p3dFloat 6s ease-in-out infinite}
 @keyframes p3dFloat{50%{translate:0 -8px}}
+@media (max-width:420px){.p3d{width:240px;height:240px}.p3d-card img{width:200px;height:200px}}
 @media (max-width:760px){.p3d{width:270px;height:270px}.p3d-chip{width:36px;height:36px;margin:-18px 0 0 -18px;font-size:19px}}
 @media (prefers-reduced-motion:reduce){.p3d-glow,.p3d-card,.p3d-card img{animation:none}}
 </style>
@@ -346,7 +347,7 @@
   var chips=icons.map(function(c){var d=document.createElement('div');d.className='p3d-chip';d.innerHTML='<img src="/icons/'+c+'.svg" alt="" width="24" height="24">';orbit.appendChild(d);return d;});
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, a=0, tx=0, ty=0, cx=0, cy=0, vis=true;
   function place(){
-    var R=stage.clientWidth*0.6, r=R*0.22, oy=stage.clientWidth*0.3;
+    var R=stage.clientWidth*(innerWidth<760?0.46:0.6), r=R*0.22, oy=stage.clientWidth*0.3;
     chips.forEach(function(d,i){
       var t=a+i*Math.PI*2/chips.length, x=Math.cos(t)*R, y=Math.sin(t)*r, z=Math.sin(t);
       var s=0.7+(z+1)*0.2;
