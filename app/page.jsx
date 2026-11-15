@@ -7,7 +7,7 @@ import Tilt from '../components/Tilt';
 import Skills from '../components/Skills';
 import Icon from '../components/Icon';
 import JsonLd from '../components/JsonLd';
-import { projects, services, marquee, labs, faqs, plans, whyEu, site } from '../lib/data';
+import { projects, services, marquee, labs, faqs, plans, whyEu, site, gulfPlans, gulfPoints } from '../lib/data';
 
 export const metadata = {
   title: { absolute: 'Shakir Hussain Portfolio | Full-Stack Web Developer for EU Businesses' },
@@ -147,6 +147,31 @@ export default function Home() {
             <div><h3>Book a free 15-minute call</h3><p>Tell me your preferred day and time (CET) and I&apos;ll confirm within a few hours.</p></div>
             <div className="bc-btns"><a className="btn primary" href="https://wa.me/923059494585?text=Hi%20Shakir%2C%20I%27d%20like%20to%20book%20a%2015-minute%20call%20about%20a%20project.%20My%20preferred%20day%20and%20time%20(CET)%20is%3A%20" target="_blank" rel="noopener">Book on WhatsApp</a><a className="btn" href="mailto:mr.shakir77@gmail.com?subject=Book%20a%2015-minute%20call&body=Hi%20Shakir%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20call.%0APreferred%20day%20and%20time%20(CET)%3A%20%0AProject%3A%20">Book by email</a></div>
           </div>
+        </div>
+      </section>
+
+      <section id="uae" className="gulf">
+        <Float3D shape="gem" side="left" />
+        <div className="wrap">
+          <div className="shead">
+            <div><div className="kicker">UAE &amp; Gulf</div><h2>Websites for businesses in Dubai, Sharjah and Ajman.</h2><div className="gulf-ar" lang="ar" dir="rtl">مواقع إلكترونية لأعمالك في الإمارات</div></div>
+            <p>Salons, clinics, restaurants and shops in the UAE get a site built for how their customers book: on WhatsApp, in English or Arabic, with prices in AED. <a href="https://uae-salon-preview.vercel.app/cleopatra/" target="_blank" rel="noopener">See a live example</a></p>
+          </div>
+          <div className="why">
+            {gulfPoints.map(([t, d], i) => <div key={t}><span className="num">0{i + 1}</span><h4>{t}</h4><p>{d}</p></div>)}
+          </div>
+          <div className="pricing gulf-plans">
+            {gulfPlans.map((p) => (
+              <div key={p.name} className={'card plan' + (p.pop ? ' pop' : '')}>
+                <h3>{p.name}</h3>
+                <div className="price"><small>from </small>{p.price}</div>
+                <p>{p.desc}</p>
+                <ul>{p.items.map((it) => <li key={it}>{it}</li>)}</ul>
+                <a className={'btn' + (p.pop ? ' primary' : '')} href={'https://wa.me/923059494585?text=' + encodeURIComponent('Hi Shakir, I am interested in the ' + p.name + ' package for my business in the UAE.')} target="_blank" rel="noopener">Get this on WhatsApp</a>
+              </div>
+            ))}
+          </div>
+          <p className="price-note">Prices in AED. Care plan from AED 100 per month for updates, hosting and small changes. Free demo of your homepage before you pay anything.</p>
         </div>
       </section>
 
