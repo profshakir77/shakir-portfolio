@@ -637,3 +637,14 @@ section>.wrap{position:relative;z-index:1}
 .band3d .f3d{top:6px;width:130px;height:130px}
 .band3d .f3d.on{opacity:.95}
 .f3d-mid{right:.5%}
+
+/* UAE & Gulf section */
+.gulf{position:relative}
+.gulf-ar{text-align:left;font-family:'Tajawal','Segoe UI',sans-serif;color:var(--accent);font-size:20px;margin-top:8px}
+.gulf .why{margin-bottom:34px}
+.gulf-plans{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.gulf-plans{grid-template-columns:1fr}}
+/* fix: keep the mentorship rocket clear of the buttons */
+.band3d .acts{position:relative;z-index:3}
+@media (min-width:1101px){.band3d{padding-right:170px}.band3d .f3d{top:50%;margin-top:-65px}}
+@media (max-width:1100px){.band3d .f3d{display:none}}
