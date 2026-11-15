@@ -6,8 +6,8 @@ import { site } from '../lib/data';
 export const metadata = {
   metadataBase: new URL(site.url),
   title: { default: 'Shakir Hussain Portfolio | Full-Stack Web Developer, Islamabad', template: '%s | Shakir Hussain' },
-  description: 'Shakir Hussain portfolio: full-stack web developer and CS educator at Air University Islamabad. Websites, online stores, web apps and AI chatbots for clients in Europe, the US and Pakistan. 213+ sites built since 2018.',
-  keywords: ['Shakir Hussain', 'Shakir portfolio', 'Shakir Hussain portfolio', 'full-stack web developer Islamabad', 'web developer Pakistan', 'Next.js developer', 'Air University'],
+  description: 'Shakir Hussain portfolio: full-stack web developer and CS educator at Air University Islamabad. Websites, online stores, web apps and AI chatbots for clients in Europe, the UAE, the US and Pakistan. 213+ sites built since 2018.',
+  keywords: ['Shakir Hussain', 'Shakir portfolio', 'Shakir Hussain portfolio', 'full-stack web developer Islamabad', 'web developer Pakistan', 'Next.js developer', 'web design Dubai', 'website design UAE', 'salon website developer', 'Air University'],
   authors: [{ name: 'Shakir Hussain' }],
   alternates: { canonical: '/' },
   openGraph: { type: 'website', siteName: 'Shakir Hussain, Full-Stack Developer', locale: 'en_US' },
@@ -27,6 +27,7 @@ const person = {
   address: { '@type': 'PostalAddress', addressLocality: 'Islamabad', addressCountry: 'PK' },
   worksFor: { '@type': 'CollegeOrUniversity', name: 'Air University Islamabad' },
   email: `mailto:${site.email}`, jobTitle: 'Full-Stack Web Developer',
+  areaServed: ['Europe', 'United Arab Emirates', 'United Kingdom', 'United States', 'Pakistan'],
   knowsAbout: ['Next.js', 'React', 'Three.js', 'Node.js', 'PHP', 'Laravel', 'MySQL', 'PostgreSQL', 'MongoDB', 'WordPress', 'WooCommerce', 'Shopify', 'AI chatbots', 'SEO', 'UI prototyping'],
   sameAs: [site.linkedin, site.github, site.facebook, site.instagram, site.tiktok],
   alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'University of Sargodha' }, { '@type': 'CollegeOrUniversity', name: 'Air University' }],
